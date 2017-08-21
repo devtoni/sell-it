@@ -1,0 +1,29 @@
+@import "../base/_colors";
+
+.logo {
+  color: $main-font-color;
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+  }
+  span.market-logo {
+    width: 35px;
+    display: inline-block;
+    background-color: #F58454;
+    padding: 0.2rem;
+   }
+   span.market-logo > h1 {
+     white-space: normal;
+     word-wrap: break-word;
+     margin: 0;
+     text-align: center;
+     font-size: 0.7rem;
+   }
+  p {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+}

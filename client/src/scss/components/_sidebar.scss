@@ -88,3 +88,21 @@
 .sidebar-nav > .sidebar-brand a:hover {
   background: none;
 }
+
+.profile-side-bar {
+  display: flex;
+  padding: 0.5rem 0;
+  align-items: center;
+  border-bottom: 1px solid $border-line;
+  img {
+    border-radius: 50%;
+  }
+  .action-profile {
+    p {
+      margin: 0;
+      a {
+        display: inline;
+      }
+    }
+  }
+}

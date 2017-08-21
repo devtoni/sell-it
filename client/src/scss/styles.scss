@@ -1,91 +1,55 @@
 @import "./base/_scaffolding";
 @import "./base/_colors";
+@import "./base/_typography";
 /* components */
 @import "./components/_nav";
+@import "./components/_logo";
 @import "./components/_sidebar";
 @import "./components/_card";
+@import "./components/_login-form";
+@import "./components/_video";
+/* pages */
+@import "./pages/_index";
 
-* {
-  box-sizing: border-box;
-}
 
-html {
-  height: 100%;
-}
-body {
-  min-height: 100%;
-}
-html,
-body {
-  font-family: 'Montserrat';
-  background-color: #F8F9FA;
-}
-.landing {
-  background-color: #F8F9FA;
-  display: flex;
-  height: 100vh;
-  header.row {
-    flex-direction: column;
-    text-align: center;
-    color: #4B4C63;
-    h1 {
-      font-weight: bold;
-      margin: 0;
-      text-align: center;
+    video.video-header {
+      display: none;
+      opacity: 0.9;
     }
-    span {
-      margin-left: 5px;
-    }
-    span.market-logo h1 {
-      font-size: 0.7rem;
-      width: 40px;
-      display: inline-block;
-      background-color: #F58454;
-      padding: 0.3rem;
-      word-wrap: break-word;
-  }
-  p {
-    font-style: italic;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-  }
-}
-}
-
-.logo {
-  color: #4B4C63;
-  h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 0;
-    text-align: center;
-  }
-  span.market-logo {
-    width: 35px;
-    display: inline-block;
-    background-color: #F58454;
-    padding: 0.2rem;
-   }
-   span.market-logo > h1 {
-     white-space: normal;
-    word-wrap: break-word;
-     margin: 0;
-     text-align: center;
-     font-size: 0.7rem;
-   }
-p {
-  font-style: italic;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-}
-}
 
 
+// .landing {
+//   background-color: #F8F9FA;
+//   display: flex;
+//   height: 100vh;
+//   header.row {
+//     flex-direction: column;
+//     text-align: center;
+//     color: #4B4C63;
+//     h1 {
+//       font-weight: bold;
+//       margin: 0;
+//       text-align: center;
+//     }
+//     span {
+//       margin-left: 5px;
+//     }
+//     span.market-logo h1 {
+//       font-size: 0.7rem;
+//       width: 40px;
+//       display: inline-block;
+//       background-color: #F58454;
+//       padding: 0.3rem;
+//       word-wrap: break-word;
+//   }
+//   p {
+//     font-style: italic;
+//     font-size: 0.9rem;
+//     margin-top: 0.5rem;
+//   }
+// }
+// }
 
-
-.menu-btn {
-  border: none;
-}
 
 
 .gallery {
@@ -93,69 +57,25 @@ p {
   flex-wrap: wrap;
   display: flex;
   margin-top: 5rem;
-
 }
 
-form.form-signin  {
-  width: 90%;
-  padding: 2rem;
-  background: white;
-  h1 {
-    color: #4B4C63;
-    text-align: center;
-    /* padding: 2rem 0; */
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  input, button {
-    border-radius: 0;
-  }
-  div, button {
-    margin: 0.5rem 0;
-    width: 75%;
-    margin: 0.5rem auto;
-  }
-}
-.profile-side-bar {
-  display: flex;
-  padding: 0.5rem 0;
-  align-items: center;
-  border-bottom: 1px solid $border-line;
-  img {
-    border-radius: 50%;
-  }
-  .action-profile {
-    p {
-      margin: 0;
-      a {
-        display: inline;
-      }
-    }
-  }
-}
-.nav-desktop {
-  width: 100%;
-  p {
-    margin: 0 1rem;
-  }
-}
-.login-form-box {
-  margin-top: 5rem;
-  form {
-    width: 90%;
-    max-width: 450px;
-    margin: 0 auto;
-  }
-}
-a.btn-search {
-  font-size: 1.5rem;
-  color: #4B4C63;
-}
+
+
 @media(min-width:768px) {
   a.btn-search {
     display: none;
   }
+
+    .header {
+      video {
+        display: inline-block;
+        vertical-align: baseline;
+        object-fit: contain;
+        width: 100%;
+        margin-top: -100px;
+      }
+    }
+ 
   .login-form-box {
     min-height: 600px;
     align-items: center;

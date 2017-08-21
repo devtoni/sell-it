@@ -3,3 +3,27 @@ ul.nav-items {
     color: #4B4C63;
   }
 }
+
+.menu-btn {
+  border: none;
+}
+
+.nav-desktop {
+  width: 100%;
+  p {
+    margin: 0 1rem;
+  }
+}
+
+a.btn-search {
+  font-size: 1.5rem;
+  color: #4B4C63;
+}
+
+@media(min-width:768px) {
+  nav.navbar {
+    h1, a, li.nav-item > a.nav-link {
+      color: #fff;
+    }
+  }
+}
