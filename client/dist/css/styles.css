@@ -1,9 +1,55 @@
+html, body {
+  height: 100%;
+  background-color: #F8F9FA; }
+
 p {
   margin: 0; }
+
+body {
+  font-family: 'Montserrat', sans-serif; }
 
 /* components */
 ul.nav-items li > a {
   color: #4B4C63; }
+
+.menu-btn {
+  border: none; }
+
+.nav-desktop {
+  width: 100%; }
+  .nav-desktop p {
+    margin: 0 1rem; }
+
+a.btn-search {
+  font-size: 1.5rem;
+  color: #4B4C63; }
+
+@media (min-width: 768px) {
+  nav.navbar h1, nav.navbar a, nav.navbar li.nav-item > a.nav-link {
+    color: #fff; } }
+
+.logo {
+  color: #4B4C63; }
+  .logo h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    text-align: center; }
+  .logo span.market-logo {
+    width: 35px;
+    display: inline-block;
+    background-color: #F58454;
+    padding: 0.2rem; }
+  .logo span.market-logo > h1 {
+    white-space: normal;
+    word-wrap: break-word;
+    margin: 0;
+    text-align: center;
+    font-size: 0.7rem; }
+  .logo p {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 0.5rem; }
 
 #wrapper {
   padding-left: 0;
@@ -79,6 +125,18 @@ ul.nav-items li > a {
 .sidebar-nav > .sidebar-brand a:hover {
   background: none; }
 
+.profile-side-bar {
+  display: flex;
+  padding: 0.5rem 0;
+  align-items: center;
+  border-bottom: 1px solid lightyellow; }
+  .profile-side-bar img {
+    border-radius: 50%; }
+  .profile-side-bar .action-profile p {
+    margin: 0; }
+    .profile-side-bar .action-profile p a {
+      display: inline; }
+
 .card {
   width: 47%;
   margin: 0.3rem; }
@@ -115,78 +173,6 @@ ul.nav-items li > a {
   .card {
     width: 20%; } }
 
-* {
-  box-sizing: border-box; }
-
-html {
-  height: 100%; }
-
-body {
-  min-height: 100%; }
-
-html,
-body {
-  font-family: 'Montserrat';
-  background-color: #F8F9FA; }
-
-.landing {
-  background-color: #F8F9FA;
-  display: flex;
-  height: 100vh; }
-  .landing header.row {
-    flex-direction: column;
-    text-align: center;
-    color: #4B4C63; }
-    .landing header.row h1 {
-      font-weight: bold;
-      margin: 0;
-      text-align: center; }
-    .landing header.row span {
-      margin-left: 5px; }
-    .landing header.row span.market-logo h1 {
-      font-size: 0.7rem;
-      width: 40px;
-      display: inline-block;
-      background-color: #F58454;
-      padding: 0.3rem;
-      word-wrap: break-word; }
-    .landing header.row p {
-      font-style: italic;
-      font-size: 0.9rem;
-      margin-top: 0.5rem; }
-
-.logo {
-  color: #4B4C63; }
-  .logo h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 0;
-    text-align: center; }
-  .logo span.market-logo {
-    width: 35px;
-    display: inline-block;
-    background-color: #F58454;
-    padding: 0.2rem; }
-  .logo span.market-logo > h1 {
-    white-space: normal;
-    word-wrap: break-word;
-    margin: 0;
-    text-align: center;
-    font-size: 0.7rem; }
-  .logo p {
-    font-style: italic;
-    font-size: 0.9rem;
-    margin-top: 0.5rem; }
-
-.menu-btn {
-  border: none; }
-
-.gallery {
-  background-color: #F8F9FA;
-  flex-wrap: wrap;
-  display: flex;
-  margin-top: 5rem; }
-
 form.form-signin {
   width: 90%;
   padding: 2rem;
@@ -205,23 +191,6 @@ form.form-signin {
     width: 75%;
     margin: 0.5rem auto; }
 
-.profile-side-bar {
-  display: flex;
-  padding: 0.5rem 0;
-  align-items: center;
-  border-bottom: 1px solid lightyellow; }
-  .profile-side-bar img {
-    border-radius: 50%; }
-  .profile-side-bar .action-profile p {
-    margin: 0; }
-    .profile-side-bar .action-profile p a {
-      display: inline; }
-
-.nav-desktop {
-  width: 100%; }
-  .nav-desktop p {
-    margin: 0 1rem; }
-
 .login-form-box {
   margin-top: 5rem; }
   .login-form-box form {
@@ -229,13 +198,26 @@ form.form-signin {
     max-width: 450px;
     margin: 0 auto; }
 
-a.btn-search {
-  font-size: 1.5rem;
-  color: #4B4C63; }
+/* pages */
+video.video-header {
+  display: none;
+  opacity: 0.9; }
+
+.gallery {
+  background-color: #F8F9FA;
+  flex-wrap: wrap;
+  display: flex;
+  margin-top: 5rem; }
 
 @media (min-width: 768px) {
   a.btn-search {
     display: none; }
+  .header video {
+    display: inline-block;
+    vertical-align: baseline;
+    object-fit: contain;
+    width: 100%;
+    margin-top: -100px; }
   .login-form-box {
     min-height: 600px;
     align-items: center; }
