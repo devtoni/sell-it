@@ -3,7 +3,9 @@ ul.nav-items {
     color: #4B4C63;
   }
 }
-
+nav {
+  z-index: 1;
+}
 .menu-btn {
   border: none;
 }

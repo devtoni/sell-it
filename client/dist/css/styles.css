@@ -12,6 +12,9 @@ body {
 ul.nav-items li > a {
   color: #4B4C63; }
 
+nav {
+  z-index: 1; }
+
 .menu-btn {
   border: none; }
 
@@ -199,9 +202,17 @@ form.form-signin {
     margin: 0 auto; }
 
 /* pages */
-video.video-header {
-  display: none;
-  opacity: 0.9; }
+.video-box {
+  display: none; }
+
+section {
+  margin: 1rem 0 3rem 0; }
+
+.why-we {
+  padding: 2rem 0; }
+  .why-we ul li {
+    max-width: 300px;
+    margin: 1rem auto; }
 
 .gallery {
   background-color: #F8F9FA;
@@ -209,15 +220,64 @@ video.video-header {
   display: flex;
   margin-top: 5rem; }
 
+.tu-mejor-eleccion h2 {
+  text-align: center; }
+
+.tu-mejor-eleccion h2 span {
+  color: #F58454; }
+
+.tu-mejor-eleccion ul,
+.tu-mejor-eleccion ul li {
+  text-align: center;
+  list-style: none; }
+
+.tu-mejor-eleccion ul li .fa {
+  font-size: 2.3rem;
+  background: #F58454;
+  border-radius: 50%;
+  width: 4.7rem;
+  height: 4.7rem;
+  line-height: 4.7rem;
+  color: #fff;
+  text-align: center; }
+
+.tu-mejor-eleccion ul li .contenedor-eleccion h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: .8rem; }
+
+.tu-mejor-eleccion ul li {
+  min-height: 9rem; }
+
+.container.video {
+  max-width: 100%; }
+
 @media (min-width: 768px) {
   a.btn-search {
     display: none; }
-  .header video {
-    display: inline-block;
-    vertical-align: baseline;
-    object-fit: contain;
-    width: 100%;
-    margin-top: -100px; }
+  section.who-are-we .section-who-are-we {
+    display: flex;
+    align-items: center; }
+    section.who-are-we .section-who-are-we img {
+      width: 75%; }
+  .video-box {
+    display: block;
+    max-height: 600px; }
+  .header {
+    position: relative; }
+    .header video {
+      opacity: 0.9;
+      vertical-align: baseline;
+      object-fit: contain;
+      width: 100%;
+      margin-top: -100px; }
+    .header .hero-text {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white; }
   .login-form-box {
     min-height: 600px;
     align-items: center; }
