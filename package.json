@@ -1,0 +1,26 @@
+{
+  "name": "lend-it",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "build:scss": "node-sass client/src/scss/styles.scss client/dist/css/styles.css",
+    "build:scss:watch": "node-sass client/src/scss/styles.scss client/dist/css/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.7",
+    "pug": "^2.0.0-rc.3"
+  }
+}
