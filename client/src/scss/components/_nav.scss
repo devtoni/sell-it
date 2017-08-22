@@ -1,9 +1,12 @@
+@import "../base/_colors";
+
 ul.nav-items {
   li > a {
     color: #4B4C63;
   }
 }
 nav {
+  background: $bg-body-color;
   z-index: 1;
 }
 .menu-btn {
@@ -24,6 +27,7 @@ a.btn-search {
 
 @media(min-width:768px) {
   nav.navbar {
+    background: transparent;
     h1, a, li.nav-item > a.nav-link {
       color: #fff;
     }
