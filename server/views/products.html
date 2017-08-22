@@ -7,7 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Lend it</title>
   <link rel="stylesheet" href="src/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="src/bower_components/MDBootstrap/css/mdb.min.css" />
   <link rel="stylesheet" href="src/bower_components/font-awesome/css/font-awesome.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
   <link rel="stylesheet" href="/dist/css/styles.css" />
@@ -28,10 +27,24 @@
       <div class="nav-desktop collapse navbar-collapse">
         <ul class="navbar-nav mr-auto nav-items">
           <li class="nav-item active"><a href="/" class="nav-link">Inicio <span class="sr-only">(current)</span></a></li>
+          <li class="nav-item active"><a href="/add" class="nav-link">Añadir productos <span class="sr-only">(current)</span></a></li>
         </ul>
 
         <p><a href="/login">Acceder</a></p>
-      </div><a href="/search" class="btn-search"><i aria-hidden="true" class="fa fa-search"></i></a>
+        <div class="btn-group">
+            <div class="profile-side-bar">
+              <div class="profile-photo"><img src="http://lorempixel.com/30/30"  />
+              </div>
+            </div>
+            <button type="button" id="dropdownBtn" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/profile">Mi perfil</a>
+              <a class="dropdown-item" href="/edit-profile">Configurar perfil</a>
+            </div>
+          </div>
+  
     </nav>
     <div id="wrapper">
       <div id="sidebar-wrapper">
@@ -57,8 +70,10 @@
         <div class="row">
           <div class="container">
             <div class="sidebar-products wow fadeIn" data-wow-delay="0.2s">
+                <div class="divider-new">
+                    <h2 class="h2-responsive">Categories</h2>
+                  </div>
               <div class="widget-wrapper">
-                <h4>Categories:</h4>
                 <br>
                 <div class="list-group">
                   <select name="" id="">
@@ -97,7 +112,7 @@
 
               <!--First row-->
               <div class="row wow fadeIn" data-wow-delay="0.4s">
-                <div class="col-lg-12">
+                <div class="col-lg-12 slider">
                   <div class="divider-new">
                     <h2 class="h2-responsive">What's new?</h2>
                   </div>
@@ -162,7 +177,7 @@
                 <div class="gallery-products">
                   <div class="gallery">
                     <!-- #begin card -->
-                    <div class="card-gallery grid-item grid-item--height2">
+                    <div class="card-gallery">
                       <img src="http://lorempixel.com/400/200" class="card-img-top" />
                       <div class="card-body">
                         <p>30€</p>
@@ -181,7 +196,7 @@
                     </div>
                     <!-- #end card -->
                     <!-- #begin card -->
-                    <div class="card-gallery grid-item grid-item--width2">
+                    <div class="card-gallery">
                       <img src="http://lorempixel.com/400/200" class="card-img-top" />
                       <div class="card-body">
                         <p>30€</p>
@@ -200,7 +215,7 @@
                     </div>
                     <!-- #end card -->
                     <!-- #begin card -->
-                    <div class="card-gallery grid-item grid-item--height2">
+                    <div class="card-gallery">
                       <img src="http://lorempixel.com/400/200" class="card-img-top" />
                       <div class="card-body">
                         <p>30€</p>
@@ -219,7 +234,7 @@
                     </div>
                     <!-- #end card -->
                     <!-- #begin card -->
-                    <div class="card-gallery grid-item grid-item--height2">
+                    <div class="card-gallery">
                       <img src="http://lorempixel.com/400/200" class="card-img-top" />
                       <div class="card-body">
                         <p>30€</p>
@@ -238,7 +253,7 @@
                     </div>
                     <!-- #end card -->
                     <!-- #begin card -->
-                    <div class="card-gallery grid-item grid-item--width2">
+                    <div class="card-gallery">
                       <img Psrc="http://lorempixel.com/400/200" class="card-img-top" />
                       <div class="card-body">
                         <p>30€</p>
@@ -276,7 +291,7 @@
                     </div>
                     <!-- #end card -->
                     <!-- #begin card -->
-                    <div class="card-gallery grid-item grid-item--width2">
+                    <div class="card-gallery">
                       <img src="http://lorempixel.com/400/200" class="card-img-top" />
                       <div class="card-body">
                         <p>30€</p>
@@ -295,26 +310,7 @@
                     </div>
                     <!-- #end card -->
                     <!-- #begin card -->
-                    <div class="card-gallery grid-item">
-                      <img src="http://lorempixel.com/400/200" class="card-img-top" />
-                      <div class="card-body">
-                        <p>30€</p>
-                        <p>Title</p>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      </div>
-                      <div class="user-card">
-                        <div class="img-user-card">
-                          <img src="http://lorempixel.com/50/50" class="img-circle" />
-                        </div>
-                        <div class="user-info">
-                          <p>User</p>
-                          <p>15 products</p>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- #end card -->
-                    <!-- #begin card -->
-                    <div class="card-gallery grid-item grid-item--width2">
+                    <div class="card-gallery">
                       <img src="http://lorempixel.com/400/200" class="card-img-top" />
                       <div class="card-body">
                         <p>30€</p>

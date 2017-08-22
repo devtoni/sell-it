@@ -4,24 +4,40 @@
 
 
 .products {
+  background: #fff;
   .container {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
   }
 }
+
+
 main.gallery-products {
+  margin-top: 5rem;
+  width: 100%;
+  text-align: center;
+  background: #fff;
   margin-top: 2rem;
   .sidebar-products {
-    display: none;
+    width: 90%;
   }
   .main-column-products {
-    width: 100%;
+    width: 90%;
+  }
+  .slider {
+    margin-bottom: 2rem;
   }
 }
 
 
 @media(min-width: 768px) {
   .products {
+    .container {
+      flex-direction: row;
+      align-items: baseline;
+    }
     main.gallery-products {
       .sidebar-products {
         display: block;

@@ -361,6 +361,9 @@ footer {
   bottom: 0;
   padding: 1rem 0; }
 
+.login footer, .register footer {
+  position: absolute; }
+
 /* pages */
 .header {
   position: relative;
@@ -441,18 +444,31 @@ footer {
   section.who-are-we {
     padding-top: 3rem; } }
 
-.products .container {
-  display: flex;
-  justify-content: space-between; }
+.products {
+  background: #fff; }
+  .products .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center; }
 
 main.gallery-products {
+  margin-top: 5rem;
+  width: 100%;
+  text-align: center;
+  background: #fff;
   margin-top: 2rem; }
   main.gallery-products .sidebar-products {
-    display: none; }
+    width: 90%; }
   main.gallery-products .main-column-products {
-    width: 100%; }
+    width: 90%; }
+  main.gallery-products .slider {
+    margin-bottom: 2rem; }
 
 @media (min-width: 768px) {
+  .products .container {
+    flex-direction: row;
+    align-items: baseline; }
   .products main.gallery-products .sidebar-products {
     display: block;
     width: 30%; }
@@ -462,29 +478,12 @@ main.gallery-products {
 .dropdown-menu a.dropdown-item {
   color: #4B4C63; }
 
-.sidebar-products {
-  display: none;
-  width: 30%;
-  margin-top: 5rem;
-  text-align: center; }
-
 .container.video {
   max-height: 500px; }
-
-.gallery-products {
-  text-align: center;
-  margin-top: 5rem;
-  width: 100%; }
 
 .gallery .card-gallery {
   width: 47%;
   max-width: 200px; }
-
-.gallery .card-gallery:nth-child(even) {
-  margin-top: 2rem; }
-
-.gallery .card-gallery:nth-child(odd) {
-  max-width: 180px; }
 
 .gallery {
   background-color: #F8F9FA;
