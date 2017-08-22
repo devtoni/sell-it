@@ -1,49 +1,59 @@
 @import "../base/_colors";
 
-.card {
-  width: 47%;
-  margin: 0.3rem;
-  
-  & > img {
-    padding: 0.2rem;
-    min-height: 130px;
+.gallery {
+  .card-gallery {
+    // width: 47%;
+    margin: 0.3rem;
+    background: #fff;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    & > img {
+      padding: 0.2rem;
+      min-height: 130px;
+    }
+    .card-body {
+      padding: 1rem 0.5rem;
+      p {
+        font-size: 0.8rem;
+        margin: 0;
+        text-align: left;
+      }
+      p:first-child {
+        font-weight: bold;
+        font-size: 1em;
+      }
+      p.card-text {
+        white-space: nowrap; 
+        max-width: 20em; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+      }
+    }
+    .user-card {
+      display: flex;
+      padding: 0.5rem;
+      justify-content: space-around;
+      align-items: center;
+      border-top: $border-line;
+      img {
+        width: 40px;
+        border-radius: 50%;
+      }
+      p {
+        font-size: 0.7rem;
+      }
+    } 
   }
-  .card-body {
-    padding: 1rem 0.5rem;
-    p {
-      font-size: 0.8rem;
-      margin: 0;
-      text-align: left;
-    }
-    p:first-child {
-      font-weight: bold;
-      font-size: 1em;
-    }
-    p.card-text {
-      white-space: nowrap; 
-      max-width: 20em; 
-      overflow: hidden;
-      text-overflow: ellipsis; 
-    }
-  }
-  .user-card {
-    display: flex;
-    padding: 0.5rem;
-    justify-content: space-around;
-    align-items: center;
-    border-top: $border-line;
-    img {
-      width: 40px;
-      border-radius: 50%;
-    }
-    p {
-      font-size: 0.7rem;
-    }
-  } 
 }
 
 @media(min-width:768px) {
-    .card {
-      width: 20%;
+   .gallery {
+    .card-gallery {
+      // width: 20%;
   }
+   }
 }
