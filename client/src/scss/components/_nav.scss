@@ -26,10 +26,13 @@ a.btn-search {
 }
 
 @media(min-width:768px) {
-  nav.navbar {
+  .home nav.navbar {
     background: transparent;
     h1, a, li.nav-item > a.nav-link {
       color: #fff;
     }
+  }
+  a.nav-link {
+    color: #fff;
   }
 }
