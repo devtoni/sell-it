@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lend it</title>
+  <link rel="stylesheet" href="src/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="src/bower_components/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="src/bower_components/animate.css/animate.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+  <link rel="stylesheet" href="/dist/css/styles.css" />
+</head>
+
+<body>
+
+  <div class="perfil">
+    <!-- @begin nav -->
+    <nav class="navbar navbar-expand-md  navbar-light">
+      <div class="container">
+          <button id="menu-toggle" type="button" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"
+          class="menu-btn navbar-toggler d-lg-none"><span class="navbar-toggler-icon"></span></button>
+        <a href="/" class="navbar-brand">
+          <div class="logo">
+            <h1>Lend it <span class="market-logo">
+                        <h1>MARKET</h1></span></h1>
+          </div>
+        </a>
+        <div class="nav-desktop collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto nav-items">
+            <li class="nav-item active"><a href="/" class="nav-link">Inicio <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item active"><a href="/productos" class="nav-link">Buscar <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item active"><a href="/add" class="nav-link">Añadir productos <span class="sr-only">(current)</span></a></li>
+          </ul>
+
+          <!-- <form class="form-inline mt-2 mt-md-0">
+            <input type="text" placeholder="Search" aria-label="Search" class="form-control mr-sm-2" />
+            <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+          </form> -->
+          <p><a href="/login">Acceder</a></p>
+        </div>
+        <!--  <a href="/search" class="btn-search"><i aria-hidden="true" class="fa fa-search"></i></a> -->
+      </div>
+    </nav>
+    <!-- @end nav -->
+    <!-- @begin sidebar -->
+    <div id="wrapper">
+      <div id="sidebar-wrapper">
+          <ul class="sidebar-nav">
+              <li>
+                <div class="profile-side-bar">
+                  <div class="profile-photo"><img src="http://lorempixel.com/50/50" class="img-circle" /></div>
+                  <div class="action-profile">
+                    <p><a href="/login">Entra</a> o <a href="/register">Regístrate</a></p>
+                  </div>
+                </div>
+              </li>
+              <li><a href="/perfil">Perfil</a></li>
+              <li><a href="/perfil">Mensajes</a></li>
+            </ul>
+      </div>
+    </div>
+    <!-- @end sidebar -->
+
+    <div class="container" style="padding-top: 60px;">
+  <h1 class="page-header">Edit Profile</h1>
+  <div class="row">
+    <!-- left column -->
+    <div class="col-md-4 col-sm-6 col-xs-12 avatar">
+        <div class="text-center">
+          <img src="/src/img/avatar.png" alt="avatar">
+          <h6>Upload a different photo...</h6>
+          <input type="file" class="text-center center-block well well-sm upload-input">
+        </div>
+      </div>
+      <!-- edit form column -->
+      <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+        <h3>Personal info</h3>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">First name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="Estela" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Last name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="Silva" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Company:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="http://tuconsultoraseo.com" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="carmenestelasi@gmail.com" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Time Zone:</label>
+            <div class="col-lg-8">
+              <div class="ui-select">
+                <select id="user_time_zone" class="form-control">
+                  <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                  <option value="Alaska">(GMT-09:00) Alaska</option>
+                  <option value="Pacific Time (US & Canada)">(GMT-08:00) Pacific Time (US & Canada)</option>
+                  <option value="Arizona">(GMT-07:00) Arizona</option>
+                  <option value="Mountain Time (US & Canada)">(GMT-07:00) Mountain Time (US & Canada)</option>
+                  <option value="Central Time (US & Canada)" selected="selected">(GMT-06:00) Central Time (US & Canada)</option>
+                  <option value="Eastern Time (US & Canada)">(GMT-05:00) Eastern Time (US & Canada)</option>
+                  <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Username:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="janeuser" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Password:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="11111122333" type="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Confirm password:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="11111122333" type="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input class="btn btn-primary" value="Save Changes" type="button">
+              <span></span>
+              <input class="btn btn-default" value="Cancel" type="reset">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+      <!-- @begin footer -->
+      <footer id="footer">
+        <p>&copy; 2017 Lend It. Todos los derechos reservados.</p>
+        <p>coded with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="">Toni Ruiz</a></p>
+      </footer>
+    </div>
+
+    <script src="/src/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/src/bower_components/popper.js/dist/umd/popper.min.js"></script>
+    <script src="/src/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/src/js/main.js"></script>
+</body>
+
+</html>

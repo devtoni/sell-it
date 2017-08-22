@@ -22,4 +22,12 @@ router.get('/perfil', (req, res) => {
   res.sendFile(path.join(process.cwd(), 'server/views/perfil.html'))
 })
 
+router.get('/edit', (req, res) => {
+  res.sendFile(path.join(process.cwd(), 'server/views/edit.html'))
+})
+
+router.get('/add', (req, res) => {
+  res.sendFile(path.join(process.cwd(), 'server/views/add.html'))
+})
+
 module.exports = router

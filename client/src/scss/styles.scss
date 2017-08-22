@@ -479,7 +479,12 @@ justify-content: center;
   border: none;
 }
 
-
+.avatar, .personal-info {
+  padding: 2rem;
+  .upload-input {
+    width: 100%;
+  }
+}
 
 
 

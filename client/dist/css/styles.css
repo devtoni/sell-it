@@ -633,6 +633,11 @@ footer {
   background: transparent;
   border: none; }
 
+.avatar, .personal-info {
+  padding: 2rem; }
+  .avatar .upload-input, .personal-info .upload-input {
+    width: 100%; }
+
 @media (min-width: 768px) {
   .btn-add {
     display: none; }
