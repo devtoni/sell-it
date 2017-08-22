@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Lend it</title>
   <link rel="stylesheet" href="src/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <!-- <link rel="stylesheet" href="src/bower_components/MDBootstrap/css/mdb.min.css" /> -->
   <link rel="stylesheet" href="src/bower_components/font-awesome/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="src/bower_components/animate.css/animate.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
   <link rel="stylesheet" href="/dist/css/styles.css" />
 </head>
@@ -19,14 +19,19 @@
     <!-- @begin nav -->
     <nav class="navbar navbar-expand-md  navbar-light">
       <div class="container">
-          <button id="menu-toggle" type="button" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"
-          class="menu-btn navbar-toggler d-lg-none"><span class="navbar-toggler-icon"></span></button>
+        <button id="menu-toggle" type="button" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation" class="menu-btn navbar-toggler d-lg-none"><span class="navbar-toggler-icon"></span>
+        </button>
         <a href="/" class="navbar-brand">
           <div class="logo">
             <h1>Lend it <span class="market-logo">
-                        <h1>MARKET</h1></span></h1>
+                          <h1>MARKET</h1>
+            </span>
+            </h1>
           </div>
         </a>
+        <div class="search-icon-nav">
+          <input type="text" class="search-hover" name="" placeholder="search here...">
+        </div>
         <div class="nav-desktop collapse navbar-collapse">
           <ul class="navbar-nav mr-auto nav-items">
             <!-- <li class="nav-item active"><a href="/" class="nav-link">Inicio <span class="sr-only">(current)</span></a></li> -->
@@ -35,18 +40,19 @@
             <input type="text" placeholder="Search" aria-label="Search" class="form-control mr-sm-2" />
             <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
           </form> -->
-          <p><a href="/login">Acceder</a></p>
+          <p><a href="/login">Acceder</a>
+          </p>
           <div class="btn-group">
-              <div class="profile-side-bar">
-                  <div class="profile-photo"><img src="http://lorempixel.com/50/50" class="img-circle" /></div>
-                </div>
-            <button type="button" id="dropdownBtn" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-                <span class="sr-only">Toggle Dropdown</span>
-              </button>
+            <div class="profile-side-bar">
+              <div class="profile-photo"><img src="http://lorempixel.com/50/50"  />
+              </div>
+            </div>
+            <button type="button" id="dropdownBtn" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="/perfil">Mi perfil</a>
-              <a class="dropdown-item" href="/edit">Configurar perfil</a>
+              <a class="dropdown-item" href="/profile">Mi perfil</a>
+              <a class="dropdown-item" href="/edit-profile">Configurar perfil</a>
             </div>
           </div>
         </div>
@@ -60,42 +66,49 @@
         <ul class="sidebar-nav">
           <li>
             <div class="profile-side-bar">
-              <div class="profile-photo"><img src="http://lorempixel.com/50/50" class="img-circle" /></div>
+              <div class="profile-photo"><img src="http://lorempixel.com/50/50"/>
+              </div>
               <div class="action-profile">
-                <p><a href="/login">Entra</a> o <a href="/register">Regístrate</a></p>
+                <p><a href="/login">Entra</a> o <a href="/register">Regístrate</a>
+                </p>
               </div>
             </div>
           </li>
-          <li><a href="/perfil">Perfil</a></li>
-          <li><a href="/perfil">Mensajes</a></li>
+          <li><a href="/profile">Perfil</a>
+          </li>
+          <li><a href="/messages">Mensajes</a>
+          </li>
         </ul>
       </div>
     </div>
     <!-- @end sidebar -->
+    <!-- video hero content -->
     <div class="container video">
       <div class="row video-box">
         <div class="header">
-          <video id="videoBg" class="video-header" src="http://res.cloudinary.com/drenzfi8m/video/upload/v1503341704/bg-video_ndve4s.mp4"
-            autoplay loop></video>
+          <video id="videoBg" class="video-header" src="http://res.cloudinary.com/drenzfi8m/video/upload/v1503341704/bg-video_ndve4s.mp4" autoplay loop></video>
           <div class="hero-text">
             <h1 class="animated fadeIn">Presta lo que no usas de la forma más sencilla</h1>
-            <form action="">
-              <input type="text" placeholder="Qué estás buscando?">
-              <input type="submit" value="Buscar">
-            </form>
+            <div class="container search-icon-hero-image">
+              <div> </div>
+              <input type="text" class="search-hover" name="" placeholder="search here...">
+              <div> </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="line"></div>
+    <!-- ./ video hero content -->
+
     <!-- @begin who-are-we -->
     <section class="who-are-we">
       <div class="container">
         <div class="row section-who-are-we">
           <div class="col-md-8 col-xl-9 wow bounceIn" data-wow-delay=".3s">
-            <h2 class="h3 text-xs-center text-md-left font-weight-bold">Lend it</h2>
-            <p>Lend it es una aplicación que te permite prestar a tus vecinos los útiles que no necesitas en ese momento de
-              una forma segura y sencilla a través de nuestra plataforma.</p>
+            <hr/>
+            <h2 class="h2-responsive">Lend it</h2>
+
+            <p>Lend it es una aplicación que te permite prestar a tus vecinos los útiles que no necesitas en ese momento de una forma segura y sencilla a través de nuestra plataforma.</p>
             <p>Ponemos a tu alcance un servicio adaptado a tus necesidades, sin que te tengas que preocupar de nada</p>
           </div>
           <div class="col-md-4 col-xl-3 wow bounceIn who-are-we-image" data-wow-delay=".6s">
@@ -107,7 +120,7 @@
     <!-- @end who-are-we -->
     <div class="line"></div>
     <!-- @begin tu-mejor-eleccion -->
-    <section class="tu-mejor-eleccion">
+    <section class="why-us">
       <div class="container">
 
         <h2 class="h3 text-xs-center font-weight-bold">¿Porque somos <span>tu mejor elección?</span></h2>
@@ -128,6 +141,8 @@
                 <p class="hidden-md-down">tool tent port underline green simple powder late ocean support no later which aid share equipment </p>
               </div>
             </li>
+          </ul>
+          <ul class="col-xs-4 xs-auto col-md-6 col-lg-6 text-xs-center text-lg-left">
             <li class="wow zoomIn" data-wow-duration=".3s" data-wow-delay="1.1s">
 
               <i class="fa  fa-comment-o" aria-hidden="true"></i>
@@ -137,9 +152,6 @@
                 <p class="hidden-md-down">tool tent port underline green simple powder late ocean support no later which aid share equipment </p>
               </div>
             </li>
-          </ul>
-
-          <ul class="col-xs-4 xs-auto col-md-6 col-lg-6 text-xs-center text-lg-right">
             <li class="wow zoomIn" data-wow-duration=".3s" data-wow-delay=".5s">
               <i class="fa  fa-calendar" aria-hidden="true"></i>
               <div class="contenedor-eleccion">
@@ -147,29 +159,19 @@
                 <p class="hidden-md-down">tool tent port underline green simple powder late ocean support no later which aid share equipment </p>
               </div>
             </li>
-            <li class="wow zoomIn" data-wow-duration=".3s" data-wow-delay=".9s">
-              <i class="fa  fa-check-square-o" aria-hidden="true"></i>
-              <div class="contenedor-eleccion">
-                <h4>Lorem Ipsum</h4>
-                <p class="hidden-md-down">tool tent port underline green simple powder late ocean support no later which aid share equipment </p>
-              </div>
-            </li>
-            <li class="wow zoomIn" data-wow-duration=".3s" data-wow-delay="1.3s">
-              <i class="fa  fa-cogs" aria-hidden="true"></i>
-              <div class="contenedor-eleccion">
-                <h4>Lorem Ipsum</h4>
-                <p class="hidden-md-down">tool tent port underline green simple powder late ocean support no later which aid share equipment </p>
-              </div>
-            </li>
           </ul>
+
+
+
         </div>
       </div>
     </section>
     <!-- @end section why-we-->
-    <!-- @begin footer -->
+    
     <footer id="footer">
       <p>&copy; 2017 Lend It. Todos los derechos reservados.</p>
-      <p>coded with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="">Toni Ruiz</a></p>
+      <p>coded with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://github.com/devtoni/" target="_blank">Toni Ruiz</a>
+      </p>
     </footer>
   </div>
 
