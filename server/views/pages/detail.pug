@@ -3,23 +3,27 @@ extends ../layout
 block content
   .detail
     .container
-      .row.product-detail
-        .col-12.col-lg-10.lg-auto
+      .row
+        .col-12.col-lg-10.lg-auto.product-detail
           .image-product-detail-box
-          .product-content-detail
-            h4 80.000.000€
-            h6 Casa en buen estado. 
-            p Necesita alguna reforma pero se puede vivir bien.
-            p 28 de Noviembre de 1600
-          .map-user-detail-product
-          .user-detail
+          .content-detail
+            .product-content-detail
+              h4 80.000.000€
+              h6 Casa en buen estado. 
+              p Necesita alguna reforma pero se puede vivir bien.
+              p 28 de Noviembre de 1600
+            .user-location-detail-product
+              p
+                i.fa.fa-map-marker(aria-hidden='true')
+                |  Neverland
+            .user-detail
             .user-card
               .img-user-card
                 img.img-circle(src='dist/img/trolface.png')
               .user-info
                 p Troll
-          .chat-product-detail-btn
-            a(href="/chat") Chat
+            .chat-product-detail-btn
+              a(href="/chat") Chat
 
 
 

@@ -3,7 +3,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 300px;
-  min-width: 100%;
+  width: 100%;
   max-width: 500px;
 }
 .product-content-detail {
@@ -22,5 +22,22 @@
 .img-user-card {
   img {
     width: 50px;
+  }
+}
+
+@media(min-width:768px) {
+  .product-detail {
+    display: flex;
+    min-height: 600px;
+  }
+  .image-product-detail-box {
+    width: 70%;
+  }
+  .content-detail {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
   }
 }
