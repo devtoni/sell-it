@@ -1,6 +1,6 @@
 
 function showProfile (req, res) {
-  res.render('pages/profile')
+  res.render('pages/profile', {idSection: 'profile'})
 }
 
 module.exports = showProfile

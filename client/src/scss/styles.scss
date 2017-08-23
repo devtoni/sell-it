@@ -19,7 +19,9 @@
 @import "./pages/_products";
 @import "./pages/_add-page";
 
-
+.white {
+  color: white !important;
+}
 
 .dropdown-menu a.dropdown-item {
   color: $main-font-color;
@@ -30,20 +32,10 @@
 }
 
 
-.gallery {
-  .card-gallery {
-    width: 47%;
-    max-width: 200px;
-  }
-}
 
 
-.gallery {
-  background-color: #F8F9FA;
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: center;
-}
+
+
 
 
 

@@ -1,8 +1,18 @@
 @import "../base/_colors";
 
+
+
+
+
 .gallery {
+
+    background-color: #F8F9FA;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+
   .card-gallery {
-    // width: 47%;
+    width: 47%;
     margin: 0.3rem;
     background: #fff;
     -moz-border-radius: 2px;
@@ -51,5 +61,10 @@
 }
 
 @media(min-width:768px) {
-
+  .gallery {
+    .card-gallery {
+      max-width: 190px;
+      width: 190px;
+    }
+  }
 }

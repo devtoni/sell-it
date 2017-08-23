@@ -10,8 +10,8 @@ console.log('Hello')
 var lowerSlider = document.querySelector('#lower')
 var upperSlider = document.querySelector('#upper')
 
-document.querySelector('#two').value = upperSlider.value
-document.querySelector('#one').value = lowerSlider.value
+document.querySelector('#two2').value = upperSlider.value
+document.querySelector('#one1').value = lowerSlider.value
 
 var lowerVal = parseInt(lowerSlider.value)
 var upperVal = parseInt(upperSlider.value)
@@ -26,7 +26,7 @@ upperSlider.oninput = function () {
       upperSlider.value = 4
     }
   }
-  document.querySelector('#two').value = this.value
+  document.querySelector('#two2').value = this.value
 }
 
 lowerSlider.oninput = function () {
@@ -38,7 +38,7 @@ lowerSlider.oninput = function () {
       lowerSlider.value = parseInt(upperSlider.max) - 4
     }
   }
-  document.querySelector('#one').value = this.value
+  document.querySelector('#one1').value = this.value
 }
 
 var dragBox = document.getElementById('add-product')

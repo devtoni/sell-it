@@ -6,8 +6,8 @@ block content
       main.gallery-products
         // Main layout
         .row
-          .container
-            .sidebar-products.wow.fadeIn(data-wow-delay='0.2s')
+          .container.box-gallery
+            .sidebar-products
               form(action='')
                 .search--products
                   p Qué estás buscando?
@@ -29,11 +29,11 @@ block content
                       .price-wrap
                         span.price-title Precio:
                         .price-wrap-1
-                          input#one
+                          input#one1
                           label(for='one') €
                         .price-wrap_line -
                         .price-wrap-2
-                          input#two
+                          input#two2
                           label(for='two') €
                       .price-field
                         input#lower(type='range', min='0', max='10000', value='500')
@@ -43,7 +43,7 @@ block content
             // Main column
             .main-column-products
               // First row
-              .row.wow.fadeIn(data-wow-delay='0.4s')
+              .row
                 .col-lg-12.slider
                   .divider-new
                     h2.h2-responsive Productos cercanos
@@ -212,9 +212,7 @@ block content
                         .user-info
                           p User
                           p 15 products
-                    // #end card
-                    // #begin card
-                    .card-gallery.grid-item
+                    .card-gallery
                       img.card-img-top(src='http://lorempixel.com/400/200')
                       .card-body
                         p 30€
@@ -227,9 +225,3 @@ block content
                         .user-info
                           p User
                           p 15 products
-                    // #end card
-                  // /.gallery
-                  // /.Main column
-              // Gallery cards
-              // #begin gallery
-            // /.Main layout

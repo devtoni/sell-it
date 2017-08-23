@@ -1,11 +1,5 @@
 function editProfile (req, res) {
-  res.render('pages/edit-profile')
-}
-
-module.exports = editProfile
-
-function editProfile (req, res) {
-  res.render('pages/edit-profile')
+  res.render('pages/edit-profile', {idSection: 'profile'})
 }
 
 module.exports = editProfile

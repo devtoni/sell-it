@@ -28,11 +28,5 @@ a.btn-search {
 @media(min-width:768px) {
    nav.navbar {
     background: transparent;
-    h1, a, li.nav-item > a.nav-link {
-      color: #fff;
-    }
-  }
-  li.nav-item.active > a.nav-link {
-    color: #fff !important;
   }
 }

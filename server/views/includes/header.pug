@@ -4,7 +4,7 @@ header
       span.navbar-toggler-icon
     a.navbar-brand(href='/')
       .logo
-        h1
+        h1(class={"white": idSection === 'home'})
           | Sell it 
           span.market-logo
             h1 MARKET
@@ -13,16 +13,16 @@ header
     .nav-desktop.collapse.navbar-collapse
       ul.navbar-nav.mr-auto.nav-items
         li.nav-item.active
-          a.nav-link(href='/')
+          a.nav-link(href='/', class={"white": idSection === 'home'})
             | Inicio 
         li.nav-item.active
-          a.nav-link(href='/products')
+          a.nav-link(href='/products',class={"white": idSection === 'home'})
             | Escaparate
         li.nav-item.active
-          a.nav-link(href='/products')
+          a.nav-link(href='/products',class={"white": idSection === 'home'})
             | Añadir Producto
       p
-        a(href='/login') Acceder
+        a(href='/login',class={"white": idSection === 'home'}) Acceder
       .btn-group
         .profile-side-bar
           .profile-photo
