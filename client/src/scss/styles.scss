@@ -18,10 +18,9 @@
 @import "./pages/_index";
 @import "./pages/_products";
 @import "./pages/_add-page";
+@import "./pages/detail-product";
 
-.white {
-  color: white !important;
-}
+
 
 .dropdown-menu a.dropdown-item {
   color: $main-font-color;

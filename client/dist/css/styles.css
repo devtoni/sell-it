@@ -172,9 +172,9 @@ a.btn-search {
     -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); }
-    .gallery .card-gallery > img {
+    .gallery .card-gallery > a > img {
       padding: 0.2rem;
-      min-height: 130px; }
+      min-height: 140px; }
     .gallery .card-gallery .card-body {
       padding: 1rem 0.5rem; }
       .gallery .card-gallery .card-body p {
@@ -794,8 +794,25 @@ div#wrapper#products-wrapper-fix {
     text-align: center;
     max-width: 200px; }
 
-.white {
-  color: white !important; }
+.image-product-detail-box {
+  background-image: url("/dist/img/casa.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  min-width: 100%;
+  max-width: 500px; }
+
+.product-content-detail > * {
+  padding: 0.5rem 0; }
+
+.chat-product-detail-btn {
+  text-align: center;
+  background: red;
+  padding: 1rem 0;
+  color: white; }
+
+.img-user-card img {
+  width: 50px; }
 
 .dropdown-menu a.dropdown-item {
   color: #4B4C63; }
