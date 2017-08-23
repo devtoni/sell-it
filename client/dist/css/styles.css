@@ -677,8 +677,6 @@ footer {
     justify-content: space-between;
     flex-direction: column;
     align-items: center; }
-  .products .products-wrapper {
-    margin-top: 2rem; }
 
 main.gallery-products {
   margin-top: 5rem;
@@ -698,6 +696,9 @@ main.gallery-products {
     width: 90%; }
   main.gallery-products .slider {
     margin-bottom: 2rem; }
+
+div#wrapper#products-wrapper-fix {
+  margin-top: -1rem; }
 
 @media (min-width: 768px) {
   .products .container {

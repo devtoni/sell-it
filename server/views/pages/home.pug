@@ -1,0 +1,61 @@
+extends ../layout
+
+block content
+    .container.video
+      .row.video-box
+        .header
+          video#videoBg.video-header(src='http://res.cloudinary.com/drenzfi8m/video/upload/v1503341704/bg-video_ndve4s.mp4', autoplay='', loop='')
+          .hero-text
+            h1.animated.fadeIn Presta lo que no usas de la forma más sencilla
+            .container.search-icon-hero-image
+              input.search-hover(type='text', name='', placeholder='search here...')
+    // ./ video hero content
+    main
+      // @begin who-are-we
+      section.who-are-we
+        .container
+          .row.section-who-are-we
+            .col-md-8.col-xl-9.wow.bounceIn(data-wow-delay='.3s')
+              hr
+              h2.h2-responsive Lend it
+              p
+                | Lend it es una aplicación que te permite prestar a tus vecinos los útiles que no necesitas en ese momento de una forma segura y sencilla a través de nuestra plataforma.
+              p
+                | Ponemos a tu alcance un servicio adaptado a tus necesidades, sin que te tengas que preocupar de nada
+            .col-md-4.col-xl-3.wow.bounceIn.who-are-we-image(data-wow-delay='.6s')
+              img(src='/src/img/device.jpg', alt='device')
+      // @end who-are-we
+      // @begin tu-mejor-eleccion
+      section.why-us
+        .container
+          h2.h3.text-xs-center.font-weight-bold
+            | ¿Porque somos 
+            span tu mejor elección?
+          .row.why-we
+            ul.col-xs-4.xs-auto.col-md-6.col-lg-6.text-xs-center.text-lg-left
+              li
+                i.fa.fa-briefcase(aria-hidden='true')
+                .contenedor-eleccion
+                  h4 Lorem Ipsum
+                  p.hidden-md-down
+                    | tool tent port underline green simple powder late ocean support no later which aid share equipment
+              li.wow.zoomIn(data-wow-duration='.3s', data-wow-delay='.7s')
+                i.fa.fa-bullhorn(aria-hidden='true')
+                .contenedor-eleccion
+                  h4 Lorem Ipsum
+                  p.hidden-md-down
+                    | tool tent port underline green simple powder late ocean support no later which aid share equipment
+            ul.col-xs-4.xs-auto.col-md-6.col-lg-6.text-xs-center.text-lg-left
+              li.wow.zoomIn(data-wow-duration='.3s', data-wow-delay='1.1s')
+                i.fa.fa-comment-o(aria-hidden='true')
+                .contenedor-eleccion
+                  h4 Lorem Ipsum
+                  p.hidden-md-down
+                    | tool tent port underline green simple powder late ocean support no later which aid share equipment
+              li.wow.zoomIn(data-wow-duration='.3s', data-wow-delay='.5s')
+                i.fa.fa-calendar(aria-hidden='true')
+                .contenedor-eleccion
+                  h4 Lorem Ipsum
+                  p.hidden-md-down
+                    | tool tent port underline green simple powder late ocean support no later which aid share equipment
+    // @end section why-we

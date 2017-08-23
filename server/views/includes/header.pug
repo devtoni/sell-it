@@ -1,0 +1,46 @@
+header
+  // nav
+  nav.navbar.navbar-expand-md.navbar-light
+    button#menu-toggle.menu-btn.navbar-toggler.d-lg-none(type='button', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    a.navbar-brand(href='/')
+      .logo
+        h1
+          | Lend it 
+          span.market-logo
+            h1 MARKET
+    .nav-desktop.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto.nav-items
+        li.nav-item.active
+          a.nav-link(href='/')
+            | Inicio 
+            span.sr-only (current)
+      //
+        <form class="form-inline mt-2 mt-md-0">
+        <input type="text" placeholder="Search" aria-label="Search" class="form-control mr-sm-2" />
+        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+        </form>
+      p
+        a(href='/login') Acceder
+    // <a href="/search" class="btn-search"><i aria-hidden="true" class="fa fa-search"></i></a>
+  // ./nav
+  // sidebar
+  #wrapper
+    #sidebar-wrapper
+      ul.sidebar-nav
+        li
+          .profile-side-bar
+            .profile-photo
+              img.img-circle(src='http://lorempixel.com/50/50')
+            .action-profile
+              p
+                a(href='/login') Entra
+                |  o 
+                a(href='/register') Regístrate
+        li
+          a(href='/') Inicio
+        li
+          a(href='/perfil') Perfil
+        li
+          a(href='/perfil') Mensajes
+  // ./ sidebar

@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  .register-page
+    .container
+      .card.card-container
+        form.form-signin
+          span#reauth-email.reauth-email
+          input#inputEmail.form-control(type='email', placeholder='Usuario', required='', autofocus='')
+          input#inputPassword.form-control(type='password', placeholder='Contraseña', required='')
+          button.btn.btn-lg.btn-success.btn-block.btn-signin(type='submit') Registrate
+        // /form
+        a.forgot-password(href='#')
+          | Ya tienes cuenta? 
+          a(href='/login') Login

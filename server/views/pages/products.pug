@@ -1,0 +1,235 @@
+extends ../layout
+
+block content
+  .products-page
+    .col-12
+      main.gallery-products
+        // Main layout
+        .row
+          .container
+            .sidebar-products.wow.fadeIn(data-wow-delay='0.2s')
+              form(action='')
+                .search--products
+                  p Qué estás buscando?
+                  input.search-products(type='text', name='', placeholder='')
+                .list-group
+                  p Categorías
+                  select(name='', id='')
+                    option(value='item1') Coches
+                    option(value='') Electrónica
+                    option(value='') Deporte
+                    option(value='') Muebles
+                    option(value='') Libros
+                    option(value='') Moda
+                    option(value='') Consolas y Videojuegos
+                .price-range_selector
+                  p Cuánto quieres pagar?
+                  .wrapper-price
+                    fieldset.filter-price
+                      .price-wrap
+                        span.price-title Precio:
+                        .price-wrap-1
+                          input#one
+                          label(for='one') €
+                        .price-wrap_line -
+                        .price-wrap-2
+                          input#two
+                          label(for='two') €
+                      .price-field
+                        input#lower(type='range', min='0', max='10000', value='500')
+                        input#upper(type='range', min='0', max='10000', value='5000')
+                input(type='submit', value='Aplicar filtros')
+            // /.Sidebar
+            // Main column
+            .main-column-products
+              // First row
+              .row.wow.fadeIn(data-wow-delay='0.4s')
+                .col-lg-12.slider
+                  .divider-new
+                    h2.h2-responsive Productos cercanos
+                  // Carousel Wrapper
+                  #carousel-example-1z.carousel.slide.carousel-fade(data-ride='carousel')
+                    // Indicators
+                    ol.carousel-indicators
+                      li.active(data-target='#carousel-example-1z', data-slide-to='0')
+                      li(data-target='#carousel-example-1z', data-slide-to='1')
+                      li(data-target='#carousel-example-1z', data-slide-to='2')
+                    // /.Indicators
+                    // Slides
+                    .carousel-inner(role='listbox')
+                      // First slide
+                      .carousel-item.active
+                        img.img-fluid(src='https://mdbootstrap.com/img/Photos/Slides/img%20(107).jpg', alt='First slide')
+                        .carousel-caption
+                          h4 Nuevos productos
+                          br
+                      // /First slide
+                      // Second slide
+                      .carousel-item
+                        img.img-fluid(src='https://mdbootstrap.com/img/Photos/Slides/img%20(109).jpg', alt='Second slide')
+                        .carousel-caption
+                          h4 Rebajados
+                          br
+                      // /Second slide
+                      // Third slide
+                      .carousel-item
+                        img.img-fluid(src='https://mdbootstrap.com/img/Photos/Slides/img%20(36).jpg', alt='Third slide')
+                        .carousel-caption
+                          h4 Sólo por 10€
+                          br
+                      // /Third slide
+                    // /.Slides
+                    // Controls
+                    a.carousel-control-prev(href='#carousel-example-1z', role='button', data-slide='prev')
+                      span.carousel-control-prev-icon(aria-hidden='true')
+                      span.sr-only Previous
+                    a.carousel-control-next(href='#carousel-example-1z', role='button', data-slide='next')
+                      span.carousel-control-next-icon(aria-hidden='true')
+                      span.sr-only Next
+                    // /.Controls
+                  // /.Carousel Wrapper
+                // /.First row
+                br
+                hr.extra-margins
+                .gallery-products
+                  .gallery
+                    // #begin card
+                    .card-gallery
+                      img.card-img-top(src='http://lorempixel.com/400/200')
+                      .card-body
+                        p 30€
+                        p Title
+                        p.card-text
+                          | Some quick example text to build on the card title and make up the bulk of the card's content.
+                      .user-card
+                        .img-user-card
+                          img.img-circle(src='http://lorempixel.com/50/50')
+                        .user-info
+                          p User
+                          p 15 products
+                    // #end card
+                    // #begin card
+                    .card-gallery
+                      img.card-img-top(src='http://lorempixel.com/400/200')
+                      .card-body
+                        p 30€
+                        p Title
+                        p.card-text
+                          | Some quick example text to build on the card title and make up the bulk of the card's content.
+                      .user-card
+                        .img-user-card
+                          img.img-circle(src='http://lorempixel.com/50/50')
+                        .user-info
+                          p User
+                          p 15 products
+                    // #end card
+                    // #begin card
+                    .card-gallery
+                      img.card-img-top(src='http://lorempixel.com/400/200')
+                      .card-body
+                        p 30€
+                        p Title
+                        p.card-text
+                          | Some quick example text to build on the card title and make up the bulk of the card's content.
+                      .user-card
+                        .img-user-card
+                          img.img-circle(src='http://lorempixel.com/50/50')
+                        .user-info
+                          p User
+                          p 15 products
+                    // #end card
+                    // #begin card
+                    .card-gallery
+                      img.card-img-top(src='http://lorempixel.com/400/200')
+                      .card-body
+                        p 30€
+                        p Title
+                        p.card-text
+                          | Some quick example text to build on the card title and make up the bulk of the card's content.
+                      .user-card
+                        .img-user-card
+                          img(src='http://lorempixel.com/50/50')
+                        .user-info
+                          p User
+                          p 15 products
+                    // #end card
+                    // #begin card
+                    .card-gallery
+                      img.card-img-top(psrc='http://lorempixel.com/400/200')
+                      .card-body
+                        p 30€
+                        p Title
+                        p.card-text
+                          | Some quick example text to build on the card title and make up the bulk of the card's content.
+                      .user-card
+                        .img-user-card
+                          img.img-circle(src='http://lorempixel.com/50/50')
+                        .user-info
+                          p User
+                          p 15 products
+                    // #end card
+                    // #begin card
+                    .card-gallery.grid-item
+                      img.card-img-top(src='http://lorempixel.com/400/200')
+                      .card-body
+                        p 30€
+                        p Title
+                        p.card-text
+                          | Some quick example text to build on the card title and make up the bulk of the card's content.
+                      .user-card
+                        .img-user-card
+                          img.img-circle(src='http://lorempixel.com/50/50')
+                        .user-info
+                          p User
+                          p 15 products
+                    // #end card
+                    // #begin card
+                    .card-gallery
+                      img.card-img-top(src='http://lorempixel.com/400/200')
+                      .card-body
+                        p 30€
+                        p Title
+                        p.card-text
+                          | Some quick example text to build on the card title and make up the bulk of the card's content.
+                      .user-card
+                        .img-user-card
+                          img.img-circle(src='http://lorempixel.com/50/50')
+                        .user-info
+                          p User
+                          p 15 products
+                    // #end card
+                    // #begin card
+                    .card-gallery
+                      img.card-img-top(src='http://lorempixel.com/400/200')
+                      .card-body
+                        p 30€
+                        p Title
+                        p.card-text
+                          | Some quick example text to build on the card title and make up the bulk of the card's content.
+                      .user-card
+                        .img-user-card
+                          img.img-circle(src='http://lorempixel.com/50/50')
+                        .user-info
+                          p User
+                          p 15 products
+                    // #end card
+                    // #begin card
+                    .card-gallery.grid-item
+                      img.card-img-top(src='http://lorempixel.com/400/200')
+                      .card-body
+                        p 30€
+                        p Title
+                        p.card-text
+                          | Some quick example text to build on the card title and make up the bulk of the card's content.
+                      .user-card
+                        .img-user-card
+                          img.img-circle(src='http://lorempixel.com/50/50')
+                        .user-info
+                          p User
+                          p 15 products
+                    // #end card
+                  // /.gallery
+                  // /.Main column
+              // Gallery cards
+              // #begin gallery
+            // /.Main layout

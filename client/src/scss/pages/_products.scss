@@ -11,9 +11,6 @@
     flex-direction: column;
     align-items: center;
   }
-  .products-wrapper {
-    margin-top: 2rem;
-  }
 }
 
 
@@ -44,6 +41,9 @@ main.gallery-products {
   }
 }
 
+div#wrapper#products-wrapper-fix {
+  margin-top: -1rem;
+}
 
 @media(min-width: 768px) {
   .products {

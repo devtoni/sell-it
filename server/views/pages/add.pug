@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  .add
+    main
+      ul.add-product_list
+        li
+          #add-product.add-product(ondrop='drop_handler(event);', ondragover='dragover_handler(event);', ondragend='dragend_handler(event);')
+            p Arrastra una foto
+        li
+          .add-title
+            input(type='text', value='Qué vendes?')
+        li
+          .add-description
+            textarea(type='text', value='Qué vendes?')
+        li
+          div
+            form(action='')
+              input(type='submit', value='Enviar')
