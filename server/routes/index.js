@@ -18,7 +18,7 @@ router.get('/profile', (req, res) => {
   res.sendFile(path.join(process.cwd(), 'server/views/profile.html'))
 })
 
-router.get('/edit-profile', (req, res) => {
+router.get('/edit', (req, res) => {
   res.sendFile(path.join(process.cwd(), 'server/views/edit.html'))
 })
 
