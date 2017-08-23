@@ -1,6 +1,6 @@
 
 function showLogin (req, res) {
-  res.render('pages/login', {idSection: 'home'})
+  res.render('pages/login', {idFooter: 'logReg'})
 }
 
 module.exports = showLogin

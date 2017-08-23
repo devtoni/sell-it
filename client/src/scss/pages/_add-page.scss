@@ -6,10 +6,18 @@
       align-items: center;
       justify-content: center;
       margin: 0 auto;
-      height: 200px;
-      width: 90%;
+      width: 100px;
+      height: 100px;
       border: 3px dashed orange;
+      border-right: none;
       max-width: 600px;
+      & .item-product {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border-right: 3px dashed orange;
+      }
     }
     .add-product_list {
       padding: 0;

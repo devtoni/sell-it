@@ -1,6 +1,6 @@
 
 function showAddPage (req, res) {
-  res.render('pages/add', {idSection: 'product'})
+  res.render('pages/add', {idFooter: 'logReg'})
 }
 
 module.exports = showAddPage

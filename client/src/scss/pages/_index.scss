@@ -85,6 +85,9 @@
 }
 
 @media(min-width:768px) {
+  .white {
+    color: white !important;
+  }
   .dropdown-menu {
     left: -65px;
   }

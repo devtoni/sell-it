@@ -692,6 +692,8 @@ footer {
     min-height: 9rem; }
 
 @media (min-width: 768px) {
+  .white {
+    color: white !important; }
   .dropdown-menu {
     left: -65px; }
   section.who-are-we {
@@ -765,10 +767,17 @@ div#wrapper#products-wrapper-fix {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    height: 200px;
-    width: 90%;
+    width: 100px;
+    height: 100px;
     border: 3px dashed orange;
+    border-right: none;
     max-width: 600px; }
+    .add main .add-product .item-product {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      border-right: 3px dashed orange; }
   .add main .add-product_list {
     padding: 0;
     text-align: center; }
@@ -822,6 +831,9 @@ div#wrapper#products-wrapper-fix {
   justify-content: center; }
   .gallery-profile div {
     margin: 0 auto; }
+
+.position-absolute-footer-pug {
+  position: absolute; }
 
 .map {
   height: 200px;

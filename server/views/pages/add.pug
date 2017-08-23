@@ -3,17 +3,18 @@ extends ../layout
 block content
   .add
     main
-      ul.add-product_list
-        li
-          #add-product.add-product(ondrop='drop_handler(event);', ondragover='dragover_handler(event);', ondragend='dragend_handler(event);')
-            p Arrastra una foto
-        li
-          .add-title
-            input(type='text', value='Qué vendes?')
-        li
-          .add-description
-            textarea(type='text', value='Qué vendes?')
-        li
-          div
-            form(action='')
-              input(type='submit', value='Enviar')
+      form 
+        ul.add-product_list
+          li
+            .add-product
+              .item-product
+                input(type='file', name='pic', accept='image/*')
+          li
+            .add-title
+              input(type='text', pplaceholder='Qué vendes?')
+          li
+            .add-description
+              textarea(type='text', placeholder='Describeme un poco que és')
+          li
+            div
+                input(type='submit', value='Enviar')
