@@ -1,4 +1,4 @@
-## Lend it
+## Sell it
 
-Borrow things to your neighbours
+Sell things to your neighbours
 

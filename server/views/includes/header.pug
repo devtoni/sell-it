@@ -1,37 +1,46 @@
 header
-  // nav
   nav.navbar.navbar-expand-md.navbar-light
     button#menu-toggle.menu-btn.navbar-toggler.d-lg-none(type='button', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
       span.navbar-toggler-icon
     a.navbar-brand(href='/')
       .logo
         h1
-          | Lend it 
+          | Sell it 
           span.market-logo
             h1 MARKET
+    .search-icon-nav
+      input.search-hover(type='text', name='', placeholder='search here...')
     .nav-desktop.collapse.navbar-collapse
       ul.navbar-nav.mr-auto.nav-items
         li.nav-item.active
           a.nav-link(href='/')
             | Inicio 
-            span.sr-only (current)
-      //
-        <form class="form-inline mt-2 mt-md-0">
-        <input type="text" placeholder="Search" aria-label="Search" class="form-control mr-sm-2" />
-        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
-        </form>
+        li.nav-item.active
+          a.nav-link(href='/products')
+            | Escaparate
+        li.nav-item.active
+          a.nav-link(href='/products')
+            | Añadir Producto
       p
         a(href='/login') Acceder
-    // <a href="/search" class="btn-search"><i aria-hidden="true" class="fa fa-search"></i></a>
-  // ./nav
-  // sidebar
+      .btn-group
+        .profile-side-bar
+          .profile-photo
+            img(src='http://lorempixel.com/30/30')
+        button#dropdownBtn.dropdown-toggle.dropdown-toggle-split(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+          span.sr-only Toggle Dropdown
+        .dropdown-menu
+          a.dropdown-item(href='/profile') Mi cuenta
+          a.dropdown-item(href='/edit-profile') Editar cuenta
+          a.dropdown-item(href='/chat') Mensajes
+          a.dropdown-item(href='/logout') Salir
   #wrapper
     #sidebar-wrapper
       ul.sidebar-nav
         li
           .profile-side-bar
             .profile-photo
-              img.img-circle(src='http://lorempixel.com/50/50')
+              img(src='http://lorempixel.com/50/50')
             .action-profile
               p
                 a(href='/login') Entra
@@ -40,7 +49,12 @@ header
         li
           a(href='/') Inicio
         li
-          a(href='/perfil') Perfil
+          a(href='/products') Escaparate
         li
-          a(href='/perfil') Mensajes
-  // ./ sidebar
+          a(href='/profile') Mi cuenta
+        li
+          a(href='/edit-profile') Editar Cuenta
+        li
+          a(href='/chat') Mensajes
+        li
+          a(href='/logout') Salir
