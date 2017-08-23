@@ -543,8 +543,8 @@ a.btn-search {
   color: #000;
   margin: 0 10px; }
 
-.price-wrap #one1,
-.price-wrap #two2 {
+.price-wrap-1 .uno,
+.price-wrap-2 .dos {
   background-color: black;
   color: #000;
   width: 30px;
