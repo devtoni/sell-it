@@ -12,7 +12,7 @@
 @import "./components/_login";
 @import "./components/_inputs";
 @import "./components/_footer";
-
+@import "./components/_chat";
 /* pages */
 
 @import "./pages/_index";
@@ -88,7 +88,7 @@
 .map {
   height: 200px;
   width: 100%;
-  background-image: url('../../src/img/map.jpg')
+  background-image: url('../../dist/img/map.jpg')
 }
 
 
@@ -285,7 +285,7 @@ justify-content: center;
 }
 
 .card.hovercard .cardheader {
-  background: url('../../src/img/map.jpg');
+  background: url('../../dist/img/map.jpg');
   background-size: cover;
   min-height: 200px;
   max-height: 300px;

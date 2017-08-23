@@ -45,12 +45,12 @@ a.btn-search {
   color: #4B4C63; }
 
 @media (min-width: 768px) {
-  .home nav.navbar {
+  nav.navbar {
     background: transparent; }
-    .home nav.navbar h1, .home nav.navbar a, .home nav.navbar li.nav-item > a.nav-link {
+    nav.navbar h1, nav.navbar a, nav.navbar li.nav-item > a.nav-link {
       color: #fff; }
-  a.nav-link {
-    color: #fff; } }
+  li.nav-item.active > a.nav-link {
+    color: #fff !important; } }
 
 .logo {
   color: #4B4C63; }
@@ -322,7 +322,7 @@ a.btn-search {
   display: none; }
 
 .search-hover {
-  background: url("../../src/img/search.png") no-repeat left;
+  background: url("../../dist/img/search.png") no-repeat left;
   border: none;
   outline: none;
   background-size: 22px;
@@ -590,6 +590,28 @@ footer {
 .login footer, .register footer {
   position: absolute; }
 
+.chat {
+  height: 100%; }
+
+.chat-box {
+  display: flex;
+  height: 500px;
+  background: grey;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 360px; }
+  .chat-box ul {
+    padding: 0;
+    margin: 0; }
+  .chat-box div {
+    width: 100%; }
+  .chat-box input {
+    width: 100%; }
+
+.chat-row {
+  justify-content: center;
+  margin-top: 2rem; }
+
 /* pages */
 .header {
   position: relative;
@@ -785,7 +807,7 @@ div#wrapper#products-wrapper-fix {
 .map {
   height: 200px;
   width: 100%;
-  background-image: url("../../src/img/map.jpg"); }
+  background-image: url("../../dist/img/map.jpg"); }
 
 .profile {
   justify-content: center; }
@@ -929,7 +951,7 @@ div#wrapper#products-wrapper-fix {
     overflow: hidden;
     text-align: center; }
   .profile .card.hovercard .cardheader {
-    background: url("../../src/img/map.jpg");
+    background: url("../../dist/img/map.jpg");
     background-size: cover;
     min-height: 200px;
     max-height: 300px; }
