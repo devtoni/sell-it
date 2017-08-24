@@ -625,6 +625,10 @@ footer {
   justify-content: center;
   margin-top: 2rem; }
 
+.statistics canvas {
+  width: 400px;
+  max-width: 400px; }
+
 /* pages */
 .header {
   position: relative;
@@ -830,7 +834,6 @@ div#wrapper#products-wrapper-fix {
 .admin-panel {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: space-between; }
 
 .admin-main-content {
@@ -842,6 +845,14 @@ div#wrapper#products-wrapper-fix {
   .admin-main-content > .admin-content {
     flex: 1;
     background: #fff; }
+    .admin-main-content > .admin-content h3 {
+      margin: 2rem 0;
+      text-align: center; }
+
+.graphs-statistics {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; }
 
 .dropdown-menu a.dropdown-item {
   color: #4B4C63; }

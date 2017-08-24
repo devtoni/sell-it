@@ -1,7 +1,6 @@
 .admin-panel {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: space-between;
 }
 
@@ -15,5 +14,14 @@
   & > .admin-content {
     flex: 1;
     background: #fff;
+    & h3 {
+      margin: 2rem 0;
+      text-align: center;
+    }
   }
+}
+.graphs-statistics {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
