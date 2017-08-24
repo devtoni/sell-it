@@ -1,0 +1,19 @@
+.admin-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.admin-main-content {
+  flex: 1;
+  display: flex;
+  & > .admin-sidebar {
+  width: 25%;
+  max-width: 300px;
+  }
+  & > .admin-content {
+    flex: 1;
+    background: #fff;
+  }
+}

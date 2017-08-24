@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="root" ng-strict-di>
+
+<head>
+  <meta charset="utf-8">
+  <title>Administration Sell it</title>
+  <base href="/">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="libs/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body ng-cloak>
+  <div class="admin-panel">
+    <div ng-include='"admin/app/templates/nav.html"'></div>
+    <div class="admin-main-content">
+      <div class="admin-sidebar">
+        <ul>
+          <li><a href="/panel">Dashboard</a></li>
+          <li><a href="/estatistics">Estadísticas</a></li>
+          <li><a href="/administration">Administración</a></li>
+        </ul>
+      </div>
+      <div class="admin-content">
+        <ng-view></ng-view>
+      </div>
+    </div>
+    <div ng-include='"admin/app/templates/footer.html"'></div>
+  </div>
+  <!-- JQUERY -->
+  <script src="libs/bower_components/jquery/dist/jquery.slim.js"></script>
+  <!-- POPPER -->
+  <script src="libs/bower_components/popper.js/dist/umd/popper.min.js"></script>
+  <!-- BOOTSTRAP -->
+  <script src="libs/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- ANGULAR -->
+  <script src="libs/bower_components/angular/angular.min.js"></script>
+  <!-- ANGULAR -->
+  <script src="libs/bower_components/angular-route/angular-route.js"></script>
+  <!-- DYNAMICS -->
+  <script src="/js/main.js"></script>
+  <!-- MAIN APP -->
+  <!-- ROOT -->
+  <script src="admin/app/app.js"></script>
+  <!-- MAIN APP -->
+
+</body>
+
+</html>
