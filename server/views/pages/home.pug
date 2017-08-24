@@ -6,10 +6,10 @@ block content
       .header
         video#videoBg.video-header(src='http://res.cloudinary.com/drenzfi8m/video/upload/v1503341704/bg-video_ndve4s.mp4', autoplay='', loop='')
         .hero-text
-          h1.animated.fadeIn Vende lo que no uses
+          h1.animated.fadeIn Vende lo que no uses y compra lo que necesites
           .container.search-icon-hero-image
-            form(action="")
-              input.search-hover(type='text', name='', placeholder='search here...')
+            form#search-form-home(target="/products")
+              input.search-hover(type='text', name='', placeholder='Qué quieres buscar..?')
   main
     section.who-are-we
       .container
@@ -20,6 +20,7 @@ block content
             p
               | Sell it es una aplicación que te permite vender lo que no necesitas de una forma sencilla a través de nuestra plataforma.
             p Ponemos a tu alcance un servicio adaptado a tus necesidades
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis sequi odio dolore ratione fugit ullam quidem eligendi at pariatur, dolor recusandae, vitae enim quaerat 
           .col-md-4.col-xl-3.wow.bounceIn.who-are-we-image(data-wow-delay='.6s')
             img(src='/img/device.jpg', alt='device')
     // @end who-are-we

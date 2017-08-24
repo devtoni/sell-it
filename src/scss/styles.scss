@@ -12,7 +12,6 @@
 @import "./components/_login";
 @import "./components/_inputs";
 @import "./components/_footer";
-@import "./components/_chat";
 @import "./components/_canvas";
 /* pages */
 
@@ -21,6 +20,7 @@
 @import "./pages/_add-page";
 @import "./pages/_detail-product";
 @import "./pages/_panel-admin";
+@import "./pages/_chat-page";
 
 
 
@@ -71,9 +71,6 @@
 
 .gallery-profile{
   justify-content: center;
-  div {
-    margin: 0 auto;
-  }
 }
 
 .position-absolute-footer-pug {
@@ -366,7 +363,14 @@ justify-content: center;
 
 
 
-
+.sidebar-nav {
+  & > li:first-child {
+    text-align: center;
+  }
+  & > li {
+    min-height: 42px;
+  }
+}
 
 
 
@@ -380,6 +384,7 @@ justify-content: center;
   .sidebar-products {
     display: block;
   }
+  
   .nav-desktop .dropdown-menu a.dropdown-item {
     color: #4B4C63;
 }

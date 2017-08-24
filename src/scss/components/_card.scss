@@ -2,7 +2,10 @@
 
 
 
-
+.user-info {
+  flex: 1;
+  margin-left: 10px;
+}
 
 .gallery {
 
@@ -12,18 +15,16 @@
     justify-content: center;
 
   .card-gallery {
-    width: 47%;
+    width: 45%;
     margin: 0.3rem;
     background: #fff;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
-    border-radius: 2px;
     -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     & > a > img {
-      padding: 0.2rem;
-      min-height: 140px ;
+      min-height: 150px;
     }
     .card-body {
       padding: 1rem 0.5rem;
@@ -46,7 +47,7 @@
     .user-card {
       display: flex;
       padding: 0.5rem;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       border-top: $border-line;
       img {

@@ -1,14 +1,15 @@
 @import "../base/_colors";
 
-ul.nav-items {
-  li > a {
-    color: #4B4C63;
+
+nav {
+  background: $nav-color;
+  z-index: 1;
+  &.navbar {
+    padding: 0 0.5rem;
   }
 }
-nav {
-  background: $bg-body-color;
-  z-index: 1;
-}
+
+
 .menu-btn {
   border: none;
 }
@@ -20,13 +21,4 @@ nav {
   }
 }
 
-a.btn-search {
-  font-size: 1.5rem;
-  color: #4B4C63;
-}
 
-@media(min-width:768px) {
-   nav.navbar {
-    background: transparent;
-  }
-}

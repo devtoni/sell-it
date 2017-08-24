@@ -3,6 +3,10 @@ $('#menu-toggle').click(function (e) {
   $('#wrapper').toggleClass('toggled')
 })
 
+$('#search-form-home').on('submit', (e) => {
+  e.preventDefault()
+  window.location = '/products'
+})
 console.log('Hello')
 
 /* range price */

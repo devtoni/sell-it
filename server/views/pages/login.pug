@@ -4,7 +4,7 @@ block content
   .login
     .container
       .card.card-container
-        form.form-signin
+        form.form-signin(target="/products")
           span#reauth-email.reauth-email
           input#inputEmail.form-control(type='email', placeholder='Usuario', required='', autofocus='')
           input#inputPassword.form-control(type='password', placeholder='Contraseña', required='')
@@ -12,12 +12,9 @@ block content
             label
               input(type='checkbox', value='remember-me')
               |  Recordarme
-          button.btn.btn-lg.btn-success.btn-block.btn-signin(type='submit') Iniciar Sesión
+          button.btn.btn-lg.btn-success.btn-block.btn-signin.custom-btn(type='submit', target="/profile") Iniciar Sesión
         // /form
         a.forgot-password(href='#')
           | Aún no tienes cuenta? 
           a(href='/register') Regístrate ahora
-        a(href='/admin-login') Eres admin?, entra aquí
-      // /card-container
-    // /container
-    // @end login
+        a(href='/panel/') Admin

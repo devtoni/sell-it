@@ -1,8 +1,30 @@
 <div class="statistics">
-  <h3>Estadísticas</h3>
+  <div class="summary-statistic">
+      <div class="data-admin">
+          <h4>Total Users</h4>
+          <p>340</p>
+      </div>
+      <div class="data-admin">
+            <h4>Total Hombres</h4>
+            <p>5</p>
+      </div>
+      <div class="data-admin">
+            <h4>Total Mujeres</h4>
+            <p>5</p>
+      </div>
+      <div class="data-admin">
+            <h4>Total Productos</h4>
+            <p>5000</p>
+      </div>
+  </div>
     <div class="graphs-statistics">
-        <canvas id="products"></canvas>
-        <canvas id="users"></canvas>
-        <canvas id="categories"></canvas>
+       <div class="canvas-box">
+            <canvas id="users" class="first-canvas"></canvas>
+       </div>
+       <div class="under">
+           <div class="canvas-box"> <canvas id="products"></canvas></div>
+            <div class="canvas-box"><canvas id="categories"></canvas></div>
+            <div class="canvas-box"><canvas id="us"></canvas></div>
+       </div>
     </div>
 </div>
