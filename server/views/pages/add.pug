@@ -3,7 +3,7 @@ extends ../layout
 block content
   .add
     main
-      form#add-product-form
+      form#add-product-form(action="/add-product", method="POST")
         ul.add-product_list
           li
             .add-product
@@ -11,10 +11,16 @@ block content
                 input(type='file', name='pic', accept='image/*')
           li
             .add-title
-              input(type='text', pplaceholder='Qué vendes?')
+              input(type='text', name="title" placeholder='Qué vendes?')
           li
             .add-description
-              textarea(type='text', placeholder='Describeme un poco que és')
+              textarea(type='text', name="description" placeholder='Describeme un poco que és')
+          li
+            div
+                select
+                  option(value='coche', name="category") Coche
+                  option(value='casa', name="category") Casa
           li
             div
                 input(type='submit', value='Enviar')
+          
