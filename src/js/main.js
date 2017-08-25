@@ -3,13 +3,39 @@ $('#menu-toggle').click(function (e) {
   $('#wrapper').toggleClass('toggled')
 })
 
-$('#search-form-home').on('submit', (e) => {
+$('#sub').on('submit', (e) => {
   e.preventDefault()
-  window.location = '/products'
+  window.location.href = '/products'
 })
-console.log('Hello')
 
+$('#sub-log').on('submit', (e) => {
+  e.preventDefault()
+  window.location.href = '/profile'
+})
+$('#sub-reg').on('submit', (e) => {
+  e.preventDefault()
+  window.location.href = '/login'
+})
+
+$('#mobile-search-form').on('submit', function (e) {
+  e.preventDefault()
+  window.location.href = '/products'
+})
+$('#search-icon-navbar').on('click', function (e) {
+  $('.search-bar-nav-mobile').fadeToggle(750)
+ // window.location.href = '/products'
+})
 /* range price */
+
+$('#add-product-form').on('submit', function (e) {
+  e.preventDefault()
+  return swal({
+    type: 'succes',
+    title: 'Ya esta!',
+    text: 'Ahora ya puedes ver tu artículo'
+  })
+  .then(() => window.location.href = '/products')
+})
 
 var lowerSlider = document.querySelector('#lower')
 var upperSlider = document.querySelector('#upper')

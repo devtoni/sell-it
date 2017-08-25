@@ -8,8 +8,11 @@ header
           | Sell it 
           span.market-logo
             h1 MARKET
+    span#search-icon-navbar 
+      i.fa.fa-search(aria-hidden='true')
     .search-icon-nav
-      input.search-hover(type='text', name='', placeholder='search here...')
+      form#mobile-search-form(target="/products")
+        input.search-bar-nav-mobile(type='text', name='', placeholder='Qué quieres buscar..')
     .nav-desktop.collapse.navbar-collapse
       ul.navbar-nav.mr-auto.nav-items
         li.nav-item.active
