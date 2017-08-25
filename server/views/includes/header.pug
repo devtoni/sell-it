@@ -49,5 +49,7 @@ header
           a(href='/') Inicio
         li
           a(href='/products') Escaparate
+        li(class={'hide': idSection !== 'profile'})
+          a(href='/edit-profile') Editar Cuenta
         li
           a(href='/logout') Salir

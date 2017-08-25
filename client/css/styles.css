@@ -152,7 +152,8 @@ nav {
 
 .user-info {
   flex: 1;
-  margin-left: 10px; }
+  margin-left: 10px;
+  color: black; }
 
 .gallery {
   background-color: #F8F9FA;
@@ -572,12 +573,25 @@ select {
   color: #000;
   transition-duration: 0.3s; }
 
+.btn-edit {
+  display: none; }
+
 input[type=submit], .custom-btn {
   background-color: #00C5DD;
   border: none;
   padding: 0.5rem; }
 
 @media (min-width: 768px) {
+  .btn-edit {
+    display: inline-block;
+    position: absolute;
+    right: 25px;
+    border-radius: 50%;
+    background-color: #20C3B3;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    box-shadow: 0 1px 3px grey; }
   .search-icon-hero-image {
     margin-top: 2rem;
     display: inherit; }
@@ -589,10 +603,12 @@ input[type=submit], .custom-btn {
     background-image: none;
     font-size: 1.2rem;
     min-width: 250px;
-    padding: 1.5rem !important;
+    padding: 1rem !important;
     height: 37px;
     border-radius: 0;
-    background-color: white; } }
+    background-color: white; }
+    .search-hover::placeholder {
+      color: black; } }
 
 footer {
   background-color: #4C4C4C;
@@ -754,6 +770,10 @@ div#wrapper#products-wrapper-fix {
     width: 90%;
     max-width: 310px; } }
 
+.add-detail-page {
+  position: relative;
+  height: 100%; }
+
 .add main {
   padding: 1rem 0; }
   .add main .add-product {
@@ -789,12 +809,18 @@ div#wrapper#products-wrapper-fix {
     max-width: 200px; }
 
 .image-product-detail-box {
-  background-image: url("/dist/img/casa.jpg");
+  background: url(/img/casa.jpg) no-repeat center;
   background-size: cover;
-  background-repeat: no-repeat;
   min-height: 300px;
   width: 100%;
   max-width: 500px; }
+
+.product-detail-page {
+  position: relative;
+  height: 100%; }
+
+.detail {
+  margin-bottom: 2rem; }
 
 .product-content-detail > * {
   padding: 0.5rem 0; }
@@ -1173,15 +1199,33 @@ div#wrapper#products-wrapper-fix {
   .avatar .upload-input, .personal-info .upload-input {
     width: 100%; }
 
+.profile-page label {
+  margin: 0;
+  min-height: 150px; }
+  .profile-page label > img {
+    height: 150px; }
+
 .profile-card {
   width: 100%;
   max-width: inherit; }
+
+.profile-page input[type=file] {
+  display: none; }
+
+span#edit-span {
+  display: none; }
+
+.title:hover span#edit-span {
+  display: inline-block; }
 
 .sidebar-nav > li:first-child {
   text-align: center; }
 
 .sidebar-nav > li {
   min-height: 42px; }
+
+.hide {
+  display: none !important; }
 
 @media (min-width: 768px) {
   .btn-add {

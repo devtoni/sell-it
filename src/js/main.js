@@ -17,6 +17,20 @@ $('#sub-reg').on('submit', (e) => {
   window.location.href = '/login'
 })
 
+$('.btn-edit').on('click', function () {
+  return swal({
+    type: 'info',
+    title: 'Edición activada!',
+    text: 'Puedes cambiar tu nombre, e imagen, y también editar tus artículos!'
+  })
+})
+
+$('#save-changes').on('click', function () {
+  return swal({
+    type: 'success',
+    title: 'Cambios guardados!'
+  })
+})
 $('#mobile-search-form').on('submit', function (e) {
   e.preventDefault()
   window.location.href = '/products'
@@ -30,7 +44,7 @@ $('#search-icon-navbar').on('click', function (e) {
 $('#add-product-form').on('submit', function (e) {
   e.preventDefault()
   return swal({
-    type: 'succes',
+    type: 'success',
     title: 'Ya esta!',
     text: 'Ahora ya puedes ver tu artículo'
   })

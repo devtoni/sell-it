@@ -366,12 +366,33 @@ justify-content: center;
   }
 }
 
+.profile-page label {
+  margin: 0;
+  min-height: 150px;
+  & > img {
+    height: 150px;
+  }
+}
 .profile-card{
   width: 100%;
   max-width: inherit;
 }
 
+.profile-page {
+  input[type=file] {
+    display: none;
+  }
+}
 
+span#edit-span {
+  display: none;
+}
+
+.title:hover {
+  span#edit-span{
+    display: inline-block;
+  }
+}
 
 
 
@@ -387,7 +408,9 @@ justify-content: center;
 }
 
 
-
+.hide {
+  display: none !important;
+}
 
 
 

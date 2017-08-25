@@ -321,12 +321,26 @@ select {
   transition-duration: 0.3s;
 }
 
+.btn-edit {
+  display: none;
+}
 input[type=submit] , .custom-btn{
   background-color: #00C5DD;
   border: none;
   padding: 0.5rem;
 }
 @media(min-width: 768px) {
+  .btn-edit {
+    display: inline-block;
+    position: absolute;
+    right: 25px;
+    border-radius: 50%;
+    background-color: #20C3B3;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    box-shadow: 0 1px 3px grey;
+  }
   .search-icon-hero-image {
     margin-top: 2rem;
     display: inherit;
@@ -340,10 +354,13 @@ input[type=submit] , .custom-btn{
     background-image: none;
     font-size: 1.2rem;
     min-width: 250px;
-    padding: 1.5rem !important;
+    padding: 1rem !important;
     height: 37px;
     border-radius: 0;
     background-color: white;
+    &::placeholder {
+      color: black;
+    }
   }
 
 

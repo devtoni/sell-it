@@ -1,10 +1,18 @@
 .image-product-detail-box {
-  background-image: url('/dist/img/casa.jpg');
+  background: url(/img/casa.jpg) no-repeat center;
   background-size: cover;
-  background-repeat: no-repeat;
   min-height: 300px;
   width: 100%;
   max-width: 500px;
+}
+
+.product-detail-page {
+  position: relative;
+  height: 100%;
+}
+
+.detail {
+  margin-bottom: 2rem;
 }
 .product-content-detail {
   & > * {
