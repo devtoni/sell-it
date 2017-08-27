@@ -6,7 +6,7 @@ p {
   margin: 0; }
 
 body {
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Helvetica-bold', sans-serif; }
 
 a, i, span {
   color: white !important;
@@ -332,7 +332,14 @@ nav {
 ::-moz-placeholder {
   color: #fff; }
 
+.custom-btn.sell,
+.custom-btn.buy {
+  display: none; }
+
 .search-icon-hero-image {
+  display: none; }
+
+input.search-hero-text {
   display: none; }
 
 .search-icon-nav {
@@ -585,18 +592,27 @@ select {
 .btn-edit {
   display: none; }
 
-input[type=submit], .custom-btn {
-  background-color: #00C5DD;
+input[type=submit],
+.custom-btn {
+  background-color: #F58454;
+  font-weight: bold;
   border: none;
   padding: 0.5rem; }
 
 @media (min-width: 768px) {
+  .custom-btn.sell,
+  .custom-btn.buy {
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding: 0.2rem 1rem;
+    font-size: 1.2rem;
+    box-shadow: 0px 0px 1px black; }
   .btn-edit {
     display: inline-block;
     position: absolute;
     right: 25px;
     border-radius: 50%;
-    background-color: #20C3B3;
+    background-color: #F58454;
     width: 50px;
     height: 50px;
     line-height: 50px;
@@ -606,7 +622,7 @@ input[type=submit], .custom-btn {
     display: inherit; }
   .search-icon-nav {
     display: none; }
-  .search-hover {
+  input.search-hero-text {
     margin: 0 auto;
     display: block;
     background-image: none;
@@ -616,7 +632,7 @@ input[type=submit], .custom-btn {
     height: 37px;
     border-radius: 0;
     background-color: white; }
-    .search-hover::placeholder {
+    input.search-hero-text::placeholder {
       color: black; } }
 
 footer {
@@ -644,24 +660,43 @@ footer {
 
 /* pages */
 .video-container {
-  background-image: url("http://res.cloudinary.com/drenzfi8m/image/upload/v1503386648/bg-landing_lawsg5.jpg");
+  margin-right: 0;
+  background-image: url("/img/bg-sell.jpg");
   min-height: 400px;
   max-height: 600px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; }
-  .video-container > video.video-header, .video-container .hero-text {
+  background-position: center;
+  justify-content: center;
+  align-items: center; }
+  .video-container > video.video-header {
     display: none; }
+  .video-container .hero-text {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    text-align: center;
+    color: #fff; }
+    .video-container .hero-text h1 {
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.5); }
+    .video-container .hero-text > form {
+      margin-top: 2rem; }
 
 .who-are-we {
   background: #fff;
-  text-align: justify;
-  padding: 2rem 0; }
-  .who-are-we .who-are-we-image {
-    text-align: center;
-    margin-top: 2rem; }
+  text-align: justify; }
   .who-are-we h2 {
-    text-align: center; }
+    margin: 1rem 0;
+    font-weight: bold;
+    text-align: left;
+    border-left: 5px solid #F58454;
+    font-size: 1.8rem;
+    padding-left: 10px; }
+  .who-are-we span.span-title-who-are-we {
+    font-weight: normal;
+    color: #000 !important; }
+  .who-are-we p {
+    margin: 0.5rem 0; }
 
 .why-us {
   padding: 2rem 0; }
@@ -695,40 +730,35 @@ footer {
 @media (min-width: 768px) {
   .video-container {
     position: relative;
-    margin-right: 0;
-    justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
     max-height: 600px; }
     .video-container > video.video-header {
       display: inline-block;
       object-fit: fill;
       width: 100%;
-      max-height: 600px; }
-    .video-container .hero-text {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      text-align: center;
-      color: #fff; }
-      .video-container .hero-text > form {
-        margin-top: 2rem; }
-  span#search-icon-navbar {
-    display: none; }
-  .white {
-    color: #F8F9FA !important; }
-  .dropdown-menu {
-    left: -65px; }
-  section.who-are-we {
-    margin-top: 1rem; }
-  section.who-are-we .section-who-are-we {
-    display: flex; }
-    section.who-are-we .section-who-are-we img {
-      width: 75%; } }
-
-@media (min-width: 1164px) {
-  section.who-are-we {
-    padding-top: 5rem; } }
+      max-height: 550px; }
+    .video-container .hero-text h1 {
+      font-size: 3rem; }
+    .video-container .who-are-we {
+      text-align: left;
+      padding: 2rem 0; }
+      .video-container .who-are-we h2 {
+        margin: 2rem 0;
+        font-weight: bold;
+        border-left: 5px solid #F58454;
+        font-size: 2.2rem;
+        padding-left: 10px; }
+      .video-container .who-are-we span.span-title-who-are-we {
+        font-weight: normal;
+        color: #000 !important; }
+      .video-container .who-are-we p {
+        margin: 0.5rem 0; }
+    .video-container span#search-icon-navbar {
+      display: none; }
+    .video-container .white {
+      color: #F8F9FA !important; }
+    .video-container .dropdown-menu {
+      left: -65px; } }
 
 .container.box-gallery {
   display: flex;

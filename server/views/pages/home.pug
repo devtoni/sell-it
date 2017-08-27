@@ -4,22 +4,22 @@ block content
   .row.video-container
       video.video-header(src='http://res.cloudinary.com/drenzfi8m/video/upload/v1503341704/bg-video_ndve4s.mp4', autoplay='', loop='')
       .container.hero-text
-        h1 Vende lo que no uses y compra lo que necesites
-        form()
-          input.search-hover(type='text', name='', placeholder='Qué quieres buscar..?')
+        h1 Sell and buy things to your neighbours
+        .container-btn
+          a.custom-btn.buy(href="/products") Buy
+          a.custom-btn.sell(href="/add-product") Sell
   main
     section.who-are-we
       .container
         .row.section-who-are-we
-          .col-md-8.col-xl-9.wow.bounceIn(data-wow-delay='.3s')
-            hr
-            h2.h2-responsive Sell it
+          .col-12
+            h2 Sell<span class="span-title-who-are-we"> your</span> unwanted<span class="span-title-who-are-we"> items</span>
             p
               | Sell it es una aplicación que te permite vender lo que no necesitas de una forma sencilla a través de nuestra plataforma.
             p Ponemos a tu alcance un servicio adaptado a tus necesidades
             p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis sequi odio dolore ratione fugit ullam quidem eligendi at pariatur, dolor recusandae, vitae enim quaerat 
-          .col-md-4.col-xl-3.wow.bounceIn.who-are-we-image(data-wow-delay='.6s')
-            img(src='/img/device.jpg', alt='device')
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis sequi odio dolore ratione fugit ullam quidem eligendi at pariatur, dolor recusandae, vitae enim quaerat 
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis sequi odio dolore ratione fugit ullam quidem eligendi at pariatur, dolor recusandae, vitae enim quaerat 
     // @end who-are-we
     // @begin tu-mejor-eleccion
     section.why-us
