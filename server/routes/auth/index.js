@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const showLogin = require('./handlers/showLogin')
-const showLogout = require('./handlers/showLogout')
-const showRegister = require('./handlers/showRegister')
+const getLogin = require('./handlers/getLogin')
+const getLogout = require('./handlers/getLogout')
+const getRegister = require('./handlers/getRegister')
 
-router.get('/logout', showLogout)
-router.get('/login', showLogin)
-router.get('/register', showRegister)
+router.get('/logout', getLogout)
+router.get('/login', getLogin)
+router.get('/register', getRegister)
 
 module.exports = router

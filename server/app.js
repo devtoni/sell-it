@@ -8,6 +8,7 @@ const routesUser = require('./routes/user/')
 const routesProducts = require('./routes/products/')
 const routesProduct = require('./routes/product/')
 const routesAdmin = require('./routes/admin')
+const routesApiProducts = require('./routes/api/products')
 
 // CONFIG BODY-PARSER
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -28,5 +29,6 @@ app.use(routesUser)
 app.use(routesProducts)
 app.use(routesProduct)
 app.use(routesAdmin)
+app.use(routesApiProducts)
 
 module.exports = app

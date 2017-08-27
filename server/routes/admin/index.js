@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const adminPanel = require('./handlers/adminPanel')
+const getAdminPanel = require('./handlers/getAdminPanel')
 
-router.get('/panel', adminPanel)
+router.get('/panel', getAdminPanel)
 
 module.exports = router

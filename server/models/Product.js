@@ -1,8 +1,9 @@
 const mongoose = require('mongoose')
 
 const collection = 'products'
+const Schema = mongoose.Schema
 
-var ProductSchema = new mongoose.Schema({
+var ProductSchema = new Schema({
   title: {
     type: String,
     required: true
@@ -11,29 +12,27 @@ var ProductSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  // imgUrl: {
-  //   type: String,
-  //   require: true
-  // },
-  img: {
-    data: Buffer, 
-    contentType: String
+  price: {
+    type: Number,
+    require: true,
+    default: 0
+  },
+  imgUrl: {
+    type: String,
+    require: true
+  },
+  category: {
+    type: String,
+    require: true
   },
   is_Active: {
     type: Boolean,
-    default: false
-  },
-  categories {
-    [
-      { type : mongoose.Schema.Types.ObjectId, 
-        ref : 'Category', required : true
-      }
-    ]
+    default: true
   },
   createdAt: {
     type: Number,
     default: Date.now()
   }
-}, { collection })
+}, {collection})
 
 module.exports = mongoose.model('Product', ProductSchema)

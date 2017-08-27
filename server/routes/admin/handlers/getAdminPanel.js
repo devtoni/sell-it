@@ -1,7 +1,6 @@
 const path = require('path')
-
-function adminPanel (req, res) {
+function getAdminPanel (req, res) {
   res.sendFile(path.join(process.cwd(), '/src/admin/index.html'))
 }
 
-module.exports = adminPanel
+module.exports = getAdminPanel

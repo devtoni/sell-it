@@ -1,6 +1,6 @@
 html, body {
   height: 100%;
-  background-color: #F8F9FA; }
+  background-color: #F5F5F5; }
 
 p {
   margin: 0; }
@@ -29,7 +29,7 @@ a {
 
 /* components */
 nav {
-  background: #4C4C4C;
+  background: #263238;
   z-index: 1; }
   nav.navbar {
     padding: 0 0.5rem; }
@@ -43,7 +43,7 @@ nav {
     margin: 0 1rem; }
 
 .logo {
-  color: #F8F9FA; }
+  color: #F5F5F5; }
   .logo h1 {
     font-size: 2rem;
     font-weight: bold;
@@ -117,7 +117,7 @@ nav {
 .sidebar-nav li a {
   display: block;
   text-decoration: none;
-  color: #F8F9FA; }
+  color: #F5F5F5; }
 
 .sidebar-nav li a:hover {
   text-decoration: none;
@@ -620,7 +620,7 @@ footer {
   text-align: center;
   bottom: 0;
   padding: 1rem 0;
-  color: #F8F9FA; }
+  color: #F5F5F5; }
 
 .login footer, .register footer {
   position: absolute; }
@@ -847,77 +847,64 @@ div#wrapper#products-wrapper-fix {
     justify-content: space-between;
     padding: 1rem; } }
 
-.admin-panel {
+html, body, .admin-site, root {
+  height: 100%; }
+
+root {
+  display: flex;
+  flex-direction: column; }
+
+app-header header > nav.admin-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem; }
+
+.main-container {
+  display: flex;
+  flex: 1; }
+  .main-container div {
+    width: 100%; }
+  .main-container app-sidebar {
+    width: 30%;
+    max-width: 250px;
+    background-color: #37474F; }
+    .main-container app-sidebar .admin-sidebar ul {
+      padding: 0; }
+      .main-container app-sidebar .admin-sidebar ul > li:hover {
+        background-color: #00B9D8; }
+      .main-container app-sidebar .admin-sidebar ul > li > a {
+        display: inline-block;
+        padding: 1rem;
+        text-decoration: none; }
+
+dashboard {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
-
-.admin-navbar {
-  display: flex;
-  justify-content: space-between; }
-
-.statistics .summary-statistic {
-  display: flex; }
-  .statistics .summary-statistic > * {
-    flex: 1; }
-
-.statistics .graphs-statistics {
-  display: flex; }
-  .statistics .graphs-statistics .under {
-    display: flex; }
-    .statistics .graphs-statistics .under > * {
-      flex: 1; }
-
-.data-admin {
-  min-height: 115px;
-  margin: 1rem;
-  border-right: 1px solid black;
-  text-align: center; }
-  .data-admin p {
-    font-size: 3rem; }
-
-.administration-panel {
-  height: 100vh; }
-
-.admin-main-content {
-  flex: 1;
-  display: flex; }
-  .admin-main-content > .admin-sidebar {
-    background: #4C4C4C;
-    width: 200px;
-    max-width: 200px; }
-    .admin-main-content > .admin-sidebar ul {
-      padding: 0; }
-      .admin-main-content > .admin-sidebar ul > li > a {
-        text-align: center;
-        padding: 1rem 0;
-        width: 100%;
-        display: inline-block;
-        text-decoration: none; }
-        .admin-main-content > .admin-sidebar ul > li > a:hover {
-          background: #20C3B3; }
-  .admin-main-content > .admin-content {
+  width: 100%; }
+  dashboard .main-chart {
     display: flex;
-    justify-content: center;
-    width: 70%;
-    flex: 1;
-    background: #fff; }
-    .admin-main-content > .admin-content h3 {
-      margin: 2rem 0;
-      text-align: center; }
-
-.graphs-statistics {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; }
-
-.canvas-box {
-  width: 30%; }
-
-.canvas-box:first-child {
-  width: 100%;
-  height: 400px;
-  margin: 0 auto; }
+    justify-content: center; }
+    dashboard .main-chart .total-users {
+      background-color: #fff;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+      width: 98%;
+      margin: 2rem 0; }
+      dashboard .main-chart .total-users .canvas-box {
+        width: 50%;
+        padding: 1rem;
+        margin: 0 auto; }
+  dashboard .secondary-charts {
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    margin: 2rem 0; }
+    dashboard .secondary-charts total-products, dashboard .secondary-charts active-products, dashboard .secondary-charts active-users {
+      background-color: #fff;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+      width: 100%;
+      margin: 0 0.5rem; }
 
 .chat {
   height: 100%; }

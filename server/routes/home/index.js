@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const showHome = require('./handlers/showHome')
+const getHome = require('./handlers/getHome')
 
-router.get('/', showHome)
+router.get('/', getHome)
 
 module.exports = router

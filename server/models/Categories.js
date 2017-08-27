@@ -1,12 +1,15 @@
 const mongoose = require('mongoose')
 
 const collection = 'categories'
+const Schema = mongoose.Schema
 
-var CategoriesSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true
+var CategoriesSchema = Schema({
+  name: {
+    formType: String,
+    required: true,
+    min: 3,
+    max: 100
   }
-}, { collection })
+})
 
 module.exports = mongoose.model('Category', CategoriesSchema)

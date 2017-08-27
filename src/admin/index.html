@@ -1,35 +1,23 @@
 <!doctype html>
-<html ng-app="root">
+<html lang="en">
 
 <head>
-
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Administration Sell it</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Administration Panel</title>
   <base href="/">
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <link rel="stylesheet" href="libs/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
-
 </head>
 
-<body ng-cloak>
-  <div class="admin-panel">
-    <div ng-include='"admin/app/templates/nav.html"'></div>
-    <div class="admin-main-content">
-      <div class="admin-sidebar">
-        <ul>
-          <li><a href="/panel">Dashboard</a></li>
-          <li><a href="/panel/#!/administration">Administración</a></li>
-        </ul>
-      </div>
-      <div class="admin-content">
-        <ng-view></ng-view>
-      </div>
-    </div>
-    <div ng-include='"admin/app/templates/footer.html"'></div>
-  </div>
+<body ng-app="adminApp">
+        <div class="admin-site">
+            <root></root>
+        </div>
+
   <!-- JQUERY -->
   <script src="libs/bower_components/jquery/dist/jquery.slim.js"></script>
   <!-- POPPER -->
@@ -40,18 +28,43 @@
   <script src="libs/bower_components/chart.js/dist/Chart.js"></script>
   <!-- ANGULAR -->
   <script src="libs/bower_components/angular/angular.min.js"></script>
-  <!-- ANGULAR -->
-  <script src="libs/bower_components/angular-route/angular-route.js"></script>
-  <!-- DYNAMICS  -->
-  <!-- <script src="/js/main.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
   <!-- ROOT -->
-  <script src="admin/app/app.js"></script>
-  <!-- DASHBOARD CONTROLLER -->
-  <script src="admin/app/routes/dashboard/controller.js"></script>
-  <script src="admin/app/routes/dashboard/index.js"></script>
-  <!-- ADMINISTRACION CONTROLLER -->
-  <script src="admin/app/routes/administracion/controller.js"></script>
-  <script src="admin/app/routes/administracion/index.js"></script>
+  <script src="admin/app/root.module.js"></script>
+  <script src="admin/app/root.component.js"></script>
+  <!-- ROOT -->
+  <script src="admin/app/common/header/header.controller.js"></script>
+  <script src="admin/app/common/header/header.component.js"></script>
+  <!-- ROOT -->
+  <script src="admin/app/common/sidenav/sidenav.controller.js"></script>
+  <script src="admin/app/common/sidenav/sidenav.component.js"></script>
+   <!-- ROOT -->
+   <!-- <script src="app/components/main/main.controller.js"></script>
+   <script src="app/components/main/main.component.js"></script> -->
+   <!-- ROOT -->
+   <script src="admin/app/components/main/administration/administration.controller.js"></script>
+   <script src="admin/app/components/main/administration/administration.component.js"></script>
+   <!-- ROOT -->
+   <script src="admin/app/components/main/administration/items-table/items-table.controller.js"></script>
+   <script src="admin/app/components/main/administration/items-table/items-table.component.js"></script>
+   <!-- ROOT -->
+   <script src="admin/app/components/main/configuration/configuration.controller.js"></script>
+   <script src="admin/app/components/main/configuration/configuration.component.js"></script>
+   <!-- ROOT -->
+   <script src="admin/app/components/main/dashboard/dashboard.controller.js"></script>
+   <script src="admin/app/components/main/dashboard/dashboard.component.js"></script>
+   <!-- ROOT -->
+   <script src="admin/app/components/main/dashboard/total-products/total-products.controller.js"></script>
+   <script src="admin/app/components/main/dashboard/total-products/total-products.component.js"></script>
+   <!-- ROOT -->
+   <script src="admin/app/components/main/dashboard/total-users/total-users.controller.js"></script>
+   <script src="admin/app/components/main/dashboard/total-users/total-users.component.js"></script>
+   <!-- ROOT -->
+   <script src="admin/app/components/main/dashboard/active-products/active-products.controller.js"></script>
+   <script src="admin/app/components/main/dashboard/active-products/active-products.component.js"></script>
+   <!-- ROOT -->
+   <script src="admin/app/components/main/dashboard/active-users/active-users.controller.js"></script>
+   <script src="admin/app/components/main/dashboard/active-users/active-users.component.js"></script>
 </body>
 
 </html>
