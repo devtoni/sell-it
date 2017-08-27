@@ -892,6 +892,23 @@ div#wrapper#products-wrapper-fix {
           border-bottom: none;
           color: #fff; }
 
+.card-image-preview {
+  height: 150px; }
+
+@media (min-width: 768px) {
+  main {
+    display: flex;
+    justify-content: center; }
+    main form {
+      width: 40%; }
+      main form ul {
+        list-style: none; }
+    main .preview-data {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center; } }
+
 .image-product-detail-box {
   background: url(/img/casa.jpg) no-repeat center;
   background-size: cover;

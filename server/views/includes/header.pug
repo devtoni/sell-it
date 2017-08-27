@@ -11,7 +11,7 @@ header
             span.market-logo
               h1 MARKET
       .div
-        button.filter-btn#filterBtn 
+        button.filter-btn#filterBtn(class={"hide": idSection !== 'products'})
           span
             i.fa.fa-filter(aria-hidden='true')
     .nav-desktop.collapse.navbar-collapse

@@ -21,6 +21,45 @@ $('#sub-reg').on('submit', (e) => {
   window.location.href = '/login'
 })
 
+/* preview card */
+
+let contentTitle = $('#input-title').val()
+$('#input-title').on('keyup', function () {
+  contentTitle = $('#input-title').val().replace(/\\n/g, '<br />')
+  $('#preview-title').text(contentTitle)
+})
+let contentDescription = $('#input-title').val()
+$('#input-description').on('keyup', function () {
+  contentDescription = $('#input-description').val().replace(/\\n/g, '<br />')
+  $('#preview-description').text(contentDescription)
+})
+let contentPrice = $('#input-price').val()
+$('#input-price').on('keyup', function () {
+  contentPrice = $('#input-price').val().replace(/\\n/g, '<br />')
+  $('#preview-price').text(contentPrice + ' €')
+})
+
+$.uploadPreview({
+  input_field: '#image-upload',   // Default: .image-upload
+  preview_box: '#image-preview',  // Default: .image-preview
+  label_field: '#image-label',    // Default: .image-label
+  label_default: 'Choose File',   // Default: Choose File
+  label_selected: 'Change File',  // Default: Change File
+  no_label: false                 // Default: false
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 $('.btn-edit').on('click', function () {
   return swal({
     type: 'info',

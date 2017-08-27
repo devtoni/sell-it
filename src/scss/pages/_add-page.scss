@@ -63,3 +63,26 @@
     }
   }
 }
+
+.card-image-preview {
+  height: 150px;
+}
+@media(min-width:768px) {
+
+  main {
+    display: flex;
+    justify-content: center;
+    form {
+      width: 40%;
+      ul {
+        list-style: none;
+      }
+    }
+    .preview-data {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

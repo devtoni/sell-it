@@ -8,19 +8,20 @@ block content
           li
             p Add an image
               .add-product
-                  input(type='file', name='img', accept='image/*')
+                  label(for="image-upload", id="image-label") 
+                  input(type='file', name='img', id="image-upload" accept='image/*')
           li
             .add-title
               p Add a title
-                input(type='text', name="title")
+                input#input-title(type='text', name="title")
           li
             .add-description
               p Add a description
-              input(type='text', name="description" )
+              input#input-description(type='text', name="description" )
           li
             .add-price
               p Add a price
-              input(type='number', name="price")
+              input#input-price(type='number', name="price")
           li
             div
               p Select a category
@@ -37,4 +38,20 @@ block content
           li
             div
                 input.custom-btn(type='submit', value='Send')
-          
+      .preview-data
+        .gallery
+          .card-gallery
+            a(href='/product-detail')
+              #image-preview.card-image-preview
+            .card-body
+              p#preview-price
+              p#preview-title
+              p.card-text#preview-description         
+            a(href='/user-id/profile')
+              .user-card
+                .img-user-card
+                  img.img-circle(src='http://lorempixel.com/50/50')
+                .user-info
+                  p User
+                  p 15 products
+             
