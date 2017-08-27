@@ -48,17 +48,13 @@ $.uploadPreview({
   no_label: false                 // Default: false
 })
 
+/* */
 
+/* preview btn for mobile view */
 
-
-
-
-
-
-
-
-
-
+$('#previewBtn').on('click', function () {
+  $('#add-product-form').toggle()
+})
 
 $('.btn-edit').on('click', function () {
   return swal({

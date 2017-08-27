@@ -3,6 +3,8 @@ extends ../layout
 block content
   .add-product-page
     main
+      .preview-button-box
+        button#previewBtn.custom-btn.preview-btn Preview
       form#add-product-form(action="/api/add-product", method="POST")
         ul.add-product_list
           li
