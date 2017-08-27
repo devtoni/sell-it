@@ -2,6 +2,11 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-a {
+a, i, span {
   color: white !important;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
 }

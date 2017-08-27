@@ -1,15 +1,12 @@
 extends ../layout
 
 block content
-  .container.video
-    .row.video-box
-      .header
-        video#videoBg.video-header(src='http://res.cloudinary.com/drenzfi8m/video/upload/v1503341704/bg-video_ndve4s.mp4', autoplay='', loop='')
-        .hero-text
-          h1.animated.fadeIn Vende lo que no uses y compra lo que necesites
-          .container.search-icon-hero-image
-            form#sub(target="/products")
-              input.search-hover(type='text', name='', placeholder='Qué quieres buscar..?')
+  .row.video-container
+      video.video-header(src='http://res.cloudinary.com/drenzfi8m/video/upload/v1503341704/bg-video_ndve4s.mp4', autoplay='', loop='')
+      .container.hero-text
+        h1 Vende lo que no uses y compra lo que necesites
+        form()
+          input.search-hover(type='text', name='', placeholder='Qué quieres buscar..?')
   main
     section.who-are-we
       .container

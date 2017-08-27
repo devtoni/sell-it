@@ -7,9 +7,16 @@ nav {
   &.navbar {
     padding: 0 0.5rem;
   }
+  button {
+    color: #fff;
+  }
 }
 
-
+.profile-photo-navbar {
+  & > img {
+     border-radius: 50%;
+  }
+}
 .menu-btn {
   border: none;
 }

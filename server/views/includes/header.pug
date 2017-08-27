@@ -1,7 +1,8 @@
 header
   nav.navbar.navbar-expand-md.navbar-light
     button#menu-toggle.menu-btn.navbar-toggler.d-lg-none(type='button', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
-      span.navbar-toggler-icon
+      span
+        i.fa.fa-bars(aria-hidden='true')
     a.navbar-brand(href='/')
       .logo
         h1(class={"white": idSection === 'home'})
@@ -27,8 +28,8 @@ header
       p
         a(href='/login',class={"white": idSection === 'home'}) Acceder
       .btn-group
-        .profile-side-bar
-          .profile-photo
+        .profile-nav-bar
+          .profile-photo-navbar
             img(src='http://lorempixel.com/30/30')
         button#dropdownBtn.dropdown-toggle.dropdown-toggle-split(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
           span.sr-only Toggle Dropdown
