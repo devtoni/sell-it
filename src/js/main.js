@@ -8,6 +8,10 @@ $('#sub').on('submit', (e) => {
   window.location.href = '/products'
 })
 
+$('#filterBtn').on('click', function () {
+  $('.sidebar-products').toggle()
+})
+
 $('#sub-log').on('submit', (e) => {
   e.preventDefault()
   window.location.href = '/profile'

@@ -1,29 +1,40 @@
 extends ../layout
 
 block content
-  .add
+  .add-product-page
     main
       form#add-product-form(action="/api/add-product", method="POST")
         ul.add-product_list
           li
-            .add-product
-              .item-product
-                input(type='file', name='img', accept='image/*')
+            p Add an image
+              .add-product
+                  input(type='file', name='img', accept='image/*')
           li
             .add-title
-              input(type='text', name="title" placeholder='Qué vendes?')
+              p Add a title
+                input(type='text', name="title")
           li
             .add-description
-              textarea(type='text', name="description" placeholder='Describeme un poco que és')
+              p Add a description
+              input(type='text', name="description" )
           li
             .add-price
-              textarea(type='number', name="price" placeholder='Precio')
+              p Add a price
+              input(type='number', name="price")
           li
             div
-                select(name="category")
-                  option(value='coche') Coche
-                  option(value='casa') Casa
+              p Select a category
+              select(name="category")
+                option(value='cars') Cars
+                option(value='motorAccesories') Motor accesories 
+                option(value='electronics') Electronics
+                option(value='sport') Sport
+                option(value='forniture') Forniture
+                option(value='consoles') Consoles and videogames 
+                option(value='books') Books
+                option(value='fashion') Fashion
+                option(value='realState') Real State
           li
             div
-                input(type='submit', value='Enviar')
+                input.custom-btn(type='submit', value='Send')
           

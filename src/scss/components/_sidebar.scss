@@ -13,7 +13,7 @@
 }
 
 #sidebar-wrapper {
-  background: $nav-color;
+  background: $first-bg-color;
   z-index: 1000;
   position: fixed;
   left: 250px;
@@ -68,7 +68,7 @@
 .sidebar-nav li a:hover {
   text-decoration: none;
  // background: rgba(255, 255, 255, 0.2);
- background: #20C3B3;
+ background: $bg-logo-span;
 }
 
 .sidebar-nav li a:active,

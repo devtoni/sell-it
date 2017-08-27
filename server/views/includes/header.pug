@@ -1,32 +1,32 @@
 header
   nav.navbar.navbar-expand-md.navbar-light
-    button#menu-toggle.menu-btn.navbar-toggler.d-lg-none(type='button', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
-      span
-        i.fa.fa-bars(aria-hidden='true')
-    a.navbar-brand(href='/')
-      .logo
-        h1(class={"white": idSection === 'home'})
-          | Sell it 
-          span.market-logo
-            h1 MARKET
-    span#search-icon-navbar 
-      i.fa.fa-search(aria-hidden='true')
-    .search-icon-nav
-      form#mobile-search-form(target="/products")
-        input.search-bar-nav-mobile(type='text', name='', placeholder='Qué quieres buscar..')
+    .container-nav
+      button#menu-toggle.menu-btn.navbar-toggler.d-lg-none(type='button', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span
+          i.fa.fa-bars(aria-hidden='true')
+      a.navbar-brand(href='/')
+        .logo
+          h1(class={"white": idSection === 'home'})
+            | Sell it 
+            span.market-logo
+              h1 MARKET
+      .div
+        button.filter-btn#filterBtn 
+          span
+            i.fa.fa-filter(aria-hidden='true')
     .nav-desktop.collapse.navbar-collapse
       ul.navbar-nav.mr-auto.nav-items
-        li.nav-item.active
+        li.nav-item
           a.nav-link(href='/', class={"white": idSection === 'home'})
-            | Inicio 
-        li.nav-item.active
-          a.nav-link(href='/products',class={"white": idSection === 'home'})
-            | Escaparate
-        li.nav-item.active
-          a.nav-link(href='/add-product',class={"white": idSection === 'home'})
-            | Añadir Producto
+            | Home 
+        li.nav-item
+          a.nav-link(href='/products',class={"white": idSection === 'home'}, class={"hide": idSection === 'home'} )
+            | Buy
+        li.nav-item
+          a.nav-link(href='/add-product',class={"white": idSection === 'home'} ,  class={"hide": idSection === 'home'})
+            | Sell 
       p
-        a(href='/login',class={"white": idSection === 'home'}) Acceder
+        a(href='/login',class={"white": idSection === 'home'}) Login
       .btn-group
         .profile-nav-bar
           .profile-photo-navbar
@@ -34,8 +34,8 @@ header
         button#dropdownBtn.dropdown-toggle.dropdown-toggle-split(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
           span.sr-only Toggle Dropdown
         .dropdown-menu
-          a.dropdown-item(href='/profile') Mi cuenta
-          a.dropdown-item(href='/logout') Salir
+          a.dropdown-item(href='/profile') My account
+          a.dropdown-item(href='/logout') Exit
   #wrapper
     #sidebar-wrapper
       ul.sidebar-nav
@@ -45,12 +45,14 @@ header
               img(src='http://lorempixel.com/50/50')
             .action-profile
               p
-                a(href='/login') Mi cuenta
+                a(href='/login') My account
         li
-          a(href='/') Inicio
+          a(href='/') Home
         li
-          a(href='/products') Escaparate
+          a(href='/products') Buy
+        li
+          a(href='/add-product') Sell
         li(class={'hide': idSection !== 'profile'})
-          a(href='/edit-profile') Editar Cuenta
+          a(href='/edit-profile') Edit 
         li
-          a(href='/logout') Salir
+          a(href='/logout') Exit

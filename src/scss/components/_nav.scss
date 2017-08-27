@@ -4,14 +4,38 @@
 nav {
   background: $first-bg-color;
   z-index: 1;
+  font-weight: bold;
   &.navbar {
     padding: 0 0.5rem;
   }
   button {
     color: #fff;
   }
+  a.nav-link:hover {
+    background-color: $bg-logo-span;
+  }
 }
 
+.container-nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & > * {
+    width: 33%;
+  } 
+  & > button {
+    text-align: left;
+  }
+}
+
+div.div {
+  text-align: right;
+  .filter-btn {
+    background-color: transparent;
+    border: none;
+  }
+}
 .profile-photo-navbar {
   & > img {
      border-radius: 50%;
