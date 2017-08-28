@@ -196,6 +196,7 @@ div.div {
   display: flex;
   justify-content: center; }
   .gallery .card-gallery {
+    position: relative;
     width: 45%;
     margin: 0.3rem;
     background: #fff;
@@ -231,6 +232,35 @@ div.div {
         border-radius: 50%; }
       .gallery .card-gallery .user-card p {
         font-size: 0.7rem; }
+
+.input-div {
+  display: none; }
+
+#btnEdit, #btnEditOk, #btnDeleteArticle {
+  position: absolute;
+  background: transparent;
+  border: none; }
+
+#btnEdit {
+  display: block;
+  top: 49%;
+  left: 84%; }
+
+#btnEditOk {
+  display: none;
+  top: 39%;
+  left: 72%; }
+
+#btnDeleteArticle {
+  display: none;
+  top: 39%;
+  left: 46%; }
+
+.position-input-toggle {
+  top: 39% !important; }
+
+.card-body input {
+  width: 100%; }
 
 @media (min-width: 768px) {
   .gallery .card-gallery {
@@ -757,6 +787,8 @@ footer {
     min-height: 9rem; }
 
 @media (min-width: 768px) {
+  main.index-main {
+    flex-direction: column; }
   .video-container {
     position: relative;
     flex-wrap: wrap;

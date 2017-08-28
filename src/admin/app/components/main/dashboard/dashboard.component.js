@@ -2,10 +2,15 @@
 (function () {
   'use strict'
   var dashboard = {
+    bindings: {
+      speakers: '<'
+    },
     templateUrl: 'admin/app/components/main/dashboard/dashboard.html',
-    controller: 'dashboardController',
-    controllerAs: 'vm'
+    controller: ['DataService', function (DataService) {
+      console.log('Hola from controller')
+    }]
   }
+
   angular
         .module('adminApp')
         .component('dashboard', dashboard)

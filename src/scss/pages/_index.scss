@@ -90,6 +90,9 @@
 }
 
 @media(min-width:768px) {
+  main.index-main {
+    flex-direction: column;
+  }
   .video-container {
     position: relative;
     flex-wrap: wrap;

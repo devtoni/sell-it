@@ -16,6 +16,7 @@
     justify-content: center;
 
   .card-gallery {
+    position: relative;
     width: 45%;
     margin: 0.3rem;
     background: #fff;
@@ -62,6 +63,41 @@
   }
 }
 
+.input-div {
+  display: none;
+}
+#btnEdit, #btnEditOk, #btnDeleteArticle {
+  position: absolute;
+  background: transparent;
+  border: none;
+}
+#btnEdit {
+  display: block;
+  top: 49%;
+  left: 84%;
+}
+
+#btnEditOk {
+  display: none;
+  top: 39%;
+  left: 72%;
+}
+
+#btnDeleteArticle {
+  display: none;
+  top: 39%;
+  left: 46%;
+}
+
+.position-input-toggle {
+  top: 39% !important;
+}
+
+.card-body {
+  input {
+    width: 100%;
+  }
+}
 @media(min-width:768px) {
   .gallery {
     .card-gallery {

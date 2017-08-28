@@ -56,6 +56,55 @@ $('#previewBtn').on('click', function () {
   $('#add-product-form').toggle()
 })
 
+/* delete article */
+
+$('.card-gallery').on('click', '#btnDeleteArticle', function (e) {
+  console.log('hola')
+  const id = $(this).data('id')
+  const url = `/api/profile/${id}`
+  const method = 'DELETE'
+  $.ajax({url, method})
+  .then(() => {
+    $(this).parent().remove()
+  })
+})
+
+/* edit article */
+
+$('.card-gallery').on('click', '#btnEdit', function (e) {
+  const btnDeleteArticle = $(this).parent().find('#btnDeleteArticle')
+  const pFromCard = $('.card-body > p')
+  const inputsHidden = $(this).parent().find('.input-div')
+  const btnEdit = $(this).parent().find('#btnEditOk')
+  $(this).toggleClass('position-input-toggle')
+  btnEdit.toggle()
+  pFromCard.toggle()
+  inputsHidden.toggle()
+  btnDeleteArticle.toggle()
+})
+
+$('.card-gallery').on('click', '#btnEditOk', function (e) {
+  const id = $(this).data('id')
+  const inputsText = $('.card-gallery').find('input[type=text]')
+  const inputTextValue = $.map(inputsText, input => input.value)
+  const [ price, title, description ] = inputTextValue
+  const url = `/api/profile/`
+  const method = 'PUT'
+  const data = { price, title, description, id}
+  $.ajax({url, method, data})
+  .then(() => {
+    const btnDeleteArticle = $('#btnDeleteArticle')
+    const pFromCard = $('.card-body > p')
+    const inputsHidden = $('.card-gallery').find('.input-div')
+    const btnEdit = $('#btnEditOk')
+    btnEdit.toggle()
+    pFromCard.toggle()
+    inputsHidden.toggle()
+    btnDeleteArticle.toggle()
+    window.location.reload()
+  })
+})
+
 $('.btn-edit').on('click', function () {
   return swal({
     type: 'info',
