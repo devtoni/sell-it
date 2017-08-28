@@ -1,8 +1,8 @@
 
-const getProductsList = require('../../../api/products/handlers/getProducts')
+const Product = require('../../../../models/Product')
 
 function getProducts (req, res) {
-  getProductsList()
+  Product.find()
   .then(productsList => {
     const categories = productsList
     .map((products) => products.category)
