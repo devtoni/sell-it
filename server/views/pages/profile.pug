@@ -3,16 +3,14 @@ extends ../layout
 block content
   .profile-page
     .container
-      .row.profil
-        .card.profile-card.hovercard
-          .cardheader
-            #map
-          .avatar
-            label(for='img-id')
-              img(alt='', src='http://lorempixel.com/100/100/people/9/')
+      .row
+        .card-profile
+          #map.map-div
+          figure 
+            img.profile-photo(alt='profile-photo', src='http://lorempixel.com/100/100/people/9/')
           .info
             .title
-              a(target='_blank', href='', contenteditable) Nombre de usuario
+              p Nombre Usuario
               span#edit-span
                 i.fa.fa-pencil(aria-hidden='true')
             i.fa.fa-star(aria-hidden='true')
@@ -51,7 +49,7 @@ block content
                     p=product.price
                     .input-div
                       p Edit price
-                      input.priceEdited(type='text')
+                      input.priceEdited(type='number')
                     p=product.title
                     .input-div
                       p Edit title

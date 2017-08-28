@@ -4,8 +4,6 @@
 }
 
 .add-product-page {
-  position: relative;
-  height: 100%;
   main {
     padding: 1rem 0;
     .add-product {
@@ -27,15 +25,15 @@
     }
     .preview-button-box {
       width: 90%;
-      margin:  0 auto;
-       text-align: right;
+      margin: 0 auto;
+      text-align: right;
     }
     .add-product_list {
       padding: 0;
       text-align: left;
-      & > li {
+      &>li {
         margin-top: 1rem;
-        & > p:first-child {
+        &>p:first-child {
           width: 90%;
           margin: 0 auto;
         }
@@ -43,11 +41,12 @@
           font-weight: bold;
           font-size: 0.9rem;
         }
-        & > div {
+        &>div {
           max-width: 600px;
           width: 90%;
-          margin: 0 auto; 
-          & input, & textarea {
+          margin: 0 auto;
+          & input,
+          & textarea {
             background: transparent;
             border: none;
             border-bottom: 1px solid black;
@@ -70,10 +69,18 @@
     }
   }
 }
-
+form.add-product-form {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 500px;
+  ul {
+    list-style: none;
+  }
+}
 .card-image-preview {
   height: 150px;
 }
+
 @media(min-width:768px) {
   .preview-button-box {
     display: none;
@@ -81,12 +88,6 @@
   main {
     display: flex;
     justify-content: center;
-    form {
-      width: 40%;
-      ul {
-        list-style: none;
-      }
-    }
     .preview-data {
       width: 50%;
       display: flex;
