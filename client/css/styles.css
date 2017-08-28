@@ -287,7 +287,6 @@ div.div {
 .card {
   background-color: #F7F7F7;
   /* just in case there no content*/
-  padding: 20px 25px 30px;
   margin: 0 auto 25px;
   margin-top: 50px;
   /* shadows and rounded borders */
@@ -714,6 +713,10 @@ footer {
   max-width: 600px;
   margin: 0 auto; }
 
+#map {
+  width: 100%;
+  height: 400px; }
+
 /* pages */
 .video-container {
   margin-right: 0;
@@ -1130,15 +1133,9 @@ dashboard {
 .position-absolute-footer-pug {
   position: absolute; }
 
-.map {
-  height: 200px;
-  width: 100%;
-  background-image: url("../../img/map.jpg"); }
-
 .profile {
   justify-content: center; }
   .profile .card {
-    padding-top: 20px;
     margin: 10px 0 20px 0;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -1179,20 +1176,16 @@ dashboard {
     font-size: 12px;
     color: #999999; }
   .profile .card .card-body {
-    padding: 0 20px;
     margin-top: 20px; }
   .profile .card .card-media {
-    padding: 0 20px;
     margin: 0 -14px; }
   .profile .card .card-media img {
     max-width: 100%;
     max-height: 100%; }
   .profile .card .card-actions {
     min-height: 30px;
-    padding: 0 20px 20px 20px;
     margin: 20px 0 0 0; }
   .profile .card .card-comments {
-    padding: 20px;
     margin: 0;
     background-color: #f8f8f8; }
   .profile .card .card-comments .comments-collapse-toggle {
@@ -1265,7 +1258,6 @@ dashboard {
     left: 0;
     display: inline-block;
     width: 100%;
-    padding: 10px 20px;
     line-height: 29px;
     text-align: center;
     -webkit-box-sizing: border-box;
@@ -1277,10 +1269,11 @@ dashboard {
     overflow: hidden;
     text-align: center; }
   .profile .card.hovercard .cardheader {
-    background: url("../../img/map.jpg");
     background-size: cover;
     min-height: 200px;
-    max-height: 300px; }
+    max-height: 300px;
+    min-width: 100%;
+    max-width: 300px; }
   .profile .card.hovercard .avatar {
     position: relative;
     top: -50px;
@@ -1375,32 +1368,6 @@ span#edit-span {
     color: #4B4C63; }
   a.btn-search {
     display: none; }
-  .video-box {
-    display: block;
-    max-height: 600px; }
-  .header {
-    background-image: none;
-    margin-bottom: 1rem; }
-    .header video {
-      min-height: 400px;
-      max-height: 500px;
-      display: inline-block;
-      opacity: 0.9;
-      vertical-align: baseline;
-      object-fit: cover;
-      width: 100%;
-      margin-top: -100px; }
-    .header .hero-text {
-      text-align: center;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white; }
-      .header .hero-text h1 {
-        font-size: 3rem; }
-  .container.video {
-    max-height: 500px; }
   .login-form-box {
     min-height: 600px;
     align-items: center; }

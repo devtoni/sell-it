@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body ng-app="adminApp">
+<body ng-app="adminApp" ng-cloak>
         <div class="admin-site">
             <root></root>
         </div>
@@ -35,15 +35,13 @@
   <script src="admin/app/root.component.js"></script>
   <!-- SERVICES --> 
   <script src="admin/app/services/DataService.js"></script>
+  <script src="admin/app/services/ServiceChart.js"></script>
   <!-- ROOT -->
   <script src="admin/app/common/header/header.controller.js"></script>
   <script src="admin/app/common/header/header.component.js"></script>
   <!-- ROOT -->
   <script src="admin/app/common/sidenav/sidenav.controller.js"></script>
   <script src="admin/app/common/sidenav/sidenav.component.js"></script>
-   <!-- ROOT -->
-   <!-- <script src="app/components/main/main.controller.js"></script>
-   <script src="app/components/main/main.component.js"></script> -->
    <!-- ROOT -->
    <script src="admin/app/components/main/administration/administration.controller.js"></script>
    <script src="admin/app/components/main/administration/administration.component.js"></script>
@@ -54,7 +52,7 @@
    <script src="admin/app/components/main/configuration/configuration.controller.js"></script>
    <script src="admin/app/components/main/configuration/configuration.component.js"></script>
    <!-- ROOT -->
-
+   <script src="admin/app/components/main/dashboard/dashboard.controller.js"></script>
    <script src="admin/app/components/main/dashboard/dashboard.component.js"></script>
    <!-- ROOT -->
    <script src="admin/app/components/main/dashboard/total-products/total-products.controller.js"></script>

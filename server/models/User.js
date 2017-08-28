@@ -16,13 +16,6 @@ const UserSchema = new mongoose.Schema({
     type: [Number],
     index: '2d'
   },
-  // products:
-  // [
-  //   { type: mongoose.Schema.Types.ObjectId,
-  //     ref: 'Product',
-  //     required: true
-  //   }
-  // ],
   admin: {
     type: Boolean,
     default: false
@@ -30,3 +23,11 @@ const UserSchema = new mongoose.Schema({
 }, { collection })
 
 module.exports = mongoose.model('User', UserSchema)
+
+  // products:
+  // [
+  //   { type: mongoose.Schema.Types.ObjectId,
+  //     ref: 'Product',
+  //     required: true
+  //   }
+  // ],

@@ -1,3 +1,25 @@
+
+/* geolocalization */
+
+/* register event */
+var getPosition = function (options) {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject, options)
+  })
+}
+
+getPosition()
+.then(position => {
+  console.log(position)
+  var map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 16)
+
+  L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map)
+})
+
 $('#menu-toggle').click(function (e) {
   e.preventDefault()
   $('#wrapper').toggleClass('toggled')
@@ -105,13 +127,6 @@ $('.card-gallery').on('click', '#btnEditOk', function (e) {
   })
 })
 
-/* register event */
-var getPosition = function (options) {
-  return new Promise(function (resolve, reject) {
-    navigator.geolocation.getCurrentPosition(resolve, reject, options)
-  })
-}
-
 $('#registerForm').on('submit', function (e) {
   e.preventDefault()
   getPosition()
@@ -126,10 +141,15 @@ $('#registerForm').on('submit', function (e) {
     const data = Object.assign({}, position, formProperties)
     return data
   })
+
   .then((data) => {
     const url = '/register/'
     const method = 'POST'
     $.ajax({url, method, data})
+  })
+  .then((state) => {
+    console.log(state)
+    window.location.href = '/login'
   })
   .catch((err) => {
     console.error(err.message)

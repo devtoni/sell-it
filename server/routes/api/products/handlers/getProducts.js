@@ -1,7 +1,9 @@
 const Products = require('../../../../models/Product')
 
 function getProducts (req, res) {
-  return Products.find()
+  Products.find()
+  .then((products) => res.json(products))
+  .catch((error) => res.send(error))
 }
 
 module.exports = getProducts

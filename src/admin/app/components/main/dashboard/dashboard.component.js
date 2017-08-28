@@ -3,12 +3,11 @@
   'use strict'
   var dashboard = {
     bindings: {
-      speakers: '<'
+      data: '<'
     },
     templateUrl: 'admin/app/components/main/dashboard/dashboard.html',
-    controller: ['DataService', function (DataService) {
-      console.log('Hola from controller')
-    }]
+    controller: 'dashboardController',
+    controllerAs: 'vm'
   }
 
   angular
