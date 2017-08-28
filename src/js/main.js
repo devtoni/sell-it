@@ -105,6 +105,37 @@ $('.card-gallery').on('click', '#btnEditOk', function (e) {
   })
 })
 
+/* register event */
+var getPosition = function (options) {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject, options)
+  })
+}
+
+$('#registerForm').on('submit', function (e) {
+  e.preventDefault()
+  getPosition()
+  .then((position) => {
+    return {lat: position.coords.latitude, lon: position.coords.longitude }
+  })
+  .then((position) => {
+    const formProperties = $(this).serializeArray().reduce((acc, input) => {
+      acc[input.name] = input.value
+      return acc
+    }, {})
+    const data = Object.assign({}, position, formProperties)
+    return data
+  })
+  .then((data) => {
+    const url = '/register/'
+    const method = 'POST'
+    $.ajax({url, method, data})
+  })
+  .catch((err) => {
+    console.error(err.message)
+  })
+})
+
 $('.btn-edit').on('click', function () {
   return swal({
     type: 'info',

@@ -4,10 +4,10 @@ block content
   .register-page
     .container
       .card.card-container
-        form#sub-reg.form-signin(target="/login")
+        form#registerForm.form-signin()
           span#reauth-email.reauth-email
-          input#inputEmail.form-control(type='email', placeholder='Usuario', required='', autofocus='')
-          input#inputPassword.form-control(type='password', placeholder='Contraseña', required='')
+          input#inputEmail.form-control(type='email', placeholder='Usuario', required='', autofocus='', name="email")
+          input#inputPassword.form-control(type='password', placeholder='Contraseña', required='', name="password")
           button.btn.btn-lg.btn-success.btn-block.btn-signin.custom-btn() Registrate
         // /form
 

@@ -21,6 +21,7 @@
     "angular-ui-router": "0.4.2",
     "angular-route": "^1.6.6",
     "chart.js": "^2.6.0",
-    "sweetalert2": "^6.6.9"
+    "sweetalert2": "^6.6.9",
+    "leaflet": "^1.2.0"
   }
 }
