@@ -25,22 +25,8 @@ $('#menu-toggle').click(function (e) {
   $('#wrapper').toggleClass('toggled')
 })
 
-$('#sub').on('submit', (e) => {
-  e.preventDefault()
-  window.location.href = '/products'
-})
-
 $('#filterBtn').on('click', function () {
   $('.sidebar-products').toggle()
-})
-
-$('#sub-log').on('submit', (e) => {
-  e.preventDefault()
-  window.location.href = '/profile'
-})
-$('#sub-reg').on('submit', (e) => {
-  e.preventDefault()
-  window.location.href = '/login'
 })
 
 /* preview card */

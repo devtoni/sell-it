@@ -4,10 +4,10 @@ block content
   .login
     .container
       .card-form
-        form#sub-log.form-signin(target="/profile")
+        form#sub-log.form-signin(action="/login", method="POST")
           span#reauth-email.reauth-email
-          input#inputEmail.form-control(type='email', placeholder='Usuario', required='', autofocus='')
-          input#inputPassword.form-control(type='password', placeholder='Contraseña', required='')
+          input#inputEmail.form-control(type='email', placeholder='Usuario', required='', autofocus='', name="email")
+          input#inputPassword.form-control(type='password', placeholder='Contraseña', required='', name="password")
           #remember.checkbox
             label
               input(type='checkbox', value='remember-me')
