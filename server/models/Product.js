@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
-
 const collection = 'products'
 const Schema = mongoose.Schema
+const ObjectId = mongoose.Schema.Types.ObjectId
 
 var ProductSchema = new Schema({
+
   title: {
     type: String,
     required: true
@@ -32,6 +33,10 @@ var ProductSchema = new Schema({
   createdAt: {
     type: Number,
     default: Date.now()
+  },
+  createdBy: {
+    type: ObjectId,
+    ref: 'User'
   }
 }, {collection})
 

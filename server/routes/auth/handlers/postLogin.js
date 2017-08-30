@@ -2,8 +2,8 @@ const User = require('../../../models/User')
 const jwt = require('jsonwebtoken')
 const SECRET = process.env.SECRET || 'supersecret'
 function postLogin (req, res) {
-  console.log(`${req.body.email} && ${req.body.password}`)
-  User.findOne({ email: req.body.email })
+  const {email} = req.body
+  User.findOne({ email })
   .then(user => {
     if (!user) {
       res.send({
@@ -12,17 +12,10 @@ function postLogin (req, res) {
       })
     } else {
       // Check if password matches
-      user.comparePassword(req.body.password, function (err, isMatch) {
+      const {password} = req.body
+      user.comparePassword(password, function (err, isMatch) {
         if (isMatch && !err) {
-          // Create token if the password matched and no error was thrown
-          var token = jwt.sign(user, SECRET, {
-            expiresIn: '2 days'
-          })
-          res.json({
-            success: true,
-            message: 'Authentication successfull',
-            token
-          })
+          res.redirect('/profile')
         } else {
           res.send({
             success: false,
@@ -36,3 +29,13 @@ function postLogin (req, res) {
 }
 
 module.exports = postLogin
+
+ // Create token if the password matched and no error was thrown
+//  var token = jwt.sign(user, 'supersecret', {
+//   expiresIn: '24h'
+// })
+//           // res.json({
+          //   success: true,
+          //   message: 'Authentication successfull',
+          //   token: 'JWT ' + token
+          // })

@@ -15,8 +15,9 @@ block content
                 .list-group
                   p Categorías
                   select(name='', id='')
-                    each category in categories
-                      option(value='item1')=category
+                    if (categories) 
+                      each category in categories
+                        option(value='item1')=category
                 .price-range_selector
                   p Cuánto quieres pagar?
                   .wrapper-price
@@ -89,17 +90,18 @@ block content
                 .gallery-products
                   .gallery
                     // #begin card
-                    for product, i in productsList
-                      .card-gallery
-                        a(href='/product-detail')
-                          img.card-img-top(src='http://lorempixel.com/400/200')
-                        .card-body
-                          p=product.price
-                          p=product.title
-                          p.card-text=product.description            
-                        a(href='/user-id/profile')
-                          .user-card
-                            .img-user-card
-                              img.img-circle(src='http://lorempixel.com/50/50')
-                            .user-info
-                              p User
+                    if (productsList)
+                      for product, i in productsList
+                        .card-gallery
+                          a(href=`/product/${product._id}`)
+                            img.card-img-top(src='http://lorempixel.com/400/200')
+                          .card-body
+                            p=product.price
+                            p=product.title
+                            p.card-text=product.description            
+                            .user-card
+                              .img-user-card
+                                img.img-circle(src='http://lorempixel.com/50/50')
+                              .user-info
+                                p=product.createdBy.username
+                                p=product.createdBy.products.length + ' products'

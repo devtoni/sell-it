@@ -1,8 +1,7 @@
 const express = require('express')
 const router = express.Router()
+const updateProfile = require('./handlers/updateProfile')
 
-const updateUser = require('./handlers/updateUser')
-
-router.put('/api/user/:id', updateUser)
+router.put('/api/user/edit/', updateProfile)
 
 module.exports = router

@@ -1,42 +1,84 @@
-.card-profile {
-  background: #fff;
-  padding-bottom: 1rem;
-  width: 100%;
-  margin: 0 auto;
-  max-width: 960px;
-  text-align: center;
-  margin-bottom: 2rem;
-  -webkit-border-radius: 2px;
-  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  & > figure {
-    img {
-      border-radius: 50%;
-      width: 100%;
-      max-width: 120px;
+@import "../base/_colors";
+
+.box-profile {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  &>div {
+    padding: 2rem 0;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  figure>img {
+    border: 2px solid white;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+    -moz-box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+  }
+  i {
+    font-size: 1.5rem;
+  }
+  div.sidebar {
+    display: none;
+  }
+  .statistics-values-mobile {
+    display: flex;
+    margin-top: 1rem;
+    &>div {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
   }
-  .info {
-    padding: 1rem;
-  }
-  .bottom {
-    display: flex;
-    justify-content: center;
-    & > div {
-      flex: 1;
+  .gallery-products {
+    h5 {
+      font-weight: bold;
     }
   }
 }
-
-
-
-
-
-
 
 @media(min-width:768px) {
-  .card-profile {
-    
+  .box-profile {
+    flex-direction: row;
+    & > div {
+      width: auto;
+    }
+    .left-box {
+      flex: 1;
+      margin: 2rem 1rem;
+      padding: 0;
+    }
+    .right-box {
+      padding: 0;
+      margin: 2rem 1rem;
+      flex: 3;
+      align-self: baseline;
+    }
+    div.sidebar {
+      margin-top: 1rem;
+      display: block;
+      ul {
+        padding: 0;
+        & > li {
+          list-style: none;
+          padding: 0;
+          & > a {
+               width: 100%;
+              background-color: $bg-body-color;
+              display: inline-block;
+              padding: 1rem;
+              color: black !important;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
   }
-}

@@ -1,16 +1,30 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
-const collection = 'user'
+const uniqueValidator = require('mongoose-unique-validator')
+const ObjectId = mongoose.Schema.Types.ObjectId
 
-const UserSchema = new mongoose.Schema({
+const collection = 'user'
+const Schema = mongoose.Schema
+
+const UserSchema = new Schema({
   email: {
     type: String,
     required: true,
+    index: true,
+    uniqueCaseInsensitive: true,
     unique: true
   },
   password: {
     type: String,
     required: true
+  },
+  username: {
+    type: String,
+    default: 'Somebody'
+  },
+  avatarUrl: {
+    type: String,
+    required: false
   },
   coords: {
     type: [Number],
@@ -19,10 +33,26 @@ const UserSchema = new mongoose.Schema({
   admin: {
     type: Boolean,
     default: false
-  }
+  },
+  gender: {
+    type: String,
+    required: false
+  },
+  age: {
+    type: Number,
+    required: false
+  },
+  products: [
+    {
+      type: ObjectId,
+      ref: 'Product'
+    }
+  ]
 }, { collection })
 
-UserSchema.pre('save', function (next) {
+UserSchema.pre('save', encryptPassword)
+
+function encryptPassword (next) {
   const user = this
   if (this.isModified('password') || this.isNew) {
     bcrypt.genSalt(10, function (err, salt) {
@@ -40,7 +70,7 @@ UserSchema.pre('save', function (next) {
   } else {
     return next()
   }
-})
+}
 
 // Compare password input to password saved in database
 UserSchema.methods.comparePassword = function (pw, cb) {
@@ -52,12 +82,6 @@ UserSchema.methods.comparePassword = function (pw, cb) {
   })
 }
 
-module.exports = mongoose.model('User', UserSchema)
+UserSchema.plugin(uniqueValidator)
 
-  // products:
-  // [
-  //   { type: mongoose.Schema.Types.ObjectId,
-  //     ref: 'Product',
-  //     required: true
-  //   }
-  // ],
+module.exports = mongoose.model('User', UserSchema)

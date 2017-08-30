@@ -4,12 +4,9 @@ block content
   .register-page
     .container
       .card-form
-        form#registerForm.form-signin()
-          span#reauth-email.reauth-email
-          input#inputEmail.form-control(type='email', placeholder='Usuario', required='', autofocus='', name="email")
-          input#inputPassword.form-control(type='password', placeholder='Contraseña', required='', name="password")
-          button.btn.btn-lg.btn-success.btn-block.btn-signin.custom-btn() Registrate
-        // /form
-
-        p Ya tienes cuenta? 
+        form#registerForm.form-signin(method="POST", action="/register")
+          input#inputEmail.form-control(type='email', required, name="email", placeholder="email")
+          input#inputPassword.form-control(type='password', placeholder='password', required, name="password")
+          button.btn.btn-lg.btn-success.btn-block.btn-signin.custom-btn() Sign Up
+        p Have you already an account?
           a(href='/login') Login

@@ -30,7 +30,7 @@ header
       .btn-group
         .profile-nav-bar
           .profile-photo-navbar
-            img(src='http://lorempixel.com/30/30')
+            img(src='http://via.placeholder.com/30x30')
         button#dropdownBtn.dropdown-toggle.dropdown-toggle-split(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
           span.sr-only Toggle Dropdown
         .dropdown-menu
@@ -42,17 +42,17 @@ header
         li
           .profile-side-bar
             .profile-photo
-              img(src='http://lorempixel.com/50/50')
+              img(src='http://via.placeholder.com/50x50')
             .action-profile
               p
                 a(href='/login') My account
-        li
-          a(href='/') Home
+        li(class={"hide": idSection !== 'profile'})
+          a(href='/edit-profile') Edit Account
         li
           a(href='/products') Buy
-        li
+        li(class={"hide": idSection !== 'profile'})
           a(href='/add-product') Sell
-        li(class={'hide': idSection !== 'profile'})
-          a(href='/edit-profile') Edit 
         li
           a(href='/logout') Exit
+
+

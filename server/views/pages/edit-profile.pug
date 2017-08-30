@@ -1,32 +1,37 @@
 extends ../layout
 
 block content
-  .perfil
-    .container(style='padding-top: 60px;')
+    .container()
       h1.page-header Edit Profile
       .row
-        // left column
-        .col-md-4.col-sm-6.col-xs-12.avatar
-          .text-center
-            img(src='/img/avatar.png', alt='avatar')
-            h6 Upload a different photo...
-            input.text-center.center-block.well.well-sm.upload-input(type='file')
-        // edit form column
-        .col-md-8.col-sm-6.col-xs-12.personal-info
-          h3 Personal info
-          form.form-horizontal(role='form')
+        form.edit-profile-form()
+          .image-div-form
             .form-group
-              label.col-lg-3.control-label Username:
-                input.form-control(value='jkhkjh', type='text')
+              img(src='/img/avatar.png', alt='avatar', name="imgUrl")
+              h6 Upload a different photo...
+              input(type='file')
+          .options-div-form
             .form-group
-              label.col-md-3.control-label Contraseña:
-                input.form-control(value='11111122333', type='password')
+              label.control-label Username:
+                input.form-control(value='', type='text', name="username")
             .form-group
-               label.col-md-3.control-label Repite contraseña:
-                input.form-control(value='11111122333', type='password')
+              label.control-label Where do you live:
+                input.form-control(value='', type='text', name="city")
             .form-group
-              label.col-md-3.control-label
-              .col-md-8
-                input.btn.btn-primary#save-changes(value='Guardar Cambios', type='button')
-                span
+              label.control-label Gender:
+                input.form-control(value='', type='text', name="gender")
+            .form-group
+              label.control-label Age:
+                input.form-control(value='', type='number', name="age")
+            .form-group
+              label.control-label
+                input.btn.btn-primary#save-changes(value='Save', type='submit')
                 input.btn.btn-default(value='Cancel', type='reset')
+
+
+//-             .form-group
+              label.col-md-3.control-label Password:
+                input.form-control(value='11111122333', type='password')
+            .form-group
+               label.col-md-3.control-label Password:
+                input.form-control(value='11111122333', type='password')

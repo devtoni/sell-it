@@ -1,19 +1,23 @@
 const Product = require('../../../../models/Product')
+const User = require('../../../../models/User')
 
 function addProduct (req, res) {
-  const { title, description, category, price} = req.body
-  let imgUrl = 'img'
-  console.log(typeof category)
+  const { title, description, category, price } = req.body
+  const imgUrl = 'img'
   const product = new Product({
     title,
     description,
     price,
     imgUrl,
-    category: (typeof req.body.category === 'undefined') ? [] : req.body.category.split(',')
+    category,
+    createdBy: '59a725515cd3af1348efc890'
   })
+
   product.save()
-  .then(() => {
-    console.log('guardado')
+  .then((product) => {
+    User
+       .findByIdAndUpdate('59a725515cd3af1348efc890', { $push: {products: product._id} })
+       .then((user) => res.redirect('/products'))
   })
   .catch((e) => console.log(e))
 }

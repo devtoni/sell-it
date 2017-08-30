@@ -1,14 +1,13 @@
 const User = require('../../../models/User')
 
 function postRegister (req, res) {
-  const { lat, lon, email, password } = req.body
-  const coords = [lat, lon]
-  const user = new User({ email, password, coords })
+  const { email, password } = req.body
+  const user = new User({ email, password })
   user.save()
   .then((data) => {
-    res.send(`user ${email} created succesfully!`)
+    res.redirect('/login')
   })
-  .catch((e) => res.send())
+  .catch((e) => res.send(e))
 }
 
 module.exports = postRegister

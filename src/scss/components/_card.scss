@@ -84,30 +84,37 @@
   display: none;
 }
 #btnEdit, #btnEditOk, #btnDeleteArticle {
+  cursor: pointer;
   position: absolute;
-  background: transparent;
+  background: $bg-logo-span;
   border: none;
 }
 #btnEdit {
+  background: none;
   display: block;
-  top: 49%;
-  left: 84%;
+  top: 61%;
+  left: 72%;
 }
 
 #btnEditOk {
   display: none;
-  top: 39%;
+  top: 2% !important;
   left: 72%;
 }
 
 #btnDeleteArticle {
   display: none;
-  top: 39%;
-  left: 46%;
+  top: 2% !important;
+  left: 38%;
+}
+
+#btnEditOk:hover, #btnDeleteArticle:hover {
+  color: white;
+  background: $nav-color;
 }
 
 .position-input-toggle {
-  top: 39% !important;
+  top: 43% !important;
 }
 
 .card-body {

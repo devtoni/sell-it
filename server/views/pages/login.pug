@@ -6,15 +6,12 @@ block content
       .card-form
         form#sub-log.form-signin(action="/login", method="POST")
           span#reauth-email.reauth-email
-          input#inputEmail.form-control(type='email', placeholder='Usuario', required='', autofocus='', name="email")
-          input#inputPassword.form-control(type='password', placeholder='Contraseña', required='', name="password")
-          #remember.checkbox
-            label
-              input(type='checkbox', value='remember-me')
-              |  Recordarme
-          button.btn.btn-lg.btn-success.btn-block.btn-signin.custom-btn(type='submit', target="/profile") Iniciar Sesión
+          input#inputEmail.form-control(type='email', placeholder='email', required='', autofocus='', name="email")
+          input#inputPassword.form-control(type='password', placeholder='Password', required='', name="password")
+          button.btn.btn-lg.btn-success.btn-block.btn-signin.custom-btn(type='submit', target="/profile") Sign In
         // /form
         a.forgot-password(href='#')
-          | Aún no tienes cuenta? 
-          a(href='/register') Regístrate ahora
-        a(href='/panel/') Admin
+        p Not registered yet? 
+          a(href='/register') Register
+        a(href='/panel/') 
+          | Admin

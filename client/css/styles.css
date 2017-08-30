@@ -8,6 +8,9 @@ p {
 .fa.fa-heart {
   color: red; }
 
+.btn {
+  outline: none !important; }
+
 body {
   font-family: 'Helvetica-bold', sans-serif; }
 
@@ -255,27 +258,33 @@ div.div {
   display: none; }
 
 #btnEdit, #btnEditOk, #btnDeleteArticle {
+  cursor: pointer;
   position: absolute;
-  background: transparent;
+  background: #F58454;
   border: none; }
 
 #btnEdit {
+  background: none;
   display: block;
-  top: 49%;
-  left: 84%; }
+  top: 61%;
+  left: 72%; }
 
 #btnEditOk {
   display: none;
-  top: 39%;
+  top: 2% !important;
   left: 72%; }
 
 #btnDeleteArticle {
   display: none;
-  top: 39%;
-  left: 46%; }
+  top: 2% !important;
+  left: 38%; }
+
+#btnEditOk:hover, #btnDeleteArticle:hover {
+  color: white;
+  background: #4C4C4C; }
 
 .position-input-toggle {
-  top: 39% !important; }
+  top: 43% !important; }
 
 .card-body input {
   width: 100%; }
@@ -1110,29 +1119,91 @@ dashboard {
   .chat-box {
     flex-direction: row; } }
 
-.card-profile {
-  background: #fff;
-  padding-bottom: 1rem;
-  width: 100%;
-  margin: 0 auto;
-  max-width: 960px;
-  text-align: center;
-  margin-bottom: 2rem;
-  -webkit-border-radius: 2px;
-  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); }
-  .card-profile > figure img {
-    border-radius: 50%;
-    width: 100%;
-    max-width: 120px; }
-  .card-profile .info {
-    padding: 1rem; }
-  .card-profile .bottom {
+.box-profile {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+  .box-profile > div {
+    padding: 2rem 0;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center; }
+  .box-profile figure > img {
+    border: 2px solid white;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+    -moz-box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4); }
+  .box-profile i {
+    font-size: 1.5rem; }
+  .box-profile div.sidebar {
+    display: none; }
+  .box-profile .statistics-values-mobile {
     display: flex;
-    justify-content: center; }
-    .card-profile .bottom > div {
-      flex: 1; }
+    margin-top: 1rem; }
+    .box-profile .statistics-values-mobile > div {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+  .box-profile .gallery-products h5 {
+    font-weight: bold; }
+
+@media (min-width: 768px) {
+  .box-profile {
+    flex-direction: row; }
+    .box-profile > div {
+      width: auto; }
+    .box-profile .left-box {
+      flex: 1;
+      margin: 2rem 1rem;
+      padding: 0; }
+    .box-profile .right-box {
+      padding: 0;
+      margin: 2rem 1rem;
+      flex: 3;
+      align-self: baseline; }
+    .box-profile div.sidebar {
+      margin-top: 1rem;
+      display: block; }
+      .box-profile div.sidebar ul {
+        padding: 0; }
+        .box-profile div.sidebar ul > li {
+          list-style: none;
+          padding: 0; }
+          .box-profile div.sidebar ul > li > a {
+            width: 100%;
+            background-color: #F5F5F5;
+            display: inline-block;
+            padding: 1rem;
+            color: black !important;
+            text-decoration: none; } }
+
+.edit-profile-form {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .edit-profile-form > * {
+    width: 100%; }
+  .edit-profile-form label {
+    width: 100%; }
+  .edit-profile-form input {
+    width: 100%; }
+
+@media (min-width: 768px) {
+  .edit-profile-form {
+    flex-direction: row; }
+  .image-div-form {
+    align-self: baseline; }
+    .image-div-form .form-group {
+      width: 90%; } }
 
 .dropdown-menu a.dropdown-item {
   color: #4B4C63; }
@@ -1148,16 +1219,6 @@ dashboard {
   position: relative;
   height: 100%; }
 
-.container.video {
-  max-width: 100%; }
-
-.home, .login, .perfil, .register, .products {
-  position: relative;
-  height: 100%; }
-
-.home {
-  height: auto; }
-
 .btn-add {
   background: #20C3B3;
   position: fixed;
@@ -1172,20 +1233,11 @@ dashboard {
   .btn-add a > i {
     font-size: 1.2rem; }
 
-.perfil footer {
-  position: inherit; }
-
 .gallery-profile {
   justify-content: center; }
 
 .position-absolute-footer-pug {
   position: absolute; }
-
-.btn {
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  line-height: 18px; }
 
 #dropdownBtn {
   background: transparent;
