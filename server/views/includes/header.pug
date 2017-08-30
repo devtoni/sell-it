@@ -25,17 +25,19 @@ header
         li.nav-item
           a.nav-link(href='/add-product',class={"white": idSection === 'home'} ,  class={"hide": idSection === 'home'})
             | Sell 
-      p
-        a(href='/login',class={"white": idSection === 'home'}) Login
+      if (!userLog)
+        p
+          a(href=`/login`,class={"white": idSection === 'home'}) Login
       .btn-group
         .profile-nav-bar
           .profile-photo-navbar
             img(src='http://via.placeholder.com/30x30')
         button#dropdownBtn.dropdown-toggle.dropdown-toggle-split(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
           span.sr-only Toggle Dropdown
-        .dropdown-menu
-          a.dropdown-item(href='/profile') My account
-          a.dropdown-item(href='/logout') Exit
+        if (userLog)
+          .dropdown-menu
+            a.dropdown-item(href='/profile/${user._id}') My account
+            a.dropdown-item(href='/logout') Exit
   #wrapper
     #sidebar-wrapper
       ul.sidebar-nav
@@ -44,8 +46,12 @@ header
             .profile-photo
               img(src='http://via.placeholder.com/50x50')
             .action-profile
-              p
-                a(href='/login') My account
+              if (userLog)
+                p
+                  a(href=`/profile/${userLog._id}`) My account
+              else 
+                p
+                  a(href=`/login`) Login
         li(class={"hide": idSection !== 'profile'})
           a(href='/edit-profile') Edit Account
         li

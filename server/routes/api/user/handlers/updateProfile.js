@@ -12,7 +12,7 @@ var options = {
 function updateProfile (req, res) {
   const updateOptions = {}
   const { username, city, gender, age} = req.body
-  const id = '59a725515cd3af1348efc890"'
+  const id = '59a72f5ebc2bb42df4448e16'
   if (username) updateOptions['username'] = username
   if (gender) updateOptions['gender'] = gender
   if (age) updateOptions['age'] = age
@@ -27,7 +27,6 @@ function updateProfile (req, res) {
     })
     .then((coords) => {
       updateOptions['coords'] = coords
-      console.log(updateOptions)
       User
       .findByIdAndUpdate(id, updateOptions)
       .then(() => res.send('Todo Ok'))
@@ -42,3 +41,5 @@ function updateProfile (req, res) {
 }
 
 module.exports = updateProfile
+
+// user1 59a72f5ebc2bb42df4448e16

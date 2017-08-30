@@ -1,7 +1,8 @@
 const User = require('../../../../models/User')
 
 function getProfile (req, res) {
-  User.findById('59a725515cd3af1348efc890')
+  const {id} = req.params
+  User.findById(id)
   .populate('products')
   .then((user) => {
     res.render('pages/profile', { idSection: 'profile', user, footerPosition: '' })
@@ -10,3 +11,5 @@ function getProfile (req, res) {
 }
 
 module.exports = getProfile
+
+// user1 59a72f5ebc2bb42df4448e16

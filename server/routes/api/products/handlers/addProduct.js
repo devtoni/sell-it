@@ -10,16 +10,18 @@ function addProduct (req, res) {
     price,
     imgUrl,
     category,
-    createdBy: '59a725515cd3af1348efc890'
+    createdBy: '59a72f5ebc2bb42df4448e16'
   })
 
   product.save()
   .then((product) => {
     User
-       .findByIdAndUpdate('59a725515cd3af1348efc890', { $push: {products: product._id} })
+       .findByIdAndUpdate('59a72f5ebc2bb42df4448e16', { $push: {products: product._id} })
        .then((user) => res.redirect('/products'))
   })
   .catch((e) => console.log(e))
 }
 
 module.exports = addProduct
+
+// user 1: 59a72f5ebc2bb42df4448e16

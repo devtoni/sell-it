@@ -15,7 +15,7 @@ function postLogin (req, res) {
       const {password} = req.body
       user.comparePassword(password, function (err, isMatch) {
         if (isMatch && !err) {
-          res.redirect('/profile')
+          res.redirect(`/profile/${user._id}`)
         } else {
           res.send({
             success: false,

@@ -8,22 +8,22 @@ block content
           .image-product-detail-box
           .content-detail
             .product-content-detail
-              h4 80.000.000€
-              h6 Casa en buen estado. 
-              p Necesita alguna reforma pero se puede vivir bien.
-              p 28 de Noviembre de 1600
+              h4=product.price + ' €'
+              h6=product.title
+              p=product.description
             .user-location-detail-product
               p
                 i.fa.fa-map-marker(aria-hidden='true')
-                |  Neverland
+                |  product.createdBy.city
+              p=`Created: ${moment(product.createdAt).format('DD-MM-YYYY')}`
             .user-detail
             .user-card
               .img-user-card
                 img.img-circle(src='/img/trolface.jpg')
               .user-info
-                p Rich Man
+                p=product.createdBy.username
             .chat-product-detail-btn
-              a(href="/chat") Chat
+              a(href=`/chat/${product.createdBy._id}`) Chat
 
 
 

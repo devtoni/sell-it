@@ -3,6 +3,7 @@ const app = express()
 const path = require('path')
 const bodyParser = require('body-parser')
 const logger = require('morgan')
+const moment = require('moment')
 
 /* RENDER VIEWS */
 const routeProducts = require(path.join(__base, '/routes/views/products'))
@@ -22,9 +23,12 @@ const routeUser = require(path.join(__base, '/routes/private/user'))
 const routesApiProducts = require(path.join(__base, '/routes/api/products'))
 const routesApiProduct = require(path.join(__base, '/routes/api/product'))
 const routesApiUser = require(path.join(__base, '/routes/api/user'))
+
+// SETTING LOCALS
+app.locals.moment = moment
+
 /* LOGGER */
 app.use(logger('dev'))
-/* PROJECTION */
 
 // CONFIG BODY-PARSER
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -46,6 +50,7 @@ app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Credentials', 'true')
   next()
 })
+
 // ROUTES
 app.use(routeProducts)
 app.use(routeProduct)

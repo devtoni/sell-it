@@ -30,6 +30,10 @@ const UserSchema = new Schema({
     type: [Number],
     index: '2d'
   },
+  city: {
+    type: String,
+    default: 'Somewhere'
+  },
   admin: {
     type: Boolean,
     default: false

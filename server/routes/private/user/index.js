@@ -5,7 +5,7 @@ const getChatPage = require('./handlers/getChatPage')
 const getEditPage = require('./handlers/getEditPage')
 
 router.get('/edit-profile', getEditPage)
-router.get('/profile', getProfile)
+router.get('/profile/:id', getProfile)
 router.get('/chat', getChatPage)
 
 // router.get('/user-id/profile', (req, res) => res.render('pages/user-id-profile', {idSection: 'profile'}))
