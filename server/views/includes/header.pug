@@ -36,7 +36,7 @@ header
           span.sr-only Toggle Dropdown
         if (userLog)
           .dropdown-menu
-            a.dropdown-item(href='/profile/${user._id}') My account
+            a.dropdown-item(href=`/profile/${userLog._id}`) My account
             a.dropdown-item(href='/logout') Exit
   #wrapper
     #sidebar-wrapper

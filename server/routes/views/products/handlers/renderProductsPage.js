@@ -3,6 +3,7 @@ const Product = require('../../../../models/Product')
 
 function getProducts (req, res) {
   Product.find()
+
   .populate('createdBy')
   .then(productsList => {
     const categories = productsList

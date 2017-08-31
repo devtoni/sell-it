@@ -139,39 +139,47 @@
    .catch(() => console.log('something wrong'))
  })
 
-// var lowerSlider = document.querySelector('#lower')
-// var upperSlider = document.querySelector('#upper')
+/* FILTER PRODUCTS */
 
-// document.querySelector('#two2').value = upperSlider.value
-// document.querySelector('#one1').value = lowerSlider.value
+ $('#filter-products-form').on('submit', function (e) {
+   e.preventDefault()
+   const values = convertNameValueFormToObject($(this))
+   console.log(values)
+ })
 
-// var lowerVal = parseInt(lowerSlider.value)
-// var upperVal = parseInt(upperSlider.value)
+ var lowerSlider = document.querySelector('#lower')
+ var upperSlider = document.querySelector('#upper')
 
-// upperSlider.oninput = function () {
-//   lowerVal = parseInt(lowerSlider.value)
-//   upperVal = parseInt(upperSlider.value)
+ document.querySelector('#dos').value = upperSlider.value
+ document.querySelector('#uno').value = lowerSlider.value
 
-//   if (upperVal < lowerVal + 4) {
-//     lowerSlider.value = upperVal - 4
-//     if (lowerVal == lowerSlider.min) {
-//       upperSlider.value = 4
-//     }
-//   }
-//   document.querySelector('#two2').value = this.value
-// }
+ var lowerVal = parseInt(lowerSlider.value)
+ var upperVal = parseInt(upperSlider.value)
 
-// lowerSlider.oninput = function () {
-//   lowerVal = parseInt(lowerSlider.value)
-//   upperVal = parseInt(upperSlider.value)
-//   if (lowerVal > upperVal - 4) {
-//     upperSlider.value = lowerVal + 4
-//     if (upperVal == upperSlider.max) {
-//       lowerSlider.value = parseInt(upperSlider.max) - 4
-//     }
-//   }
-//   document.querySelector('#one1').value = this.value
-// }
+ upperSlider.oninput = function () {
+   lowerVal = parseInt(lowerSlider.value)
+   upperVal = parseInt(upperSlider.value)
+
+   if (upperVal < lowerVal + 4) {
+     lowerSlider.value = upperVal - 4
+     if (lowerVal == lowerSlider.min) {
+       upperSlider.value = 4
+     }
+   }
+   document.querySelector('#dos').value = this.value
+ }
+
+ lowerSlider.oninput = function () {
+   lowerVal = parseInt(lowerSlider.value)
+   upperVal = parseInt(upperSlider.value)
+   if (lowerVal > upperVal - 4) {
+     upperSlider.value = lowerVal + 4
+     if (upperVal == upperSlider.max) {
+       lowerSlider.value = parseInt(upperSlider.max) - 4
+     }
+   }
+   document.querySelector('#uno').value = this.value
+ }
 
   /* register event */
  function getPosition (options) {

@@ -214,7 +214,8 @@ div.div {
 .gallery {
   flex-wrap: wrap;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  width: 100%; }
   .gallery .card-gallery {
     position: relative;
     width: 90%;
@@ -878,6 +879,9 @@ main.gallery-products {
     width: 100%; }
   main.gallery-products .slider {
     margin-bottom: 2rem; }
+
+.gallery-products-box {
+  width: 100%; }
 
 .sidebar-products {
   display: none;

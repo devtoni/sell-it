@@ -1,42 +1,20 @@
-const JwtStrategy = require('passport-jwt').Strategy
-const ExtractJwt = require('passport-jwt').ExtractJwt
-const LocalStrategy = require('passport-local')
-const User = require(__base + 'models/User')
-const SECRET = process.env.SECRET || 'supersecret'
+const { Strategy, ExtractJwt } = require('passport-jwt')
 
-const localOptions = { usernameField: 'email' }
-
-const localLogin = new LocalStrategy(localOptions, function (email, password, done) {
-  User.findOne({ email: email }, function (err, user) {
-    console.log('hola')
-    if (err) { return done(err) }
-    if (!user) { return done(null, false, { error: 'Your login details could not be verified. Please try again.' }) }
-
-    user.comparePassword(password, function (err, isMatch) {
-      if (err) { return done(err) }
-      if (!isMatch) { return done(null, false, { error: 'Your login details could not be verified. Please try again.' }) }
-
-      return done(null, user)
-    })
-  })
-})
+const User = require(__base + '/models/User')
+const SECRET = process.env.SECRET
 
 const jwtOptions = {
-  secretOrKey: 'supersecret',
-  jwtFromRequest: ExtractJwt.fromHeader()
+  secretOrKey: SECRET,
+  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
 }
 
-const strategy = new JwtStrategy(jwtOptions, (payload, done) => {
-  User.findById(payload._id, function (err, user) {
-    console.log('holaj')
-    if (err) { return done(err, false) }
-
-    if (user) {
-      done(null, user)
-    } else {
-      done(null, false)
-    }
-  })
+const strategy = new Strategy(jwtOptions, (jwt_payload, done) => {
+  User.findById(jwt_payload.id)
+    .then(user => {
+      if (user) done(null, user)
+      else done(null, false)
+    })
+    .catch(err => done(err, false))
 })
 
-module.exports = {strategy, localLogin }
+module.exports = strategy

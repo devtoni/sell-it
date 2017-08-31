@@ -8,33 +8,33 @@ block content
         .row
           .container.box-gallery
             .sidebar-products
-              form(action='')
+              form#filter-products-form(action='')
                 .search--products
-                  p Qué estás buscando?
-                  input.search-products(type='text', name='', placeholder='')
+                  p What are you looking for?
+                  input.search-products(type='text', name='keyword', placeholder='')
                 .list-group
-                  p Categorías
-                  select(name='', id='')
+                  p Categories
+                  select(name='category', id='')
                     if (categories) 
                       each category in categories
-                        option(value='item1')=category
+                        option(value=category)=category
                 .price-range_selector
-                  p Cuánto quieres pagar?
+                  p How much?
                   .wrapper-price
                     fieldset.filter-price
                       .price-wrap
-                        span.price-title Precio:
+                        span.price-title Price:
                         .price-wrap-1
-                          input.uno
+                          input.uno#uno
                           label(for='one') €
                         .price-wrap_line -
                         .price-wrap-2
-                          input.dos
+                          input.dos#dos
                           label(for='two') €
                       .price-field
-                        input#lower(type='range', min='0', max='10000', value='500')
-                        input#upper(type='range', min='0', max='10000', value='5000')
-                input(type='submit', value='Aplicar filtros')
+                        input#lower(name='min', type='range', min='0', max='10000', value='500')
+                        input#upper(name='max',type='range', min='0', max='10000', value='5000')
+                input(type='submit', value='Search')
             // /.Sidebar
             // Main column
             .main-column-products
@@ -42,7 +42,7 @@ block content
               .row
                 .col-lg-12.slider
                   .divider-new
-                    h2.h2-responsive Productos cercanos
+                    h2.h2-responsive Closest products to your location
                   // Carousel Wrapper
                   #carousel-example-1z.carousel.slide.carousel-fade(data-ride='carousel')
                     // Indicators
@@ -57,21 +57,21 @@ block content
                       .carousel-item.active
                         img.img-fluid(src='https://mdbootstrap.com/img/Photos/Slides/img%20(107).jpg', alt='First slide')
                         .carousel-caption
-                          h4 Nuevos productos
+                          h4 New products
                           br
                       // /First slide
                       // Second slide
                       .carousel-item
                         img.img-fluid(src='https://mdbootstrap.com/img/Photos/Slides/img%20(109).jpg', alt='Second slide')
                         .carousel-caption
-                          h4 Rebajados
+                          h4 Specials
                           br
                       // /Second slide
                       // Third slide
                       .carousel-item
                         img.img-fluid(src='https://mdbootstrap.com/img/Photos/Slides/img%20(36).jpg', alt='Third slide')
                         .carousel-caption
-                          h4 Sólo por 10€
+                          h4 Another 
                           br
                       // /Third slide
                     // /.Slides
@@ -87,7 +87,7 @@ block content
                 // /.First row
                 br
                 hr.extra-margins
-                .gallery-products
+                .gallery-products-box
                   .gallery
                     // #begin card
                     if (productsList)
