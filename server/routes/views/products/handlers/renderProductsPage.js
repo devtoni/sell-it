@@ -3,7 +3,6 @@ const Product = require('../../../../models/Product')
 
 function getProducts (req, res) {
   Product.find()
-
   .populate('createdBy')
   .then(productsList => {
     const categories = productsList
@@ -14,6 +13,7 @@ function getProducts (req, res) {
       productsList,
       categories
     }
+    console.log(productsList)
     res.render('pages/products', options)
   })
   .catch((e) => res.render('pages/products'))

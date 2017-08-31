@@ -8,7 +8,7 @@ function postRegister (req, res) {
     if (err) {
       return res.json({ success: false, msg: 'Email already exists.' })
     }
-    res.redirect(200, '/login')
+    res.json({ success: true, msg: 'Successful created new user.' })
   })
 }
 

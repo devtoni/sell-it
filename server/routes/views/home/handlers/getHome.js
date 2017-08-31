@@ -1,7 +1,8 @@
 
 function getHome (req, res) {
-  console.log(req.session)
-  res.render('pages/home', {idSection: 'home'})
+  const user = req
+  console.log(user)
+  res.render('pages/home', {idSection: 'home', user})
 }
 
 module.exports = getHome

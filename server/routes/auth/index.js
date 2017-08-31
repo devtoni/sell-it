@@ -6,9 +6,6 @@ const postRegister = require('./handlers/postRegister')
 const postLogin = require('./handlers/postLogin')
 
 router.post('/register', postRegister)
-router.post('/login', passport.authenticate('local', {
-  session: true,
-  successRedirect: '/'
-}), postLogin)
+router.post('/login', passport.authenticate('local', { session: false }), postLogin)
 
 module.exports = router

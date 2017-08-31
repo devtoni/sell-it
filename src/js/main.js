@@ -129,13 +129,13 @@
 /* UPDATE USER PROFILE */
 
  $('.edit-profile-form').on('submit', function (e) {
+   const id = $('#save-changes').data('id')
    e.preventDefault()
    const data = convertNameValueFormToObject($(this))
-   console.log(data)
-   const url = '/api/user/edit/'
+   const url = `/api/user/edit/${id}`
    const method = 'PUT'
    $.ajax({url, method, data})
-   .then(() => window.location.href = '/profile')
+   .then((user) => window.location.href = `/profile/${id}`)
    .catch(() => console.log('something wrong'))
  })
 
@@ -147,55 +147,55 @@
    console.log(values)
  })
 
- var lowerSlider = document.querySelector('#lower')
- var upperSlider = document.querySelector('#upper')
+//  var lowerSlider = document.querySelector('#lower')
+//  var upperSlider = document.querySelector('#upper')
 
- document.querySelector('#dos').value = upperSlider.value
- document.querySelector('#uno').value = lowerSlider.value
+//  document.querySelector('#dos').value = upperSlider.value
+//  document.querySelector('#uno').value = lowerSlider.value
 
- var lowerVal = parseInt(lowerSlider.value)
- var upperVal = parseInt(upperSlider.value)
+//  var lowerVal = parseInt(lowerSlider.value)
+//  var upperVal = parseInt(upperSlider.value)
 
- upperSlider.oninput = function () {
-   lowerVal = parseInt(lowerSlider.value)
-   upperVal = parseInt(upperSlider.value)
+//  upperSlider.oninput = function () {
+//    lowerVal = parseInt(lowerSlider.value)
+//    upperVal = parseInt(upperSlider.value)
 
-   if (upperVal < lowerVal + 4) {
-     lowerSlider.value = upperVal - 4
-     if (lowerVal == lowerSlider.min) {
-       upperSlider.value = 4
-     }
-   }
-   document.querySelector('#dos').value = this.value
- }
+//    if (upperVal < lowerVal + 4) {
+//      lowerSlider.value = upperVal - 4
+//      if (lowerVal == lowerSlider.min) {
+//        upperSlider.value = 4
+//      }
+//    }
+//    document.querySelector('#dos').value = this.value
+//  }
 
- lowerSlider.oninput = function () {
-   lowerVal = parseInt(lowerSlider.value)
-   upperVal = parseInt(upperSlider.value)
-   if (lowerVal > upperVal - 4) {
-     upperSlider.value = lowerVal + 4
-     if (upperVal == upperSlider.max) {
-       lowerSlider.value = parseInt(upperSlider.max) - 4
-     }
-   }
-   document.querySelector('#uno').value = this.value
- }
+//  lowerSlider.oninput = function () {
+//    lowerVal = parseInt(lowerSlider.value)
+//    upperVal = parseInt(upperSlider.value)
+//    if (lowerVal > upperVal - 4) {
+//      upperSlider.value = lowerVal + 4
+//      if (upperVal == upperSlider.max) {
+//        lowerSlider.value = parseInt(upperSlider.max) - 4
+//      }
+//    }
+//    document.querySelector('#uno').value = this.value
+//  }
 
-  /* register event */
- function getPosition (options) {
-   return new Promise(function (resolve, reject) {
-     navigator.geolocation.getCurrentPosition(resolve, reject, options)
-   })
- }
+//   /* register event */
+//  function getPosition (options) {
+//    return new Promise(function (resolve, reject) {
+//      navigator.geolocation.getCurrentPosition(resolve, reject, options)
+//    })
+//  }
 
- function drawMap (lat, lon, mapId) {
-   map = L.map(mapId).setView([lat, lon], 16)
-   L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-     subdomains: 'abcd',
-     maxZoom: 19
-   }).addTo(map)
- }
+//  function drawMap (lat, lon, mapId) {
+//    map = L.map(mapId).setView([lat, lon], 16)
+//    L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+//      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+//      subdomains: 'abcd',
+//      maxZoom: 19
+//    }).addTo(map)
+//  }
 
  function convertNameValueFormToObject (form) {
    const data = form.serializeArray().reduce((acc, input) => {

@@ -1,5 +1,6 @@
 function getEditPage (req, res) {
-  res.render('pages/edit-profile', {idSection: 'profile'})
+  const {user} = req
+  res.render('pages/edit-profile', {idSection: 'profile', user})
 }
 
 module.exports = getEditPage

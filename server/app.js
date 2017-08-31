@@ -5,7 +5,8 @@ const bodyParser = require('body-parser')
 const logger = require('morgan')
 const moment = require('moment')
 const passport = require('./config/passport/')
-const session = require('express-session')
+const cookieParser = require('cookie-parser')
+
 // RENDER VIEWS
 const routeProducts = require(path.join(__base, '/routes/views/products'))
 const routeProduct = require(path.join(__base, '/routes/views/product'))
@@ -29,22 +30,16 @@ const routesApiUser = require(path.join(__base, '/routes/api/user'))
 // SETTING LOCALS
 app.locals.moment = moment
 
-// SESSION
-app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true
-}))
-
-// LOGGER
-app.use(logger('dev'))
-
 // CONFIG BODY-PARSER
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+// SESSION
+app.use(cookieParser())
 
-// INITIALIZING PASSPORT
 app.use(passport.initialize())
+
+// LOGGER
+app.use(logger('dev'))
 
 // CONFIG VIEWS
 app.set('views', path.join(process.cwd(), './server/views'))

@@ -30,7 +30,7 @@ block content
               li
                 a(href='/chat') Messages
               li 
-                a(href='/edit-profile') Edit
+                a(href=`/edit-profile/${user._id}`) Edit
         .right-box
           .gallery-products
             h5 Your articles
@@ -42,7 +42,7 @@ block content
                     button#btnDeleteArticle(data-id=product._id) Delete
                     button#btnEdit.btn.btn-warning.pull-right(data-test=product._id)
                       i.fa.fa-pencil
-                    a(href='/profile')
+                    a(href=`/profile/${user._id}`)
                       img.card-img-top(src='http://lorempixel.com/400/200')
                     .card-body
                       p=product.price + ' €'
