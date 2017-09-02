@@ -4,7 +4,7 @@ block content
   .register-page
     .container
       .card-form
-        form#registerForm.form-signin(method="POST", action="/register")
+        form#register-form.form-signin()
           input#inputEmail.form-control(type='email', required, name="email", placeholder="email")
           input#inputPassword.form-control(type='password', placeholder='password', required, name="password")
           button.btn.btn-lg.btn-success.btn-block.btn-signin.custom-btn() Sign Up

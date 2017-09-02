@@ -7,25 +7,11 @@ const moment = require('moment')
 const passport = require('./config/passport/')
 const cookieParser = require('cookie-parser')
 
-// RENDER VIEWS
-const routeProducts = require(path.join(__base, '/routes/views/products'))
-const routeProduct = require(path.join(__base, '/routes/views/product'))
-const routeAdmin = require(path.join(__base, '/routes/views/admin'))
-const routeHome = require(path.join(__base, '/routes/views/home'))
-const routeLogin = require(path.join(__base, '/routes/views/login'))
-const routeLogout = require(path.join(__base, '/routes/views/logout'))
-const routeRegister = require(path.join(__base, '/routes/views/register'))
-
-// AUTH VIEWS
-const routesAuth = require(path.join(__base, '/routes/auth'))
-
-// PRIVATE VIEWS
-const routeUser = require(path.join(__base, '/routes/private/user'))
-
-// API ROUTES
-const routesApiProducts = require(path.join(__base, '/routes/api/products'))
-const routesApiProduct = require(path.join(__base, '/routes/api/product'))
-const routesApiUser = require(path.join(__base, '/routes/api/user'))
+// ROUTES
+const viewRoutes = require(path.join(__base, '/routes/views/'))
+const authRoutes = require(path.join(__base, '/routes/auth/'))
+const privateRoutes = require(path.join(__base, '/routes/private/'))
+const apiRoutes = require(path.join(__base, '/routes/api/'))
 
 // SETTING LOCALS
 app.locals.moment = moment
@@ -33,9 +19,11 @@ app.locals.moment = moment
 // CONFIG BODY-PARSER
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
 // SESSION
 app.use(cookieParser())
 
+// INITIALIZING PASSPORT
 app.use(passport.initialize())
 
 // LOGGER
@@ -50,17 +38,9 @@ app.use(express.static(path.join(process.cwd(), './client')))
 app.use(express.static(path.join(process.cwd(), './src')))
 
 // ROUTES
-app.use(routeProducts)
-app.use(routeProduct)
-app.use(routeAdmin)
-app.use(routeHome)
-app.use(routeLogin)
-app.use(routeLogout)
-app.use(routeRegister)
-app.use(routesAuth)
-app.use(routeUser)
-app.use(routesApiProducts)
-app.use(routesApiProduct)
-app.use(routesApiUser)
+app.use(viewRoutes)
+app.use(authRoutes)
+app.use(privateRoutes)
+app.use(apiRoutes)
 
 module.exports = app

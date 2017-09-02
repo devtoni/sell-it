@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-    .container()
+    .container
       h1.page-header Edit Profile
       .row
         form.edit-profile-form()
@@ -27,11 +27,3 @@ block content
               label.control-label
                 input.btn.btn-primary#save-changes(value='Save', type='submit', data-id=user._id)
                 input.btn.btn-default(value='Cancel', type='reset')
-
-
-//-             .form-group
-              label.col-md-3.control-label Password:
-                input.form-control(value='11111122333', type='password')
-            .form-group
-               label.col-md-3.control-label Password:
-                input.form-control(value='11111122333', type='password')

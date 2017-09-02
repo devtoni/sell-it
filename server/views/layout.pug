@@ -6,9 +6,8 @@ html(lang='es')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     title Sell it
     include includes/styles
-  body
-    .page
-      include includes/header
-      block content
-      include includes/footer
+  body(class=section)
+    include includes/header
+    block content
+    include includes/footer
   include includes/scripts

@@ -7,6 +7,7 @@ block content
         h1 Sell and buy things to your neighbours
         .container-btn
           a.custom-btn.buy(href="/products") Buy
+        if (user)
           a.custom-btn.sell(href="/add-product") Sell
   main.index-main
     section.who-are-we
@@ -14,9 +15,8 @@ block content
         .row.section-who-are-we
           .col-12
             h2 Sell<span class="span-title-who-are-we"> your</span> unwanted<span class="span-title-who-are-we"> items</span>
-            p
-              | Sell it es una aplicación que te permite vender lo que no necesitas de una forma sencilla a través de nuestra plataforma.
-            p Ponemos a tu alcance un servicio adaptado a tus necesidades
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis sequi odio dolore ratione fugit ullam quidem eligendi at pariatur, dolor recusandae, vitae enim quaerat 
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis sequi odio dolore ratione fugit ullam quidem eligendi at pariatur, dolor recusandae, vitae enim quaerat 
             p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis sequi odio dolore ratione fugit ullam quidem eligendi at pariatur, dolor recusandae, vitae enim quaerat 
             p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis sequi odio dolore ratione fugit ullam quidem eligendi at pariatur, dolor recusandae, vitae enim quaerat 
             p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis sequi odio dolore ratione fugit ullam quidem eligendi at pariatur, dolor recusandae, vitae enim quaerat 
@@ -25,8 +25,8 @@ block content
     section.why-us
       .container
         h2.h3.text-xs-center.font-weight-bold
-          | ¿Porque somos 
-          span tu mejor elección?
+          | Why are
+          span  the best?
         .row.why-we
           ul.col-xs-4.xs-auto.col-md-6.col-lg-6.text-xs-center.text-lg-left
             li

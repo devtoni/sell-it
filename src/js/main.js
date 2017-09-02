@@ -132,10 +132,10 @@
    const id = $('#save-changes').data('id')
    e.preventDefault()
    const data = convertNameValueFormToObject($(this))
-   const url = `/api/user/edit/${id}`
+   const url = '/api/user/update'
    const method = 'PUT'
    $.ajax({url, method, data})
-   .then((user) => window.location.href = `/profile/${id}`)
+   .then((user) => window.location.href = '/profile')
    .catch(() => console.log('something wrong'))
  })
 
@@ -147,60 +147,98 @@
    console.log(values)
  })
 
-//  var lowerSlider = document.querySelector('#lower')
-//  var upperSlider = document.querySelector('#upper')
-
-//  document.querySelector('#dos').value = upperSlider.value
-//  document.querySelector('#uno').value = lowerSlider.value
-
-//  var lowerVal = parseInt(lowerSlider.value)
-//  var upperVal = parseInt(upperSlider.value)
-
-//  upperSlider.oninput = function () {
-//    lowerVal = parseInt(lowerSlider.value)
-//    upperVal = parseInt(upperSlider.value)
-
-//    if (upperVal < lowerVal + 4) {
-//      lowerSlider.value = upperVal - 4
-//      if (lowerVal == lowerSlider.min) {
-//        upperSlider.value = 4
-//      }
-//    }
-//    document.querySelector('#dos').value = this.value
-//  }
-
-//  lowerSlider.oninput = function () {
-//    lowerVal = parseInt(lowerSlider.value)
-//    upperVal = parseInt(upperSlider.value)
-//    if (lowerVal > upperVal - 4) {
-//      upperSlider.value = lowerVal + 4
-//      if (upperVal == upperSlider.max) {
-//        lowerSlider.value = parseInt(upperSlider.max) - 4
-//      }
-//    }
-//    document.querySelector('#uno').value = this.value
-//  }
-
-//   /* register event */
-//  function getPosition (options) {
-//    return new Promise(function (resolve, reject) {
-//      navigator.geolocation.getCurrentPosition(resolve, reject, options)
-//    })
-//  }
-
-//  function drawMap (lat, lon, mapId) {
-//    map = L.map(mapId).setView([lat, lon], 16)
-//    L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-//      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-//      subdomains: 'abcd',
-//      maxZoom: 19
-//    }).addTo(map)
-//  }
-
  function convertNameValueFormToObject (form) {
    const data = form.serializeArray().reduce((acc, input) => {
      acc[input.name] = input.value
      return acc
    }, {})
    return data
+ }
+
+ if ($('body').hasClass('products-site')) {
+  // slider price
+   var lowerSlider = document.querySelector('#lower')
+   var upperSlider = document.querySelector('#upper')
+
+   document.querySelector('#dos').value = upperSlider.value
+   document.querySelector('#uno').value = lowerSlider.value
+
+   var lowerVal = parseInt(lowerSlider.value)
+   var upperVal = parseInt(upperSlider.value)
+
+   upperSlider.oninput = function () {
+     lowerVal = parseInt(lowerSlider.value)
+     upperVal = parseInt(upperSlider.value)
+
+     if (upperVal < lowerVal + 4) {
+       lowerSlider.value = upperVal - 4
+       if (lowerVal == lowerSlider.min) {
+         upperSlider.value = 4
+       }
+     }
+     document.querySelector('#dos').value = this.value
+   }
+
+   lowerSlider.oninput = function () {
+     lowerVal = parseInt(lowerSlider.value)
+     upperVal = parseInt(upperSlider.value)
+     if (lowerVal > upperVal - 4) {
+       upperSlider.value = lowerVal + 4
+       if (upperVal == upperSlider.max) {
+         lowerSlider.value = parseInt(upperSlider.max) - 4
+       }
+     }
+     document.querySelector('#uno').value = this.value
+   }
+
+   // get search params
+
+   $('#order-select').on('change', function (e) {
+     const sortByValue = $(this).val()
+     const url = `/api/products/?sortBy=${sortByValue}`
+     const method = 'GET'
+     $.ajax({ url, method })
+     .then((values) => console.log(values))
+     .catch((e) => console.log(e))
+   })
+ }
+
+ // login site
+
+ if ($('body').hasClass('register-site')) {
+   const registerForm = $('#register-form')
+   registerForm.on('submit', function (e) {
+     e.preventDefault()
+     const values = convertNameValueFormToObject(registerForm)
+     getPosition()
+      .then((position) => {
+        const { latitude: lat, longitude: lon } = position.coords
+        const geoLocation = {lon, lat}
+        const url = '/register'
+        const data = Object.assign({}, values, geoLocation)
+        const method = 'POST'
+        $.ajax({url, method, data})
+        .then((value) => {
+          swal({
+            type: 'success',
+            title: `Registered succesfully!`,
+            timer: 5000
+          })
+          window.location.href = '/login'
+        })
+      })
+      .catch((err) => {
+        return swal({
+          type: 'error',
+          title: `Email is registered!`,
+          timer: 5000
+        })
+      })
+   })
+ }
+
+ function getPosition (options) {
+   return new Promise(function (resolve, reject) {
+     navigator.geolocation.getCurrentPosition(resolve, reject, options)
+   })
  }

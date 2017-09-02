@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  .login
+    .container
+      .card-form
+        form#login-form.form-signin(action="/admin/login", method="POST")
+          span#reauth-email.reauth-email
+          input#inputEmail.form-control(type='email', placeholder='email', required='', autofocus='', name="email")
+          input#inputPassword.form-control(type='password', placeholder='Password', required='', name="password")
+          button.btn.btn-lg.btn-success.btn-block.btn-signin.custom-btn(type='submit', target="/profile") Sign In
+

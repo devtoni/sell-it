@@ -35,8 +35,10 @@ block content
                         input#lower(name='min', type='range', min='0', max='10000', value='500')
                         input#upper(name='max',type='range', min='0', max='10000', value='5000')
                 input(type='submit', value='Search')
-            // /.Sidebar
-            // Main column
+                p Order by
+                select#order-select(name='sortBy')
+                  option(value="price") Price
+                  option(value="distance") Distance
             .main-column-products
               // First row
               .row

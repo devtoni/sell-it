@@ -37,6 +37,10 @@ var ProductSchema = new Schema({
   createdBy: {
     type: ObjectId,
     ref: 'User'
+  },
+  coords: {
+    type: [Number],
+    index: '2d'
   }
 }, {collection})
 

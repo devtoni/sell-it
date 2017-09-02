@@ -9,6 +9,10 @@ const DB_URI = process.env.DB_URI
 const app = require('./server/app')
 const db = require('./server/config/db')
 
+const http = require('http').Server(app)
+const io = require('./server/config/socket')
+io(http, app)
+
 db.openUri(DB_URI)
 
-app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`))
+http.listen(PORT, () => console.log(`Listening on PORT ${PORT}`))

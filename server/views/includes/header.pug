@@ -6,38 +6,39 @@ header
           i.fa.fa-bars(aria-hidden='true')
       a.navbar-brand(href='/')
         .logo
-          h1(class={"white": idSection === 'home'})
+          h1(class={"white": section === 'home'})
             | Sell it 
             span.market-logo
               h1 MARKET
       .div
-        button.filter-btn#filterBtn(class={"hide": idSection !== 'products'})
+        button.filter-btn#filterBtn(class={"hide": section !== 'products'})
           span
             i.fa.fa-filter(aria-hidden='true')
     .nav-desktop.collapse.navbar-collapse
       ul.navbar-nav.mr-auto.nav-items
         li.nav-item
-          a.nav-link(href='/', class={"white": idSection === 'home'})
+          a.nav-link(href='/', class={"white": section === 'home'})
             | Home 
         li.nav-item
-          a.nav-link(href='/products',class={"white": idSection === 'home'}, class={"hide": idSection === 'home'} )
+          a.nav-link(href='/products',class={"white": section === 'home'})
             | Buy
+      if (user)
         li.nav-item
-          a.nav-link(href='/add-product',class={"white": idSection === 'home'} ,  class={"hide": idSection === 'home'})
+          a.nav-link(href='/add-product',class={"white": section === 'home'})
             | Sell 
       if (!user)
         p
-          a(href=`/login`,class={"white": idSection === 'home'}) Login
-      .btn-group
-        .profile-nav-bar
-          .profile-photo-navbar
-            img(src='http://via.placeholder.com/30x30')
-        button#dropdownBtn.dropdown-toggle.dropdown-toggle-split(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-          span.sr-only Toggle Dropdown
-        if (user)
-          .dropdown-menu
-            a.dropdown-item(href=`/profile/${user._id}`) My account
-            a.dropdown-item(href='/logout') Exit
+          a(href='/login', class={"white": idSection === 'home'}) Login
+      if (user)
+        .btn-group
+          .profile-nav-bar
+            .profile-photo-navbar
+              img(src='http://via.placeholder.com/30x30')
+          button#dropdownBtn.dropdown-toggle.dropdown-toggle-split(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            span.sr-only Toggle Dropdown
+            .dropdown-menu
+              a.dropdown-item(href='/profile') My account
+              a.dropdown-item(href='/logout') Exit
   #wrapper
     #sidebar-wrapper
       ul.sidebar-nav
@@ -48,13 +49,13 @@ header
               img(src='http://via.placeholder.com/50x50')
             .action-profile
               p
-                a(href=`/profile/${user._id}`) My account
+                a(href='/profile') My account
         li
-          a(href=`/edit-profile/${user._id}`) Edit Account
+          a(href='/edit-profile') Edit Account
         li
           a(href='/products') Buy
         li
-          a(href=`/add-product/${user._id}`) Sell
+          a(href='/add-product') Sell
         li
           a(href='/logout') Exit
        else
@@ -64,7 +65,7 @@ header
               img(src='http://via.placeholder.com/50x50')
             .action-profile
               p
-                a(href=`/login`) Login
+                a(href='/login') Login
         li
           a(href='/products') Buy
 

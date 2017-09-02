@@ -31,7 +31,7 @@
   text-align: justify;
   padding: 2rem 0;
   h2 {
-    margin: 1rem 0;
+    margin: 1rem 0 2rem 0;
     font-weight: bold;
     text-align: left;
     border-left: 5px solid $bg-logo-span;
@@ -62,7 +62,7 @@
     text-align: center;
   }
   h2 span {
-    color: $bg-logo-span;
+    color: $bg-logo-span !important;
   }
   ul,
   ul li {
@@ -99,7 +99,7 @@
     max-height: 600px;
     &>video.video-header {
       display: inline-block;
-      object-fit: fill;
+      object-fit: unset;
       width: 100%;
       max-height: 550px;
     }
