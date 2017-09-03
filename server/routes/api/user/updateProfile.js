@@ -6,11 +6,13 @@ function updateProfile (req, res) {
   const { id } = req.user
   const { username, city, gender, age, imgUrl} = req.body
   const updateOptions = {}
+
   if (username) updateOptions['username'] = username
   if (gender) updateOptions['gender'] = gender
   if (age) updateOptions['age'] = age
   if (city) updateOptions['city'] = city
   if (imgUrl) updateOptions['avatarUrl'] = imgUrl
+
   if (city) {
     geoCoder().geocode(city)
     .then((userLocation) => {

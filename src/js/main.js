@@ -49,7 +49,7 @@
 
  $('.card-gallery').on('click', '#btnDeleteArticle', function (e) {
    const id = $(this).data('id')
-   const url = `/api/profile/${id}`
+   const url = `/api/delete/product/${id}`
    const method = 'DELETE'
    $.ajax({url, method})
   .then(() => {
@@ -102,7 +102,7 @@
 /* range price */
 
  $('#add-product-form').on('submit', function (e) {
-   return swal({
+   swal({
      type: 'success',
      title: `That's all!`
    })
@@ -113,20 +113,9 @@
 
  $('#edit-profile-form').on('submit', function (e) {
    e.preventDefault()
-  //  const fileName = {
-  //    avatarUrl: $(this)['0'].elements.avatarUrl.value.replace(/\\/g, '/').replace(/.*\//, '')
-  //  }
-  //  const formData = new FormData()
-  //  const inputText = convertNameValueFormToObject($(this))
-  //  const data = Object.assign({}, inputText, fileName)
-  //  formData.append(u)
    const formData = new FormData($(this)[0])
-   for (let [key, value] of formData.entries()) {
-     console.log(key, value)
-  }
    const url = '/api/user/update'
    const method = 'PUT'
-
    $.ajax(
      url,
      { method,
@@ -135,7 +124,9 @@
        processData: false,
        contentType: false
      })
-   .then((user) => window.location.href = '/profile')
+   .then((user) => {
+     window.location.href = '/profile'
+   })
    .catch(() => console.log('something wrong'))
  })
 

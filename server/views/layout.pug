@@ -6,7 +6,7 @@ html(lang='es')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     title Sell it
     include includes/styles
-  body(class=section)
+  body(class=section, class={"flex": section !== 'home'})
     include includes/header
     block content
     include includes/footer

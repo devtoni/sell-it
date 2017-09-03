@@ -3,15 +3,16 @@
 footer {
   background-color: $first-bg-color;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   bottom: 0;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   color: $bg-body-color;
-  position: absolute;
+  p {
+    color:  $bg-body-color;
+    & a {
+      color: $bg-body-color !important;
+    }
+  }
 }
 
 
