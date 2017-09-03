@@ -22,10 +22,10 @@ header
         li.nav-item
           a.nav-link(href='/products',class={"white": section === 'home'})
             | Buy
-      if (user)
-        li.nav-item
-          a.nav-link(href='/add-product',class={"white": section === 'home'})
-            | Sell 
+        if (user)
+          li.nav-item
+            a.nav-link(href='/add-product',class={"white": section === 'home'})
+              | Sell 
       if (!user)
         p
           a(href='/login', class={"white": idSection === 'home'}) Login
@@ -33,7 +33,7 @@ header
         .btn-group
           .profile-nav-bar
             .profile-photo-navbar
-              img(src='http://via.placeholder.com/30x30')
+              img(src=user.avatarUrl, alt=user.avatarUrl)
           button#dropdownBtn.dropdown-toggle.dropdown-toggle-split(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
             span.sr-only Toggle Dropdown
             .dropdown-menu
@@ -46,7 +46,7 @@ header
         li
           .profile-side-bar
             .profile-photo
-              img(src='http://via.placeholder.com/50x50')
+              img(src=user.avatarUrl, alt=user.avatarUrl)
             .action-profile
               p
                 a(href='/profile') My account

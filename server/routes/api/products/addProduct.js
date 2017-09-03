@@ -2,7 +2,6 @@ const path = require('path')
 const Product = require(path.join(__base, '/models/Product'))
 const User = require(path.join(__base, '/models/User'))
 const Category = require(path.join(__base, '/models/Categories'))
-const fileUrl = require('file-url')
 
 function addProduct (req, res) {
   const { title, description, category, price, imgUrl} = req.body

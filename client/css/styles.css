@@ -17,6 +17,9 @@ p {
   flex-direction: column;
   justify-content: space-between; }
 
+img {
+  width: 100%; }
+
 body {
   font-family: 'Helvetica-bold', sans-serif; }
 
@@ -72,7 +75,8 @@ div.div {
     border: none; }
 
 .profile-photo-navbar > img {
-  border-radius: 50%; }
+  border-radius: 50%;
+  width: 40px; }
 
 .menu-btn {
   border: none; }
@@ -188,7 +192,8 @@ div.div {
   align-items: center;
   border-bottom: 1px solid lightyellow; }
   .profile-side-bar img {
-    border-radius: 50%; }
+    border-radius: 50%;
+    width: 50px; }
   .profile-side-bar .action-profile p {
     margin: 0; }
     .profile-side-bar .action-profile p a {
