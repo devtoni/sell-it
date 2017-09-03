@@ -7,8 +7,7 @@ function deleteProduct (req, res) {
 
   User
       .update({product: id}, {$pull: { products: id }})
-      .then((user) => res.send(`Item with ID: ${id} has been removed from user`))
-      .catch((e) => res.send(`FAIL!! Product w/ id ${id} was NOT removed from user`))
+      .catch((e) => res.send(e))
 
   Product
       .findByIdAndRemove(id)

@@ -91,24 +91,6 @@
   .catch((e) => console.log(e))
  })
 
- $('#mobile-search-form').on('submit', function (e) {
-   e.preventDefault()
-   window.location.href = '/products'
- })
- $('#search-icon-navbar').on('click', function (e) {
-   $('.search-bar-nav-mobile').fadeToggle(750)
- // window.location.href = '/products'
- })
-/* range price */
-
- $('#add-product-form').on('submit', function (e) {
-   swal({
-     type: 'success',
-     title: `That's all!`
-   })
-  .then(() => window.location.href = '/products')
- })
-
 /* UPDATE USER PROFILE */
 
  $('#edit-profile-form').on('submit', function (e) {
@@ -134,8 +116,9 @@
 
  $('#filter-products-form').on('submit', function (e) {
    e.preventDefault()
-   const values = convertNameValueFormToObject($(this))
-   console.log(values)
+   const data = convertNameValueFormToObject($(this))
+   const query = $.param(data, true)
+   window.location.href = `/products?${query}`
  })
 
  if ($('body').hasClass('products-site')) {
@@ -153,10 +136,10 @@
      lowerVal = parseInt(lowerSlider.value)
      upperVal = parseInt(upperSlider.value)
 
-     if (upperVal < lowerVal + 4) {
-       lowerSlider.value = upperVal - 4
+     if (upperVal < lowerVal + 5) {
+       lowerSlider.value = upperVal - 5
        if (lowerVal == lowerSlider.min) {
-         upperSlider.value = 4
+         upperSlider.value = 5
        }
      }
      document.querySelector('#dos').value = this.value
@@ -165,25 +148,14 @@
    lowerSlider.oninput = function () {
      lowerVal = parseInt(lowerSlider.value)
      upperVal = parseInt(upperSlider.value)
-     if (lowerVal > upperVal - 4) {
-       upperSlider.value = lowerVal + 4
+     if (lowerVal > upperVal - 5) {
+       upperSlider.value = lowerVal + 5
        if (upperVal == upperSlider.max) {
-         lowerSlider.value = parseInt(upperSlider.max) - 4
+         lowerSlider.value = parseInt(upperSlider.max) - 5
        }
      }
      document.querySelector('#uno').value = this.value
    }
-
-   // get search params
-
-   $('#order-select').on('change', function (e) {
-     const sortByValue = $(this).val()
-     const url = `/api/products/?sortBy=${sortByValue}`
-     const method = 'GET'
-     $.ajax({ url, method })
-     .then((values) => console.log(values))
-     .catch((e) => console.log(e))
-   })
  }
 
  // login site
@@ -220,9 +192,6 @@
    })
  }
 
- if ($('body').hasClass('add-product-page')) {
-
- }
  function getPosition (options) {
    return new Promise(function (resolve, reject) {
      navigator.geolocation.getCurrentPosition(resolve, reject, options)

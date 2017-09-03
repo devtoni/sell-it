@@ -2,32 +2,18 @@
   'use strict'
   angular
   .module('adminApp', ['ui.router', 'angular-jwt' ])
-  .config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.when('', '/')
-    var states = [
-      {
-        name: 'login',
-        url: '/',
-        template: '<login></login>'
-      },
-      {
-        name: 'administration',
-        url: '/administration',
-        template: '<administration></administration>'
-      },
-      {
-        name: 'dashboard',
-        url: '/dashboard',
-        template: '<dashboard></dashboard>'
-      },
-      {
-        name: 'configuration',
-        url: '/configuration',
-        template: '<configuration></configuration>'
+  .run(function ($rootScope, $location, StorageService, AuthService, $state) {
+    if (AuthService.isLoggedIn()) {
+      const token = StorageService.getToken()
+      AuthService.setCredentials(token)
+    }
+
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+      var authorization = toState.data.authorization
+      if (!AuthService.isLoggedIn() && authorization === true) {
+        event.preventDefault()
+        $state.go('login')
       }
-    ]
-    states.forEach(function (state) {
-      $stateProvider.state(state)
     })
   })
 })()

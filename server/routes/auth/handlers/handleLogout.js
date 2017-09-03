@@ -1,5 +1,5 @@
 
-function showLogout (req, res) {
+function handleLogout (req, res) {
   cookie = req.cookies
   for (var prop in cookie) {
     if (!cookie.hasOwnProperty(prop)) {
@@ -9,4 +9,4 @@ function showLogout (req, res) {
   }
   res.redirect('/')
 }
-module.exports = showLogout
+module.exports = handleLogout

@@ -15,9 +15,10 @@ block content
                 .list-group
                   p Categories
                   select(name='category', id='')
+                    option(value='')
                     if (categories) 
                       each category in categories
-                        option(value=category)=category
+                        option(value=category.title)=category.title
                 .price-range_selector
                   p How much?
                   .wrapper-price
@@ -32,8 +33,8 @@ block content
                           input.dos#dos
                           label(for='two') €
                       .price-field
-                        input#lower(name='min', type='range', min='0', max='10000', value='500')
-                        input#upper(name='max',type='range', min='0', max='10000', value='5000')
+                        input#lower(name='min', type='range', min='0', max='50000', value='0')
+                        input#upper(name='max',type='range', min='0', max='50000', value='50')
                 input(type='submit', value='Search')
                 p Order by
                 select#order-select(name='sortBy')
@@ -92,18 +93,18 @@ block content
                 .gallery-products-box
                   .gallery
                     // #begin card
-                    if (productsList)
-                      for product, i in productsList
+                    if (products)
+                      for product, i in products
                         .card-gallery
                           a(href=`/product/${product._id}`)
-                            img.card-img-top(src='http://lorempixel.com/400/200')
+                            .div.card-img-top(style=`background-image: url(${product.imgUrl});`)
                           .card-body
                             p=product.price + ' €'
                             p=product.title
                             p.card-text=product.description            
                             .user-card
                               .img-user-card
-                                img.img-circle(src='http://lorempixel.com/50/50')
+                                img.img-circle(src=product.createdBy.avatarUrl)
                               .user-info
                                 p=product.createdBy.username
                                 p=product.createdBy.products.length + ' products'
