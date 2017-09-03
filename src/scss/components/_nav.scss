@@ -36,6 +36,17 @@ div.div {
     border: none;
   }
 }
+.profile-nav-bar{
+  display: flex;
+  align-items: center;
+  button {
+    background: transparent;
+    border: none;
+  }
+  button:hover {
+    background: transparent;
+  }
+}
 .profile-photo-navbar {
   & > img {
      border-radius: 50%;

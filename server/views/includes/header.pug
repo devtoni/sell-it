@@ -24,21 +24,21 @@ header
             | Buy
         if (user)
           li.nav-item
-            a.nav-link(href='/add-product',class={"white": section === 'home'})
+            a.nav-link(href='/add-product', class={"white": section === 'home'})
               | Sell 
       if (!user)
         p
           a(href='/login', class={"white": idSection === 'home'}) Login
-      if (user)
-        .btn-group
-          .profile-nav-bar
-            .profile-photo-navbar
-              img(src=user.avatarUrl, alt=user.avatarUrl)
-          button#dropdownBtn.dropdown-toggle.dropdown-toggle-split(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+    if (user)
+      .btn-group
+        .profile-nav-bar
+          .profile-photo-navbar
+            img(src=user.avatarUrl, alt=user.avatarUrl)
+          button#dropdownMenu2.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
             span.sr-only Toggle Dropdown
-            .dropdown-menu
-              a.dropdown-item(href='/profile') My account
-              a.dropdown-item(href='/logout') Exit
+          .dropdown-menu(aria-labelledby='dropdownMenu2')
+            a.dropdown-item(href='/profile') My account
+            a.dropdown-item(href='/logout') Exit
   #wrapper
     #sidebar-wrapper
       ul.sidebar-nav

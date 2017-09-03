@@ -1,13 +1,4 @@
 @import "../base/_colors";
-
-
-
-.user-info {
-  flex: 1;
-  margin-left: 10px;
-  color: black;
-}
-
 .card-form {
   width: 90%;
   margin: 0 auto;
@@ -27,10 +18,11 @@
     font-weight: bold;
   }
 }
+
 .gallery {
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
   .card-gallery {
     position: relative;
     width: 90%;
@@ -42,57 +34,87 @@
     -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    & > a > img {
+    &>a>img {
       min-height: 150px;
     }
     .card-body {
-      padding: 1rem 0.5rem;
+      padding: 0.5rem;
+      .title-place {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        p:first-child {
+          font-weight: bold;
+          font-size: 1em;
+          color: black;
+        }
+      }
       p {
-        font-size: 0.8rem;
+        font-size: 1.2rem;
         margin: 0;
         text-align: left;
       }
-      p:first-child {
-        font-weight: bold;
-        font-size: 1em;
+      &>p:nth-child(2) {
+        color: $bg-logo-span;
+        letter-spacing: -2px;
       }
       p.card-text {
-        white-space: nowrap; 
-        max-width: 20em; 
+        white-space: nowrap;
+        max-width: 20em;
         overflow: hidden;
-        text-overflow: ellipsis; 
+        text-overflow: ellipsis;
+      }
+      .user-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: $border-line;
+        .user-info {
+          flex: 1;
+          margin-left: 10px;
+          color: black;
+          &>p {
+            letter-spacing: 0px;
+            color: inherit;
+          }
+        }
+        img {
+          width: 40px;
+          border-radius: 50%;
+        }
+        p {
+          font-size: 0.7rem;
+        }
       }
     }
-    .user-card {
-      display: flex;
-      padding: 0.5rem;
-      justify-content: space-between;
-      align-items: center;
-      border-top: $border-line;
-      img {
-        width: 40px;
-        border-radius: 50%;
-      }
-      p {
-        font-size: 0.7rem;
-      }
-    } 
   }
+}
+
+p.city {
+  text-align: right !important;
+  color: lightslategray;
+  font-size: 0.8rem !important;
+  letter-spacing: 0;
+  font-weight: bold;
 }
 
 .input-div {
   display: none;
 }
-#btnEdit, #btnEditOk, #btnDeleteArticle {
+
+#btnEdit,
+#btnEditOk,
+#btnDeleteArticle {
   cursor: pointer;
   position: absolute;
   background: $bg-logo-span;
   border: none;
 }
+
 #btnEdit {
   background: none;
   display: block;
-  top: 61%;
+  top: 70%;
   left: 72%;
 }
 
@@ -108,13 +130,14 @@
   left: 38%;
 }
 
-#btnEditOk:hover, #btnDeleteArticle:hover {
+#btnEditOk:hover,
+#btnDeleteArticle:hover {
   color: white;
   background: $nav-color;
 }
 
 .position-input-toggle {
-  top: 43% !important;
+  top: 52% !important;
 }
 
 .card-body {
@@ -124,7 +147,7 @@
 }
 
 div.card-img-top {
-  height: 150px;
+  height: 200px;
   /* width: 100%; */
   border-top-left-radius: calc(.25rem - 1px);
   border-top-right-radius: calc(.25rem - 1px);
@@ -132,11 +155,4 @@ div.card-img-top {
   background-position: center;
   background-repeat: no-repeat;
 }
-@media(min-width:768px) {
-  .gallery {
-    .card-gallery {
-      max-width: 190px;
-      width: 190px;
-    }
-  }
-}
+

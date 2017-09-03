@@ -6,13 +6,13 @@ const Category = require(path.join(__base, '/models/Categories'))
 function showProducts (req, res) {
   const user = req.cookies
   const queryElements = Object.keys(req.query).length
-  const {keyword, min = 0, max = 25, category } = req.query
+  const {keyword, min = 0, max = 10000000, category, sortBy = 'price'} = req.query
 
   const queries = {}
   if (keyword) queries['title'] = new RegExp(keyword, 'i')
   if (category) queries['category'] = category
   queries['price'] = { '$gte': min, '$lte': max }
-
+  queries['coords'] = { $near: { $geometry: { type: 'Point', coordinates: [ 41, 2 ] } } }
   async.parallel({
     categories: function (callback) {
       Category
@@ -22,13 +22,13 @@ function showProducts (req, res) {
       Product
         .find(queries)
         .populate('createdBy')
-        .sort('price')
+        .sort(sortBy)
         .exec(callback)
     },
     products: function (callback) {
       Product.find()
         .populate('createdBy')
-        .sort('price')
+        .sort(sortBy)
         .exec(callback)
     }
   }, function (err, results) {

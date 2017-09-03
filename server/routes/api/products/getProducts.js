@@ -14,7 +14,6 @@ function getProducts (req, res) {
   Product.find()
          .populate('createdBy')
          .then((products) => {
-           callback(products)
          })
          .catch((e) => res.send(e))
 }

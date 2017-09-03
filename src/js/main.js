@@ -121,45 +121,6 @@
    window.location.href = `/products?${query}`
  })
 
- if ($('body').hasClass('products-site')) {
-  // slider price
-   var lowerSlider = document.querySelector('#lower')
-   var upperSlider = document.querySelector('#upper')
-
-   document.querySelector('#dos').value = upperSlider.value
-   document.querySelector('#uno').value = lowerSlider.value
-
-   var lowerVal = parseInt(lowerSlider.value)
-   var upperVal = parseInt(upperSlider.value)
-
-   upperSlider.oninput = function () {
-     lowerVal = parseInt(lowerSlider.value)
-     upperVal = parseInt(upperSlider.value)
-
-     if (upperVal < lowerVal + 5) {
-       lowerSlider.value = upperVal - 5
-       if (lowerVal == lowerSlider.min) {
-         upperSlider.value = 5
-       }
-     }
-     document.querySelector('#dos').value = this.value
-   }
-
-   lowerSlider.oninput = function () {
-     lowerVal = parseInt(lowerSlider.value)
-     upperVal = parseInt(upperSlider.value)
-     if (lowerVal > upperVal - 5) {
-       upperSlider.value = lowerVal + 5
-       if (upperVal == upperSlider.max) {
-         lowerSlider.value = parseInt(upperSlider.max) - 5
-       }
-     }
-     document.querySelector('#uno').value = this.value
-   }
- }
-
- // login site
-
  if ($('body').hasClass('register-site')) {
    const registerForm = $('#register-form')
    registerForm.on('submit', function (e) {

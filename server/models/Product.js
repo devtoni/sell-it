@@ -40,7 +40,7 @@ var ProductSchema = new Schema({
   },
   coords: {
     type: [Number],
-    index: '2d'
+    index: '2dsphere'
   }
 }, {collection})
 

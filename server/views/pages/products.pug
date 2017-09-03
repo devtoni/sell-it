@@ -4,107 +4,50 @@ block content
   .products-page
     .col-12
       main.gallery-products
-        // Main layout
-        .row
-          .container.box-gallery
-            .sidebar-products
-              form#filter-products-form(action='')
-                .search--products
+        .box-gallery
+          .sidebar-products
+            form#filter-products-form(action='')
+                div 
                   p What are you looking for?
                   input.search-products(type='text', name='keyword', placeholder='')
-                .list-group
+                div 
                   p Categories
                   select(name='category', id='')
                     option(value='')
                     if (categories) 
                       each category in categories
                         option(value=category.title)=category.title
-                .price-range_selector
-                  p How much?
-                  .wrapper-price
-                    fieldset.filter-price
-                      .price-wrap
-                        span.price-title Price:
-                        .price-wrap-1
-                          input.uno#uno
-                          label(for='one') €
-                        .price-wrap_line -
-                        .price-wrap-2
-                          input.dos#dos
-                          label(for='two') €
-                      .price-field
-                        input#lower(name='min', type='range', min='0', max='50000', value='0')
-                        input#upper(name='max',type='range', min='0', max='50000', value='50')
-                input(type='submit', value='Search')
-                p Order by
-                select#order-select(name='sortBy')
-                  option(value="price") Price
-                  option(value="distance") Distance
-            .main-column-products
-              // First row
-              .row
-                .col-lg-12.slider
-                  .divider-new
-                    h2.h2-responsive Closest products to your location
-                  // Carousel Wrapper
-                  #carousel-example-1z.carousel.slide.carousel-fade(data-ride='carousel')
-                    // Indicators
-                    ol.carousel-indicators
-                      li.active(data-target='#carousel-example-1z', data-slide-to='0')
-                      li(data-target='#carousel-example-1z', data-slide-to='1')
-                      li(data-target='#carousel-example-1z', data-slide-to='2')
-                    // /.Indicators
-                    // Slides
-                    .carousel-inner(role='listbox')
-                      // First slide
-                      .carousel-item.active
-                        img.img-fluid(src='https://mdbootstrap.com/img/Photos/Slides/img%20(107).jpg', alt='First slide')
-                        .carousel-caption
-                          h4 New products
-                          br
-                      // /First slide
-                      // Second slide
-                      .carousel-item
-                        img.img-fluid(src='https://mdbootstrap.com/img/Photos/Slides/img%20(109).jpg', alt='Second slide')
-                        .carousel-caption
-                          h4 Specials
-                          br
-                      // /Second slide
-                      // Third slide
-                      .carousel-item
-                        img.img-fluid(src='https://mdbootstrap.com/img/Photos/Slides/img%20(36).jpg', alt='Third slide')
-                        .carousel-caption
-                          h4 Another 
-                          br
-                      // /Third slide
-                    // /.Slides
-                    // Controls
-                    a.carousel-control-prev(href='#carousel-example-1z', role='button', data-slide='prev')
-                      span.carousel-control-prev-icon(aria-hidden='true')
-                      span.sr-only Previous
-                    a.carousel-control-next(href='#carousel-example-1z', role='button', data-slide='next')
-                      span.carousel-control-next-icon(aria-hidden='true')
-                      span.sr-only Next
-                    // /.Controls
-                  // /.Carousel Wrapper
-                // /.First row
-                br
-                hr.extra-margins
-                .gallery-products-box
-                  .gallery
-                    // #begin card
-                    if (products)
-                      for product, i in products
-                        .card-gallery
-                          a(href=`/product/${product._id}`)
-                            .div.card-img-top(style=`background-image: url(${product.imgUrl});`)
-                          .card-body
-                            p=product.price + ' €'
-                            p=product.title
-                            p.card-text=product.description            
-                            .user-card
-                              .img-user-card
-                                img.img-circle(src=product.createdBy.avatarUrl)
-                              .user-info
-                                p=product.createdBy.username
-                                p=product.createdBy.products.length + ' products'
+                div
+                  p Type a range price
+                  .div-range-price-inputs
+                    input(type='number', name='min', placeholder='from')
+                    input(type='number', name='max', placeholder='to')
+                div
+                  p Order by
+                  select#order-select(name='sortBy')
+                    option(value="") 
+                    option(value="price") Price
+                    option(value="distance") Distance
+                    option(value="createdAt") Date
+                div
+                  input(type='submit', value='Search')
+          .main-column-products
+            .gallery
+              // #begin card
+              if (products)
+                for product, i in products
+                  .card-gallery
+                    a(href=`/product/${product._id}`)
+                      .div.card-img-top(style=`background-image: url(${product.imgUrl});`)
+                    .card-body
+                      p.city=product.createdBy.city
+                      .title-place
+                        p=product.title
+                      p=product.price + ' €'           
+                      .user-card
+                        .img-user-card
+                          img.img-circle(src=product.createdBy.avatarUrl)
+                        .user-info
+                          p=product.createdBy.username
+                          p=product.createdBy.products.length + ' products'
+                          p=`Created: ${moment(product.createdAt).format('DD-MM-YYYY')}`

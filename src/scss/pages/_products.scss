@@ -1,8 +1,10 @@
-.container.box-gallery {
+.box-gallery {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .products {
@@ -26,6 +28,7 @@ main.gallery-products {
     background: transparent;
   }
   .main-column-products {
+    margin-top: 2rem;
     width: 100%;
   }
   .slider {
@@ -41,12 +44,31 @@ main.gallery-products {
   display: none;
   margin-top: 2rem;
   width: 90%;
+  margin-bottom: 2rem;
   form {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
   }
   &>form>div {
     margin-top: 1rem;
+    &:last-child {
+      margin-top: 3rem;
+    }
+  }
+  input,
+  select {
+    width: 100%;
+    padding: 0.5rem;
+  }
+  input[type=number] {
+    width: 45%;
+    &::placeholder {
+      color: black;
+    }
+  }
+  .div-range-price-inputs {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -55,15 +77,10 @@ div#wrapper#products-wrapper-fix {
 }
 
 @media(min-width: 768px) {
-  .products {
-    .container {
-      flex-direction: row;
-      align-items: baseline;
-    }
-    main.gallery-products {
-      .main-column-products {
-        width: 65%;
-      }
+  main.gallery-products {
+    .main-column-products {
+      width: 65%;
+      padding-top: 8rem;
     }
   }
   .sidebar-products {
@@ -72,7 +89,7 @@ div#wrapper#products-wrapper-fix {
     width: 90%;
     max-width: 310px;
   }
-  .container.box-gallery {
+  .box-gallery {
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;

@@ -1,12 +1,12 @@
 extends ../layout
 
 block content
-    .container
+    .container.edit-page-box
       h1.page-header Edit Profile
       .row
         form.edit-profile-form#edit-profile-form(enctype="multipart/form-data")
           .image-div-form
-            .form-group
+            .form-group.box-img-edit-page
               img(src='/img/avatar.png', alt='avatar')
               label.control-label Upload:
                 input.form-control(type='file', name='avatarUrl')
