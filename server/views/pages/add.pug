@@ -5,13 +5,13 @@ block content
     main
       .preview-button-box
         button#previewBtn.custom-btn.preview-btn Preview
-      form#add-product-form.add-product-form(action="/api/add-product", method="POST")
+      form#add-product-form.add-product-form(action="/api/add-product", method="POST",enctype="multipart/form-data")
         ul.add-product_list
           li
             p Add an image
               .add-product
                   label(for="image-upload", id="image-label") 
-                  input(type='file', name='img', id="image-upload" accept='image/*')
+                  input(type='file',  id="image-upload" name="imgLocal", accept='image/*', )
           li
             .add-title
               p Add a title

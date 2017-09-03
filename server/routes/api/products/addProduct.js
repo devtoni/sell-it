@@ -1,13 +1,14 @@
 const path = require('path')
 const Product = require(path.join(__base, '/models/Product'))
 const User = require(path.join(__base, '/models/User'))
+const fileUrl = require('file-url')
 
 function addProduct (req, res) {
+  const { title, description, category, price, imgUrl} = req.body
+  console.log(imgUrl)
   const {id} = req.user
   User.findById(id)
   .then((user) => {
-    const { title, description, category, price } = req.body
-    const imgUrl = 'img'
     const product = new Product({
       title,
       description,

@@ -91,23 +91,6 @@
   .catch((e) => console.log(e))
  })
 
- /* REGISTER FORM */
-
- $('#registerForm').on('submit', function (e) {
-   return swal({
-     type: 'success',
-     title: 'User registered!'
-   })
- })
-
- /* ALERTS */
- $('#save-changes').on('click', function () {
-   return swal({
-     type: 'success',
-     title: 'Changes saved!'
-   })
- })
-
  $('#mobile-search-form').on('submit', function (e) {
    e.preventDefault()
    window.location.href = '/products'
@@ -128,13 +111,30 @@
 
 /* UPDATE USER PROFILE */
 
- $('.edit-profile-form').on('submit', function (e) {
-   const id = $('#save-changes').data('id')
+ $('#edit-profile-form').on('submit', function (e) {
    e.preventDefault()
-   const data = convertNameValueFormToObject($(this))
+  //  const fileName = {
+  //    avatarUrl: $(this)['0'].elements.avatarUrl.value.replace(/\\/g, '/').replace(/.*\//, '')
+  //  }
+  //  const formData = new FormData()
+  //  const inputText = convertNameValueFormToObject($(this))
+  //  const data = Object.assign({}, inputText, fileName)
+  //  formData.append(u)
+   const formData = new FormData($(this)[0])
+   for (let [key, value] of formData.entries()) {
+     console.log(key, value)
+  }
    const url = '/api/user/update'
    const method = 'PUT'
-   $.ajax({url, method, data})
+
+   $.ajax(
+     url,
+     { method,
+       enctype: 'multipart/form-data',
+       data: formData,
+       processData: false,
+       contentType: false
+     })
    .then((user) => window.location.href = '/profile')
    .catch(() => console.log('something wrong'))
  })
@@ -146,14 +146,6 @@
    const values = convertNameValueFormToObject($(this))
    console.log(values)
  })
-
- function convertNameValueFormToObject (form) {
-   const data = form.serializeArray().reduce((acc, input) => {
-     acc[input.name] = input.value
-     return acc
-   }, {})
-   return data
- }
 
  if ($('body').hasClass('products-site')) {
   // slider price
@@ -237,8 +229,19 @@
    })
  }
 
+ if ($('body').hasClass('add-product-page')) {
+
+ }
  function getPosition (options) {
    return new Promise(function (resolve, reject) {
      navigator.geolocation.getCurrentPosition(resolve, reject, options)
    })
+ }
+
+ function convertNameValueFormToObject (form) {
+   const data = form.serializeArray().reduce((acc, input) => {
+     acc[input.name] = input.value
+     return acc
+   }, {})
+   return data
  }

@@ -17,7 +17,7 @@ const apiRoutes = require(path.join(__base, '/routes/api/'))
 app.locals.moment = moment
 
 // CONFIG BODY-PARSER
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 // SESSION

@@ -683,7 +683,24 @@ input[type=submit],
   border: none;
   padding: 0.5rem; }
 
+.btn-add {
+  z-index: 5;
+  background: #20C3B3;
+  position: fixed;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  line-height: 56px;
+  text-align: center;
+  border-radius: 50%;
+  right: 15px;
+  box-shadow: 0px 2px 5px grey; }
+  .btn-add a > i {
+    font-size: 1.2rem; }
+
 @media (min-width: 768px) {
+  .btn-add {
+    display: none; }
   .custom-btn.sell,
   .custom-btn.buy {
     display: inline-block;
@@ -1225,20 +1242,6 @@ dashboard {
   position: relative;
   height: 100%; }
 
-.btn-add {
-  background: #20C3B3;
-  position: fixed;
-  bottom: 10px;
-  width: 50px;
-  height: 50px;
-  line-height: 56px;
-  text-align: center;
-  border-radius: 50%;
-  right: 15px;
-  box-shadow: 0px 2px 5px grey; }
-  .btn-add a > i {
-    font-size: 1.2rem; }
-
 .gallery-profile {
   justify-content: center; }
 
@@ -1286,8 +1289,6 @@ span#edit-span {
   display: none !important; }
 
 @media (min-width: 768px) {
-  .btn-add {
-    display: none; }
   .sidebar-products {
     display: block; }
   .nav-desktop .dropdown-menu a.dropdown-item {

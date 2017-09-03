@@ -6,7 +6,7 @@ block content
       .row.box-profile
         .left-box
           figure 
-            img.profile-photo(alt='profile-photo', src='http://lorempixel.com/100/100/people/9/')
+            img.profile-photo(alt='profile-photo', src=user.avatarUrl)
           .title
              p=user.username || user.email
              i.fa.fa-star(aria-hidden='true')

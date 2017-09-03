@@ -4,12 +4,13 @@ const geoCoder = require(path.join(__base, '/services/getLocation'))
 
 function updateProfile (req, res) {
   const { id } = req.user
-  const { username, city, gender, age} = req.body
+  const { username, city, gender, age, imgUrl} = req.body
   const updateOptions = {}
   if (username) updateOptions['username'] = username
   if (gender) updateOptions['gender'] = gender
   if (age) updateOptions['age'] = age
   if (city) updateOptions['city'] = city
+  if (imgUrl) updateOptions['avatarUrl'] = imgUrl
   if (city) {
     geoCoder().geocode(city)
     .then((userLocation) => {
@@ -22,7 +23,6 @@ function updateProfile (req, res) {
       User
       .findByIdAndUpdate(id, updateOptions)
       .then((user) => {
-        req.flash('success', 'Your profile has been succesfully updated!')
         res.json(user)
       })
     })
@@ -31,8 +31,6 @@ function updateProfile (req, res) {
     User
     .findByIdAndUpdate(id, updateOptions)
     .then((user) => {
-      req.flash('success', 'Your profile has been succesfully updated!')
-      res.json(user)
     })
     .catch((e) => res.json(e))
   }
