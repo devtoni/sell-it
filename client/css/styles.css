@@ -300,6 +300,15 @@ div.div {
 .card-body input {
   width: 100%; }
 
+div.card-img-top {
+  height: 150px;
+  /* width: 100%; */
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
 @media (min-width: 768px) {
   .gallery .card-gallery {
     max-width: 190px;
@@ -750,8 +759,11 @@ footer {
   width: 100%;
   text-align: center;
   bottom: 0;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
   color: #F5F5F5; }
+  footer p:last-child {
+    text-align: right;
+    cursor: pointer; }
   footer p {
     color: #F5F5F5; }
     footer p a {

@@ -1,19 +1,24 @@
 (function () {
   'use strict'
   angular
-  .module('adminApp', ['ui.router'])
+  .module('adminApp', ['ui.router', 'angular-jwt' ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.when('', '/')
     var states = [
       {
-        name: 'dashboard',
+        name: 'login',
         url: '/',
-        template: '<dashboard></dashboard>'
+        template: '<login></login>'
       },
       {
         name: 'administration',
         url: '/administration',
         template: '<administration></administration>'
+      },
+      {
+        name: 'dashboard',
+        url: '/dashboard',
+        template: '<dashboard></dashboard>'
       },
       {
         name: 'configuration',

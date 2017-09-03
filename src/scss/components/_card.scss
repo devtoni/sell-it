@@ -122,6 +122,16 @@
     width: 100%;
   }
 }
+
+div.card-img-top {
+  height: 150px;
+  /* width: 100%; */
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 @media(min-width:768px) {
   .gallery {
     .card-gallery {

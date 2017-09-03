@@ -5,8 +5,12 @@ footer {
   width: 100%;
   text-align: center;
   bottom: 0;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
   color: $bg-body-color;
+  p:last-child {
+    text-align: right;
+    cursor: pointer;
+  }
   p {
     color:  $bg-body-color;
     & a {

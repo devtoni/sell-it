@@ -15,6 +15,7 @@
 
 <body ng-app="adminApp" ng-cloak>
         <div class="admin-site">
+           
             <root></root>
         </div>
 
@@ -26,22 +27,34 @@
   <script src="libs/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <!-- CHART -->
   <script src="libs/bower_components/chart.js/dist/Chart.js"></script>
+  
   <!-- ANGULAR -->
   <script src="libs/bower_components/angular/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
-   
+   <!-- ANGULAR JWT -->
+   <script src="libs/bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
   <!-- ROOT -->
   <script src="admin/app/root.module.js"></script>
   <script src="admin/app/root.component.js"></script>
   <!-- SERVICES --> 
-  <script src="admin/app/services/DataService.js"></script>
+  <script src="admin/app/services/ApiService.js"></script>
   <script src="admin/app/services/ServiceChart.js"></script>
+  <script src="admin/app/services/AuthInterceptor.js"></script>
+  <script src="admin/app/services/FlashMessageService.js"></script>
+  <script src="admin/app/services/StorageService.js"></script>
+  <script src="admin/app/services/AuthService.js"></script>
+    <!-- ROOT -->
+  <script src="admin/app/common/messageFlash/message.controller.js"></script>
+  <script src="admin/app/common/messageFlash/message.component.js"></script>
   <!-- ROOT -->
   <script src="admin/app/common/header/header.controller.js"></script>
   <script src="admin/app/common/header/header.component.js"></script>
   <!-- ROOT -->
   <script src="admin/app/common/sidenav/sidenav.controller.js"></script>
   <script src="admin/app/common/sidenav/sidenav.component.js"></script>
+   <!-- LOGIN -->
+   <script src="admin/app/components/login/login.controller.js"></script>
+   <script src="admin/app/components/login/login.component.js"></script>
    <!-- ROOT -->
    <script src="admin/app/components/main/administration/administration.controller.js"></script>
    <script src="admin/app/components/main/administration/administration.component.js"></script>

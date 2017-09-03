@@ -81,7 +81,7 @@
    const inputPriceValue = $.map(inputPrice, input => input.value)
    const values = [...inputTextValue, ...inputPriceValue]
    const [title, description, price] = values
-   const url = `/api/profile/`
+   const url = `/api/update/product/${id}`
    const method = 'PUT'
    const data = { price, title, description, id }
    $.ajax({url, method, data})

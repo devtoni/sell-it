@@ -1,4 +1,4 @@
-var jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken')
 
 function postLogin (req, res) {
   const SECRET = process.env.SECRET

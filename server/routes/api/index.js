@@ -17,7 +17,7 @@ const getCategories = require('./categories/getCategories')
 
 router.delete('/api/delete/product/:id', passport.authenticate('jwt', { session: false }), deleteProduct)
 router.put('/api/user/update', passport.authenticate('jwt', { session: false }), p, upload.single('avatarUrl'), uploadCloudinary, updateProfile)
-router.put('/api/update-product/:id', passport.authenticate('jwt', { session: false }), updateProduct)
+router.put('/api/update/product/:id', passport.authenticate('jwt', { session: false }), updateProduct)
 router.post('/api/add-product', passport.authenticate('jwt', { session: false }), upload.single('imgLocal'), uploadCloudinary, addProduct)
 router.get('/api/users', getUsers)
 router.get('/api/products/?', getProducts)

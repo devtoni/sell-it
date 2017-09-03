@@ -1,5 +1,6 @@
+const path = require('path')
+
 function showAdminLogin (req, res) {
-  const section = 'login-site'
-  res.render('pages/adminLogin', { section})
+  res.sendFile(path.join(__base, '../src/admin/index.html'))
 }
 module.exports = showAdminLogin

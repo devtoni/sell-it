@@ -2,8 +2,16 @@
   'use strict'
   const app = angular.module('adminApp')
 
-  function headerController () {
-    console.log('Hola desde sidenav')
+  function headerController (AuthService, $location, FlashMessageService) {
+    const self = this
+    self.logout = function () {
+      AuthService.logout()
+        .then(function () {
+          FlashMessageService.setMessage('Successfully logged out')
+          $location.path('/')
+        })
+        .catch(() => console.log('there was an error tying to logout'))
+    }
   }
-  app.controller('headerController', headerController)
+  app.controller('headerController', [ 'AuthService', '$location', 'FlashMessageService', headerController])
 })()
