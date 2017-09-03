@@ -44,19 +44,16 @@ block content
             div
                 input.custom-btn(type='submit', value='Send')
       .preview-data
-        .gallery
-          .card-gallery
-            a(href='/product-detail')
-              #image-preview.card-image-preview
-            .card-body
-              p#preview-price
-              p#preview-title
-              p.card-text#preview-description         
-            a(href='/user-id/profile')
-              .user-card
-                .img-user-card
-                  img.img-circle(src='http://via.placeholder.com/50x50')
-                .user-info
-                  p User
-                  p 15 products
-             
+        .card-preview
+          #image-preview.card-image-preview
+          .card-body.card-body-add-page
+            p#preview-price
+            p#preview-title
+            p.card-text#preview-description         
+            .user-card
+              .img-user-card
+                img.img-circle(src='http://via.placeholder.com/50x50')
+              .user-info
+                p User
+                p 15 products
+            
