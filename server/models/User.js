@@ -16,7 +16,7 @@ const UserSchema = new Schema({
   },
   coords: {
     type: [Number],
-    index: '2dsphere'
+    index: '2d'
   },
   city: {
     type: String,

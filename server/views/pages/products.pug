@@ -23,12 +23,13 @@ block content
                     input(type='number', name='min', placeholder='from')
                     input(type='number', name='max', placeholder='to')
                 div
-                  p Order by
+                  p Sort by
                   select#order-select(name='sortBy')
                     option(value="") 
-                    option(value="price") Price
-                    option(value="distance") Distance
-                    option(value="createdAt") Date
+                    option(value='coords') Distance
+                    option(value='price') Price
+                    option(value='createdAt') Date
+
                 div
                   input(type='submit', value='Search')
           .main-column-products
