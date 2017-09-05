@@ -1,6 +1,6 @@
 
 function ApiService ($http) {
-  function getProducts () {
+  function getProducts (projection) {
     const url = `/api/products/all/`
     return $http.get(url)
   }
@@ -11,7 +11,9 @@ function ApiService ($http) {
   }
 
   function getTotalUsers () {
+    console.log('getTotalUsers...')
     const url = `/api/users`
+    console.log(url)
     return $http.get(url)
   }
 

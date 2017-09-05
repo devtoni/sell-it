@@ -5,6 +5,7 @@
     const self = this
     const canvas = angular.element('#canvas')
     self.optionSelection = function () {
+      console.log(self.optionSelected)
       switch (self.optionSelected) {
         case 'menWomen':
           ApiService.getTotalUsers()
@@ -17,25 +18,19 @@
         case 'productsByDay':
           ApiService.getProducts()
           .then(products => {
-            const arrayOfProducts = products.data.productsByDay
-            const arrayOfDates = arrayOfProducts.map((product) => Object.values(product._id))
-            const formatedDates = arrayOfDates.map((date) => +new Date(date.join('/')))
-            const countByDate = arrayOfProducts.map((product) => product.total)
-            ServiceChart.getBarChart(canvas, formatedDates, countByDate)
+            console.log(products)
           })
           break
         case 'categories':
           ApiService.getCategories()
           .then(categories => {
-            const categoriesArray = categories.data
-            const categoriesFormated = categoriesArray.reduce((acc, category) => {
-              acc[category.title] = category.products.length
-              return acc
-            }, {})
-            const catNames = Object.keys(categoriesFormated)
-            const counts = Object.values(categoriesFormated)
-            ServiceChart.getDoughnutChar(canvas, counts, catNames)
+            console.log(categories)
+          //  ServiceChart.getDoughnutChar(canvas, counts, catNames)
           })
+          break
+        case 'active':
+          ApiService.getProducts()
+          .then(products => console.log(products))
       }
     }
   }

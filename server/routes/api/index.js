@@ -22,13 +22,8 @@ router.post('/user/add-product', isAuthenticated, upload.single('imgLocal'), upl
 router.delete('/user/delete/product/:id', isAuthenticated, deleteProduct)
 
 // API ROUTES TO MANIPULATE INFO
-router.get('/api/users', isAdmin, getUsers)
-router.get('/api/products/all/', isAdmin, getProducts)
-router.get('/api/categories/', getCategories)
+router.get('/api/users/', /* isAdmin, */ getUsers)
+router.get('/api/products/all/', /* isAdmin, */ getProducts)
+router.get('/api/categories/', /* isAdmin, */ getCategories)
 
 module.exports = router
-
-function p (req, res, next) {
-  console.log(req.user)
-  next()
-}

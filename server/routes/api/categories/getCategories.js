@@ -1,10 +1,16 @@
 const path = require('path')
 const Category = require(path.join(__base, '/models/Categories'))
-const async = require('async')
 
 function getCategories (req, res) {
+  console.log("getCategories...")
   Category.find()
-  .then(categories => res.json(categories))
+  .then(categories => {
+    const categoriesFormated = categories.reduce((acc, category) => {
+      acc[category.title] = category.products.length
+      return acc
+    }, {})
+    res.json(categoriesFormated)
+  })
 }
 
 module.exports = getCategories

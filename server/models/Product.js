@@ -15,16 +15,15 @@ var ProductSchema = new Schema({
   },
   price: {
     type: Number,
-    require: true,
-    default: 0
+    required: true
   },
   imgUrl: {
     type: String,
-    require: true
+    required: true
   },
   category: {
     type: String,
-    require: true
+    required: true
   },
   is_Active: {
     type: Boolean,
