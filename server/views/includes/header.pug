@@ -33,7 +33,8 @@ header
       .btn-group
         .profile-nav-bar
           .profile-photo-navbar
-            img(src=user.avatarUrl, alt=user.avatarUrl)
+            a(href='/profile')
+              img(src=user.avatarUrl, alt=user.avatarUrl)
           button#dropdownMenu2.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
             span.sr-only Toggle Dropdown
           .dropdown-menu(aria-labelledby='dropdownMenu2')

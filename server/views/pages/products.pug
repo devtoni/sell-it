@@ -26,7 +26,6 @@ block content
                   p Sort by
                   select#order-select(name='sortBy')
                     option(value="") 
-                    option(value='coords') Distance
                     option(value='price') Price
                     option(value='createdAt') Date
 
@@ -41,7 +40,7 @@ block content
                     a(href=`/product/${product._id}`)
                       .div.card-img-top(style=`background-image: url(${product.imgUrl});`)
                     .card-body
-                      p.city=product.createdBy.city
+                      p.city=product.createdBy.city || ''
                       .title-place
                         p=product.title
                       p=product.price + ' €'           
