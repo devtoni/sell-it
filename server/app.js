@@ -7,8 +7,8 @@ const moment = require('moment')
 const passport = require('./config/passport/')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
-// const MongoStore = require('connect-mongo')(session)
-// const db = require(path.join(__base, '/config/db'))
+const MongoStore = require('connect-mongo')(session)
+const db = require(path.join(__base, '/config/db'))
 
 // ROUTES
 const viewRoutes = require(path.join(__base, '/routes/views/'))
@@ -26,8 +26,8 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(session({ secret: 'supersecretworddonottelltoanyone',
   resave: false,
-  saveUninitialized: true
-// persist session to prevent reset from server
+  saveUninitialized: true,
+  store: new MongoStore({ mongooseConnection: db})  // persist session to prevent reset from server
 }))
 
 app.use(passport.initialize())
