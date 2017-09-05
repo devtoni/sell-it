@@ -19,7 +19,10 @@ block content
                 input.form-control(value='', type='text', name="city")
             .form-group
               label.control-label Gender:
-                input.form-control(value='', type='text', name="gender")
+                //- input.form-control(value='', type='text', name="gender")
+                select.form-control(value='', type='text', name="gender")
+                  option(value="male") Male
+                  option(value="female") Female
             .form-group
               label.control-label Age:
                 input.form-control(value='', type='number', name="age")

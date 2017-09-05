@@ -1,10 +1,16 @@
-.statistics {
-  canvas {
-    max-width: 100%;
-    margin: 1rem;
+  .canvas-box {
+    width: 90%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .div-select-description {
+      display: flex;
+    }
+    #canvas {
+      padding: 1rem;
+      border: 1px solid black;
+      max-width: 600px;
+    }
   }
-  .first-canvas  {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-}

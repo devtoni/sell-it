@@ -27,3 +27,8 @@ router.get('/api/products/all/', isAdmin, getProducts)
 router.get('/api/categories/', getCategories)
 
 module.exports = router
+
+function p (req, res, next) {
+  console.log(req.user)
+  next()
+}

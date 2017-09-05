@@ -9,7 +9,7 @@ function editProduct (req, res) {
   if (price) updateFile.price = price
   if (title) updateFile.title = title
   if (description) updateFile.description = description
-
+  updateFile.createdAt = new Date('2017-09-01').getTime()
   Product
         .findByIdAndUpdate(id, updateFile)
         .then((file) => res.send('Todo ok'))

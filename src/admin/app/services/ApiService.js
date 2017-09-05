@@ -10,7 +10,12 @@ function ApiService ($http) {
     return $http.get(url)
   }
 
-  return { getProducts, getCategories }
+  function getTotalUsers () {
+    const url = `/api/users`
+    return $http.get(url)
+  }
+
+  return { getProducts, getCategories, getTotalUsers }
 }
 
 ApiService.$inject = ['$http']

@@ -1,14 +1,12 @@
 function ServiceChart () {
-  this.getBarChart = function (element, dateRange, dataRange) {
-    dateRange = dateRange || ['26/08/2017', '27/08/2017', '28/08/2017', '29/08/2017']
-    dataRange = dataRange || [12, 19, 3, 5]
+  this.getBarChart = function (element, dates, counts) {
     const barChart = new Chart(element, {
       type: 'bar',
       data: {
-        labels: dateRange,
+        labels: dates,
         datasets: [{
-          label: '# Nº subidas nuevas',
-          data: dataRange,
+          label: '# Uploading Articles by Day',
+          data: counts,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -26,9 +24,20 @@ function ServiceChart () {
       },
       options: {
         scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
+          xAxes: [{
+            type: 'time',
+            time: {
+              displayFormats: {
+                'millisecond': 'MMM DD',
+                'second': 'MMM DD',
+                'minute': 'MMM DD',
+                'hour': 'MMM DD',
+                'day': 'MMM DD',
+                'week': 'MMM DD',
+                'month': 'MMM DD',
+                'quarter': 'MMM DD',
+                'year': 'MMM DD'
+              }
             }
           }]
         }
@@ -36,18 +45,14 @@ function ServiceChart () {
     })
     return barChart
   }
-  this.getDoughnutChar = function (ctx, options) {
-    var myPieChart = new Chart(ctx, {
-      type: 'pie',
+  this.getDoughnutChar = function (canvas, data, labels) {
+    var myPieChart = new Chart(canvas, {
+      type: 'doughnut',
       data: {
         datasets: [{
-          data: [10, 20, 30]
+          data: data
         }],
-        labels: [
-          'Red',
-          'Yellow',
-          'Blue'
-        ]
+        labels: labels
       }
     })
   }

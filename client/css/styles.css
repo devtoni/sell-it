@@ -575,13 +575,19 @@ footer {
 .footer-position {
   position: absolute; }
 
-.statistics canvas {
-  max-width: 100%;
-  margin: 1rem; }
-
-.statistics .first-canvas {
-  max-width: 600px;
-  margin: 0 auto; }
+.canvas-box {
+  width: 90%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .canvas-box .div-select-description {
+    display: flex; }
+  .canvas-box #canvas {
+    padding: 1rem;
+    border: 1px solid black;
+    max-width: 600px; }
 
 #map {
   width: 100%;
@@ -1123,6 +1129,16 @@ items-table table.administration-table {
   items-table table.administration-table button {
     height: 30px;
     line-height: 15px; }
+
+dashboard {
+  width: 100%;
+  height: 100%;
+  display: flex; }
+  dashboard .main-chart {
+    flex: 1; }
+    dashboard .main-chart stats {
+      width: 100%;
+      height: 100%; }
 
 .dropdown-menu a.dropdown-item {
   color: #4B4C63; }
