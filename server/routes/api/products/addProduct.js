@@ -4,8 +4,8 @@ const User = require(path.join(__base, '/models/User'))
 const Category = require(path.join(__base, '/models/Categories'))
 
 function addProduct (req, res) {
-  const { title, description, category, price, imgUrl} = req.body
-  const {id} = req.user
+  const { title, description, category, price, imgUrl } = req.body
+  const {_id: id} = req.user
 
   Category
   .findOneAndUpdate({title: category}, { $push: {products: id} }, {upsert: true})

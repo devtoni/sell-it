@@ -1,16 +1,16 @@
 (function () {
   'use strict'
   const app = angular.module('adminApp')
-  function totalProductsController (DataService, ServiceChart) {
+  function totalProductsController (ApiService, ServiceChart) {
     const self = this
-    DataService.getProducts()
+    ApiService.getProducts()
       .then((products) => {
         console.log(products)
-        const canvasProduct = angular.element('#productCanvas')
-        ServiceChart.getBarChart(canvasProduct)
+        const canvas = angular.element('#canvas')
+        ServiceChart.getDoughnutChar(canvas)
       })
       .catch((e) => console.log(e))
   }
 
-  app.controller('totalProductsController', ['DataService', 'ServiceChart', totalProductsController])
+  app.controller('totalProductsController', ['ApiService', 'ServiceChart', totalProductsController])
 })()

@@ -10,7 +10,7 @@ const handleLogout = require('./handlers/handleLogout')
 const isAdmin = require('./handlers/middleware/isAdmin')
 
 router.post('/register', handleRegister)
-router.post('/login', passport.authenticate('local', { session: false }), handleLogin)
-router.post('/admin/login', passport.authenticate('local', {session: false}), isAdmin, handleAdminLogin)
+router.post('/login', passport.authenticate('local', {session: true}), handleLogin)
+router.post('/admin/login', passport.authenticate('local', {session: true}), isAdmin, handleAdminLogin)
 router.get('/logout', handleLogout)
 module.exports = router

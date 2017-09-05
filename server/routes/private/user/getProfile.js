@@ -2,10 +2,11 @@ const path = require('path')
 const User = require(path.join(__base, '/models/User'))
 
 function getProfile (req, res) {
-  const {id} = req.user
-  User.findById(id)
+  const { user } = req
+  User.findById(user._id)
   .populate('products')
   .then((user) => {
+    console.log(user)
     res.render('pages/profile', { idSection: 'profile', user, footerPosition: '' })
   })
   .catch((e) => res.send('user not found'))

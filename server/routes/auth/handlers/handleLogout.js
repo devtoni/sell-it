@@ -1,6 +1,6 @@
 
 function handleLogout (req, res) {
-  cookie = req.cookies
+  const cookie = req.cookies
   for (var prop in cookie) {
     if (!cookie.hasOwnProperty(prop)) {
       continue

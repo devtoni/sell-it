@@ -3,8 +3,9 @@ const User = require(path.join(__base, '/models/User'))
 const geoCoder = require(path.join(__base, '/services/getLocation'))
 
 function updateProfile (req, res) {
-  const { id } = req.user
-  const { username, city, gender, age, imgUrl} = req.body
+  console.log(req.user)
+  const { user } = req
+  const { username, city, gender, age, imgUrl } = req.body
   const updateOptions = {}
 
   if (username) updateOptions['username'] = username
@@ -23,16 +24,17 @@ function updateProfile (req, res) {
     .then((coords) => {
       updateOptions['coords'] = coords
       User
-      .findByIdAndUpdate(id, updateOptions)
-      .then((user) => {
-        res.json(user)
+      .findByIdAndUpdate(user._id, updateOptions)
+      .then((userUpdated) => {
+        res.json(userUpdated)
       })
     })
     .catch((e) => res.json(e))
   } else {
     User
-    .findByIdAndUpdate(id, updateOptions)
-    .then((user) => {
+    .findByIdAndUpdate(user._id, updateOptions)
+    .then((userUpdated) => {
+      res.json(userUpdated)
     })
     .catch((e) => res.json(e))
   }

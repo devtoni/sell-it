@@ -5,11 +5,10 @@ const SECRET = process.env.SECRET
 
 const jwtOptions = {
   secretOrKey: SECRET,
-  jwtFromRequest: cookie
+  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
 }
 
 const strategy = new Strategy(jwtOptions, (jwt_payload, done) => {
-  console.log(jwt_payload)
   console.log('paso por payload')
   User.findById(jwt_payload.id)
     .then(user => {
@@ -20,11 +19,3 @@ const strategy = new Strategy(jwtOptions, (jwt_payload, done) => {
 })
 
 module.exports = strategy
-
-function cookie (req) {
-  var token = null
-  if (req && req.cookies) {
-    token = req.cookies['auth']
-  }
-  return token
-}

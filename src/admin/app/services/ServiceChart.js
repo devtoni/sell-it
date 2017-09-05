@@ -1,4 +1,3 @@
-
 function ServiceChart () {
   this.getBarChart = function (element, dateRange, dataRange) {
     dateRange = dateRange || ['26/08/2017', '27/08/2017', '28/08/2017', '29/08/2017']
@@ -37,8 +36,23 @@ function ServiceChart () {
     })
     return barChart
   }
+  this.getDoughnutChar = function (ctx, options) {
+    var myPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        datasets: [{
+          data: [10, 20, 30]
+        }],
+        labels: [
+          'Red',
+          'Yellow',
+          'Blue'
+        ]
+      }
+    })
+  }
 }
 
 angular
-      .module('adminApp')
-      .service('ServiceChart', ServiceChart)
+  .module('adminApp')
+  .service('ServiceChart', ServiceChart)

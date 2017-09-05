@@ -49,7 +49,7 @@
 
  $('.card-gallery').on('click', '#btnDeleteArticle', function (e) {
    const id = $(this).data('id')
-   const url = `/api/delete/product/${id}`
+   const url = `/user/delete/product/${id}`
    const method = 'DELETE'
    $.ajax({url, method})
   .then(() => {
@@ -96,7 +96,7 @@
  $('#edit-profile-form').on('submit', function (e) {
    e.preventDefault()
    const formData = new FormData($(this)[0])
-   const url = '/api/user/update'
+   const url = '/user/update'
    const method = 'PUT'
    $.ajax(
      url,
@@ -144,7 +144,7 @@
         })
       })
       .catch((err) => {
-        return swal({
+        swal({
           type: 'error',
           title: `Email is registered!`,
           timer: 5000

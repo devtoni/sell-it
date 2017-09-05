@@ -31,8 +31,8 @@ var ProductSchema = new Schema({
     default: true
   },
   createdAt: {
-    type: Number,
-    default: Date.now()
+    type: Date,
+    default: Date.now
   },
   createdBy: {
     type: ObjectId,

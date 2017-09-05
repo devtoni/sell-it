@@ -43,8 +43,7 @@ const UserSchema = new Schema({
 }, { collection })
 
 const options = {
-  usernameField: 'email',
-  usernameLowerCase: true
+  usernameField: 'email'
 }
 
 UserSchema.plugin(passportLocalMongoose, (options))

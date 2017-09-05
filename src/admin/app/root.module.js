@@ -1,7 +1,7 @@
 (function () {
   'use strict'
   angular
-  .module('adminApp', ['ui.router', 'angular-jwt' ])
+  .module('adminApp', ['ui.router', 'angular-jwt', 'toaster', 'ngAnimate'])
   .run(function ($rootScope, $location, StorageService, AuthService, $state) {
     if (AuthService.isLoggedIn()) {
       const token = StorageService.getToken()

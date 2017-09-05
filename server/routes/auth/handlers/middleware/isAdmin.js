@@ -3,6 +3,7 @@ function isAdmin (req, res, next) {
     return res.status(401).end()
   }
   if (!req.user.admin) {
+    console.log('not admin')
     return res.redirect('/profile')
   }
   return next()

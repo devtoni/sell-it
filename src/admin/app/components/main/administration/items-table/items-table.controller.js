@@ -2,8 +2,14 @@
   'use strict'
   const app = angular.module('adminApp')
 
-  function tableController () {
-    console.log('Hola desde table')
+  function tableController (ApiService) {
+    const self = this
+    ApiService.getProducts()
+    .then((products) => {
+      console.log(products)
+      self.productsList = products.data
+      self.now = +new Date()
+    })
   }
-  app.controller('tableController', tableController)
+  app.controller('tableController', ['ApiService', tableController])
 })()

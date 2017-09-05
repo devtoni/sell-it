@@ -5,7 +5,7 @@ const Product = require(path.join(__base, '/models/Product'))
 const Category = require(path.join(__base, '/models/Categories'))
 
 function showProducts (req, res) {
-  const userId = req.cookies.user
+  const { user } = req
   const queryElements = Object.keys(req.query).length
   const { keyword, min = 0, max = 100000, category, sortBy = 'price' } = req.query
   const queries = {}
@@ -13,13 +13,13 @@ function showProducts (req, res) {
   if (category) queries['category'] = category
   if (min && max) queries['price'] = { '$gte': min, '$lte': max }
   User
-    .findById(userId, {
+    .findById(user.id, {
       coords: 1,
       avatarUrl: 1
     })
     .then(data => {
       const {coords} = data
-    //  queries['coords'] = { $near: coords }
+     // queries['coords'] = { $near: coords }
       async.parallel({
         categories: function (callback) {
           Category
@@ -28,6 +28,7 @@ function showProducts (req, res) {
             }, callback)
         },
         productsFiltered: function (callback) {
+          console.log(queries)
           Product
             .find(queries)
             .sort(sortBy)
@@ -35,6 +36,7 @@ function showProducts (req, res) {
             .exec(callback)
         },
         products: function (callback) {
+          console.log(queries)
           Product.find()
             .sort(sortBy)
             .populate('createdBy')
@@ -48,7 +50,7 @@ function showProducts (req, res) {
         } else {
           products = results.products
         }
-        const user = { user: userId, avatarUrl: data.avatarUrl}
+        console.log(products)
         const options = {
           section: 'products-site',
           user,

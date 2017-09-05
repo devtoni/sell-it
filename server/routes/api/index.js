@@ -3,7 +3,6 @@ const router = express.Router()
 const passport = require('../../config/passport')
 const path = require('path')
 const multer = require('multer')
-// const uploadFolderPath = require(path.join(process.env.UPLOAD_FOLDER))
 const upload = multer({ dest: 'C:/Users/toni/Pictures' })
 const uploadCloudinary = require(path.join(__base, '/config/cloudinary'))
 
@@ -14,13 +13,17 @@ const getProducts = require('./products/getProducts')
 const updateProfile = require('./user/updateProfile')
 const getUsers = require('./users/getUsers')
 const getCategories = require('./categories/getCategories')
+const isAuthenticated = require(path.join(__base, '/routes/auth/handlers/middleware/isAuthenticated'))
+const isAdmin = require(path.join(__base, '/routes/auth/handlers/middleware/isAdmin'))
 
-router.delete('/api/delete/product/:id', passport.authenticate('jwt', { session: false }), deleteProduct)
-router.put('/api/user/update', passport.authenticate('jwt', { session: false }), upload.single('avatarUrl'), uploadCloudinary, updateProfile)
-router.put('/api/update/product/:id', passport.authenticate('jwt', { session: false }), updateProduct)
-router.post('/api/add-product', passport.authenticate('jwt', { session: false }), upload.single('imgLocal'), uploadCloudinary, addProduct)
-router.get('/api/users', getUsers)
-router.get('/api/products', getProducts)
+router.put('/user/update', upload.single('avatarUrl'), uploadCloudinary, updateProfile)
+router.put('/user/update/product/:id', isAuthenticated, updateProduct)
+router.post('/user/add-product', isAuthenticated, upload.single('imgLocal'), uploadCloudinary, addProduct)
+router.delete('/user/delete/product/:id', isAuthenticated, deleteProduct)
+
+// API ROUTES TO MANIPULATE INFO
+router.get('/api/users', isAdmin, getUsers)
+router.get('/api/products/all/', isAdmin, getProducts)
 router.get('/api/categories/', getCategories)
 
 module.exports = router

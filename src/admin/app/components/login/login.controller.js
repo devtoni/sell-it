@@ -3,7 +3,7 @@
 
   const app = angular.module('adminApp')
 
-  function LoginCtrl ($rootScope, $location, AuthService, $log, FlashMessageService) {
+  function LoginCtrl ($rootScope, $location, AuthService, $log) {
     if (!AuthService.isLoggedIn()) $location.path('/')
     const self = this
     self.credentials = {
@@ -17,12 +17,11 @@
           $location.path('/administration')
         })
         .catch(err => {
-          FlashMessageService.setMessage(err.data)
           $log.log(err)
         })
     }
   }
 
   app
-  .controller('LoginCtrl', ['$rootScope', '$location', 'AuthService', '$log', 'FlashMessageService', LoginCtrl])
+  .controller('LoginCtrl', ['$rootScope', '$location', 'AuthService', '$log', LoginCtrl])
 })()

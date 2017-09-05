@@ -6,6 +6,9 @@ const logger = require('morgan')
 const moment = require('moment')
 const passport = require('./config/passport/')
 const cookieParser = require('cookie-parser')
+const session = require('express-session')
+const MongoStore = require('connect-mongo')(session)
+const db = require(path.join(__base, '/config/db'))
 
 // ROUTES
 const viewRoutes = require(path.join(__base, '/routes/views/'))
@@ -20,11 +23,15 @@ app.locals.moment = moment
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-// SESSION
 app.use(cookieParser())
+app.use(session({ secret: 'supersecretworddonottelltoanyone',
+  resave: false,
+  saveUninitialized: true,
+  store: new MongoStore({ mongooseConnection: db})  // persist session to prevent reset from server
+}))
 
-// INITIALIZING PASSPORT
 app.use(passport.initialize())
+app.use(passport.session())
 
 // LOGGER
 app.use(logger('dev'))
