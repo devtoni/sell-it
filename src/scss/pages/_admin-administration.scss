@@ -1,0 +1,14 @@
+items-table {
+  table.administration-table {
+    padding-top: 2rem;
+    width: 90%;
+    margin: 3rem auto;
+    & td {
+      vertical-align: middle;
+    }
+    & button {
+      height: 30px;
+      line-height: 15px;
+    }
+  }
+}

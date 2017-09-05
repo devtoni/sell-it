@@ -67,7 +67,7 @@ div.div {
   .profile-nav-bar button:hover {
     background: transparent; }
 
-.profile-photo-navbar > img {
+.profile-photo-navbar a > img {
   border-radius: 50%;
   width: 40px; }
 
@@ -1113,6 +1113,16 @@ dashboard {
     align-self: baseline; }
     .image-div-form .form-group {
       width: 90%; } }
+
+items-table table.administration-table {
+  padding-top: 2rem;
+  width: 90%;
+  margin: 3rem auto; }
+  items-table table.administration-table td {
+    vertical-align: middle; }
+  items-table table.administration-table button {
+    height: 30px;
+    line-height: 15px; }
 
 .dropdown-menu a.dropdown-item {
   color: #4B4C63; }

@@ -11,10 +11,12 @@
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <link rel="stylesheet" href="libs/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="libs/bower_components/AngularJS-Toaster/toaster.min.css">
 </head>
 
 <body ng-app="adminApp" ng-cloak>
         <div class="admin-site">
+            <toaster-container></toaster-container>
             <root></root>
         </div>
 
@@ -26,10 +28,13 @@
   <script src="libs/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <!-- CHART -->
   <script src="libs/bower_components/chart.js/dist/Chart.js"></script>
-  
   <!-- ANGULAR -->
   <script src="libs/bower_components/angular/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+     <!-- ANGULAR ANIMATE -->
+  <script src="libs/bower_components/angular-animate/angular-animate.min.js"></script>
+  <!-- TOASTER -->
+  <script src="libs/bower_components/AngularJS-Toaster/toaster.min.js"></script>
    <!-- ANGULAR JWT -->
    <script src="libs/bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
   <!-- ROOT -->
@@ -39,15 +44,12 @@
   <script src="admin/app/services/ApiService.js"></script>
   <script src="admin/app/services/ServiceChart.js"></script>
   <script src="admin/app/services/AuthInterceptor.js"></script>
-  <script src="admin/app/services/FlashMessageService.js"></script>
   <script src="admin/app/services/StorageService.js"></script>
   <script src="admin/app/services/AuthService.js"></script>
   <!-- CONFIG -->
   <script src="admin/app/config/stateRoutes.js"></script>
   <script src="admin/app/config/addInterceptor.js"></script>
-  <!-- ROOT -->
-  <script src="admin/app/common/messageFlash/message.controller.js"></script>
-  <script src="admin/app/common/messageFlash/message.component.js"></script>
+
   <!-- ROOT -->
   <script src="admin/app/common/header/header.controller.js"></script>
   <script src="admin/app/common/header/header.component.js"></script>
