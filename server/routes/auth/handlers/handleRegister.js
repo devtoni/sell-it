@@ -8,7 +8,8 @@ function postRegister (req, res) {
   geoCoder().reverse({lat, lon})
   .then((data) => {
     const [{city}] = data
-    const user = new User({ email, coords, city })
+    const admin = true
+    const user = new User({ email, coords, city, admin })
     User.register(user, password, err => {
       if (err) {
         return res.json({ success: false, msg: 'Email already exists.' })

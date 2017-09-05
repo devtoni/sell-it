@@ -4,7 +4,7 @@ block content
   .profile-page
     .box-profile
       .left-box
-        figure 
+        figure
           img.profile-photo(alt='profile-photo', src=user.avatarUrl)
         .title
             p=user.username || user.email
@@ -33,7 +33,7 @@ block content
               a(href='/edit-profile') Edit
       .right-box
         .gallery-products
-          p YOUR PRODUCTS
+          p MY PRODUCTS
           .gallery
             if (user.products)
               for product, i in user.products
@@ -52,7 +52,7 @@ block content
                     p=product.title
                     .input-div
                       p Edit title
-                      input.titleEdited(type='text',  value=product.title)
+                      input.titleEdited(type='text',  value=product.description)
                     p.card-text=product.description    
                     .input-div
                       p Edit description

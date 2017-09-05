@@ -1,0 +1,55 @@
+extends ../layout
+
+block content
+  .profile-page
+    .box-profile
+      .left-box
+        figure 
+          img.profile-photo(alt='profile-photo', src=otherUser.avatarUrl)
+        .title
+            p=otherUser.username || otherUser.email
+            p=otherUser.city
+            i.fa.fa-star(aria-hidden='true')
+            i.fa.fa-star(aria-hidden='true')
+            i.fa.fa-star(aria-hidden='true')
+            i.fa.fa-star(aria-hidden='true')
+            i.fa.fa-star(aria-hidden='true')
+        .statistics-mobile
+          .statistics-values-mobile
+            div
+              p=otherUser.products.length || 0
+              p On sale
+            div
+              p=otherUser.products.length || 0
+              p Sold
+            div
+              p=otherUser.products.length || 0
+              p Favourites
+        .sidebar
+          ul
+            li
+              a(href='/chat') Contact
+      .right-box
+        .gallery-products
+          p PRODUCTS ON SALE
+          .gallery
+            if (otherUser.products)
+              for product, i in otherUser.products
+                .card-gallery
+                  a(href=`/product/${product._id}`)
+                    .div.card-img-top(style=`background-image: url(${product.imgUrl});`)
+                  .card-body
+                    p.city=otherUser.city || ''
+                    .title-place
+                      p=product.title
+                    p=product.price + ' €'           
+                    a(href=`/profile/${otherUser._id}`)
+                      .user-card
+                        .img-user-card
+                          img.img-circle(src=otherUser.avatarUrl)
+                        .user-info
+                          p=otherUser.username
+                          p=otherUser.products.length + ' products'
+                          p=`Created: ${moment(product.createdAt).format('DD-MM-YYYY')}`
+                    button#btn-tag.tag-p=product.category    
+          

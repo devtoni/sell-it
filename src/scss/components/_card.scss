@@ -20,7 +20,9 @@
       min-height: 150px;
     }
     .card-body {
+      text-align: right;
       padding: 0.5rem;
+      padding-bottom: 0.2rem;
       .title-place {
         display: flex;
         justify-content: space-between;
@@ -141,7 +143,14 @@ p.city {
      }
    }
 }
-
+.tag-p {
+  font-size: 0.7rem !important;
+  color: gray !important;
+  text-align: right !important;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
 div.card-img-top {
   height: 200px;
   /* width: 100%; */

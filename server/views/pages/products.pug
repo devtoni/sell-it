@@ -47,10 +47,12 @@ block content
                       .title-place
                         p=product.title
                       p=product.price + ' €'           
-                      .user-card
-                        .img-user-card
-                          img.img-circle(src=product.createdBy.avatarUrl)
-                        .user-info
-                          p=product.createdBy.username
-                          p=product.createdBy.products.length + ' products'
-                          p=`Created: ${moment(product.createdAt).format('DD-MM-YYYY')}`
+                      a(href=`/profile/${product.createdBy._id}`)
+                        .user-card
+                          .img-user-card
+                            img.img-circle(src=product.createdBy.avatarUrl)
+                          .user-info
+                            p=product.createdBy.username
+                            p=product.createdBy.products.length + ' products'
+                            p=`Created: ${moment(product.createdAt).format('DD-MM-YYYY')}`
+                      button#btn-tag.tag-p=product.category

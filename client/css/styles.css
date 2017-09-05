@@ -212,7 +212,9 @@ div.div {
     .gallery .card-gallery > a > img {
       min-height: 150px; }
     .gallery .card-gallery .card-body {
-      padding: 0.5rem; }
+      text-align: right;
+      padding: 0.5rem;
+      padding-bottom: 0.2rem; }
       .gallery .card-gallery .card-body .title-place {
         display: flex;
         justify-content: space-between;
@@ -304,6 +306,14 @@ p.city {
   display: flex; }
   .card-body-add-page .user-card .img-user-card img {
     border-radius: 50%; }
+
+.tag-p {
+  font-size: 0.7rem !important;
+  color: gray !important;
+  text-align: right !important;
+  background: transparent;
+  border: none;
+  cursor: pointer; }
 
 div.card-img-top {
   height: 200px;

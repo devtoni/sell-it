@@ -17,11 +17,12 @@ block content
                 |  product.createdBy.city
               p=`Created: ${moment(product.createdAt).format('DD-MM-YYYY')}`
             .user-detail
-            .user-card
-              .img-user-card
-                img.img-circle(src=`product.createdBy.avatarUrl`)
-              .user-info
-                p=product.createdBy.username
+            a(href=`/profile/${product.createdBy._id}`)
+              .user-card
+                .img-user-card
+                  img.img-circle(src=product.createdBy.avatarUrl)
+                .user-info
+                  p=product.createdBy.username
             .chat-product-detail-btn
               a(href=`/contact/${product.createdBy._id}`) Contact
 

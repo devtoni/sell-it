@@ -38,6 +38,7 @@ function getProducts (req, res) {
     }
   }, function (err, results) {
     if (err) throw err
+    console.log(results)
     const isActive = _.countBy(results.activeProducts, product => product.is_Active)
     res.json({ productsByDay: results.productsByDay, isActive, total: results.totalProduct.length })
   })
