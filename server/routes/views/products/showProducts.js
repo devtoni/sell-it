@@ -1,65 +1,39 @@
 const path = require('path')
 const async = require('async')
-const User = require(path.join(__base, '/models/User'))
 const Product = require(path.join(__base, '/models/Product'))
 const Category = require(path.join(__base, '/models/Categories'))
 
 function showProducts (req, res) {
-  const { user } = req
-  const queryElements = Object.keys(req.query).length
-  const { keyword, min = 0, max = 100000, category, sortBy = 'price' } = req.query
+  let user = ''
   const queries = {}
+  if (req.user) {
+    user = req.user
+    queries['coords'] = { $near: user.coords }
+  }
+
+  const { keyword, min, max, category, sortBy = 'price' } = req.query
+
   if (keyword) queries['title'] = new RegExp(keyword, 'i')
   if (category) queries['category'] = category
   if (min && max) queries['price'] = { '$gte': min, '$lte': max }
-  User
-    .findById(user.id, {
-      coords: 1,
-      avatarUrl: 1
-    })
-    .then(data => {
-      const {coords} = data
-     // queries['coords'] = { $near: coords }
-      async.parallel({
-        categories: function (callback) {
-          Category
-            .find({}, {
-              title: 1
-            }, callback)
-        },
-        productsFiltered: function (callback) {
-          console.log(queries)
-          Product
+
+  async.parallel({
+    categories: (callback) => {
+      Category
+            .find({}, { title: 1 }, callback)
+    },
+    products: (callback) => {
+      Product
             .find(queries)
             .sort(sortBy)
             .populate('createdBy')
             .exec(callback)
-        },
-        products: function (callback) {
-          console.log(queries)
-          Product.find()
-            .sort(sortBy)
-            .populate('createdBy')
-            .exec(callback)
-        }
-      }, function (err, results) {
-        if (err) throw err
-        var products = ''
-        if (queryElements) {
-          products = results.productsFiltered
-        } else {
-          products = results.products
-        }
-        console.log(products)
-        const options = {
-          section: 'products-site',
-          user,
-          products,
-          categories: results.categories
-        }
-        res.render('pages/products', options)
-      })
-    })
+    }
+  }, (err, results) => {
+    if (err) throw err
+    const options = { section: 'products-site', user, results }
+    res.render('pages/products', options)
+  })
 }
 
 module.exports = showProducts

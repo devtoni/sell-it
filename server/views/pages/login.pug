@@ -1,15 +1,14 @@
 extends ../layout
 
 block content
-  .container
-    h3 Login
+  .container.login-container
+    h3 Login Access
     .card-form
       form#login-form.form-signin(action="/login", method="POST")
-        p Enter your credentials
+        p E-mail
         input#inputEmail.form-control(type='email', placeholder='email', required='', autofocus='', name="email")
-        input#inputPassword.form-control(type='password', placeholder='Password', required='', name="password")
+        p Password
+        input#inputPassword.form-control(type='password', placeholder='password', required='', name="password")
         button.btn.btn-lg.btn-success.btn-block.btn-signin.custom-btn(type='submit', target="/profile") Sign In
-      // /form
-      a.forgot-password(href='#')
       p Not registered yet? 
         a(href='/register') Register

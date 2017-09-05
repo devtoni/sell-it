@@ -1,5 +1,7 @@
 function showContactForm (req, res) {
-  res.render('pages/contact', {idSection: 'profile'})
+  const { user } = req
+  const section = 'contact'
+  res.render('pages/contact', { user, section })
 }
 
 module.exports = showContactForm

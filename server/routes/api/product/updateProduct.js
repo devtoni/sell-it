@@ -2,6 +2,7 @@ const path = require('path')
 const Product = require(path.join(__base, '/models/Product'))
 
 function editProduct (req, res) {
+  console.log('paso por edit')
   const { price, title, description } = req.body
   const { id } = req.params
   const updateFile = {}

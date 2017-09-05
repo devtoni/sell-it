@@ -48,15 +48,15 @@ block content
                     p=product.price + ' €'
                     .input-div
                       p Edit price
-                      input.priceEdited(type='number')
+                      input.priceEdited(type='number', value=product.price)
                     p=product.title
                     .input-div
                       p Edit title
-                      input.titleEdited(type='text')
+                      input.titleEdited(type='text',  value=product.title)
                     p.card-text=product.description    
                     .input-div
                       p Edit description
-                      input.descriptionEdited(type='text')    
+                      input.descriptionEdited(type='text', value=product.description)    
           .btn-add
             a(href='/add-product')
               i.fa.fa-plus(aria-hidden='true')

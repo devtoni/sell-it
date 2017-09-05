@@ -14,14 +14,17 @@ block content
                   p Categories
                   select(name='category', id='')
                     option(value='')
-                    if (categories) 
-                      each category in categories
+                    if (results.categories) 
+                      each category in results.categories
                         option(value=category.title)=category.title
                 div
-                  p Type a range price
                   .div-range-price-inputs
-                    input(type='number', name='min', placeholder='from')
-                    input(type='number', name='max', placeholder='to')
+                    .range
+                      label From:
+                      input.from(type='number', name='min', min='0', value='')
+                    .range
+                      label To:
+                      input(type='number', name='max', min='0', value='')
                 div
                   p Sort by
                   select#order-select(name='sortBy')
@@ -34,8 +37,8 @@ block content
           .main-column-products
             .gallery
               // #begin card
-              if (products)
-                for product, i in products
+              if (results.products)
+                for product, i in results.products
                   .card-gallery
                     a(href=`/product/${product._id}`)
                       .div.card-img-top(style=`background-image: url(${product.imgUrl});`)

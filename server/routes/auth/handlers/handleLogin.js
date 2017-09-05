@@ -1,7 +1,6 @@
 
 function postLogin (req, res) {
-  req.session.user = req.user
-  res.redirect('/')
+  res.redirect('/edit-profile')
 }
 
 module.exports = postLogin

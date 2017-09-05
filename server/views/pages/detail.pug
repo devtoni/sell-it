@@ -5,7 +5,7 @@ block content
     .container
       .row
         .col-12.col-lg-10.lg-auto.product-detail
-          .image-product-detail-box
+          img(src=product.imgUrl)
           .content-detail
             .product-content-detail
               h4=product.price + ' €'
@@ -19,11 +19,11 @@ block content
             .user-detail
             .user-card
               .img-user-card
-                img.img-circle(src='/img/trolface.jpg')
+                img.img-circle(src=`product.createdBy.avatarUrl`)
               .user-info
                 p=product.createdBy.username
             .chat-product-detail-btn
-              a(href=`/chat/${product.createdBy._id}`) Chat
+              a(href=`/contact/${product.createdBy._id}`) Contact
 
 
 

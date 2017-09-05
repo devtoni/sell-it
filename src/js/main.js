@@ -73,22 +73,24 @@
  })
 
  $('.card-gallery').on('click', '#btnEditOk', function (e) {
-   const $parent = $(this).parent()
-   const id = $(this).data('id')
+   const self = $(this)
+   const $parent = self.parent()
+   const id = self.data('id')
    const inputsText = $parent.find('input[type=text]')
    const inputPrice = $parent.find('input[type=number]')
    const inputTextValue = $.map(inputsText, input => input.value)
    const inputPriceValue = $.map(inputPrice, input => input.value)
    const values = [...inputTextValue, ...inputPriceValue]
    const [title, description, price] = values
-   const url = `/api/update/product/${id}`
+   const url = `/user/update/product/${id}`
    const method = 'PUT'
    const data = { price, title, description, id }
    $.ajax({url, method, data})
-  .then(() => {
-    window.location.reload()
-  })
-  .catch((e) => console.log(e))
+         .then(() => {
+           swal('Edited!', 'Your article has been edited.', 'success')
+           window.location.reload()
+         })
+         .catch((e) => console.log(e))
  })
 
 /* UPDATE USER PROFILE */
@@ -107,9 +109,21 @@
        contentType: false
      })
    .then((user) => {
+     swal({
+       type: 'success',
+       title: `Perfect you've edit succesfully your profile!`,
+       timer: 5000
+     })
      window.location.href = '/profile'
    })
-   .catch(() => console.log('something wrong'))
+   .catch(() => {
+     swal({
+       type: 'error',
+       title: `Something is wrong... :(`,
+       timer: 5000
+     })
+     window.location.href = '/profile'
+   })
  })
 
 /* FILTER PRODUCTS */
@@ -150,6 +164,27 @@
           timer: 5000
         })
       })
+   })
+ }
+
+ /* EDIT PROFILE */
+
+ if ($('body').hasClass('edit-profile')) {
+   $('#info-city-alert-button').on('click', function (e) {
+     e.preventDefault()
+     swal({
+       type: 'info',
+       title: `When you register, we geolocate your position, thus is not required to put your city, although, you are able to change it.`,
+       confirmButtonText: 'I get it!'
+     })
+   })
+   $('#info-username-alert-button').on('click', function (e) {
+     e.preventDefault()
+     swal({
+       type: 'info',
+       title: `Put an username is not mandatory, but is friendlier for other users`,
+       confirmButtonText: 'I get it!'
+     })
    })
  }
 

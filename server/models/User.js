@@ -39,6 +39,12 @@ const UserSchema = new Schema({
       type: ObjectId,
       ref: 'Product'
     }
+  ],
+  favourites: [
+    {
+      type: ObjectId,
+      ref: 'Product'
+    }
   ]
 }, { collection })
 

@@ -1,13 +1,14 @@
 extends ../layout
 
 block content
-    .container
+    .container.login-container
       h3 Register
       .card-form
-        form#register-form.form-signin()
-          p Register for free account
+        form#register-form.form-signin
+          p E-mail
           input#inputEmail.form-control(type='email', required, name="email", placeholder="email")
+          p Password
           input#inputPassword.form-control(type='password', placeholder='password', required, name="password")
-          button.btn.btn-lg.btn-success.btn-block.btn-signin.custom-btn() Sign Up
+          button.btn.btn-lg.btn-success.btn-block.btn-signin.custom-btn Sign Up
         p Have you already an account?
-          a(href='/login') Login
+           a(href='/login')  Login
