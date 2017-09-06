@@ -43,7 +43,8 @@ const UserSchema = new Schema({
   favourites: [
     {
       type: ObjectId,
-      ref: 'Product'
+      ref: 'Product',
+      unique: true
     }
   ],
   sentMessages: [

@@ -13,6 +13,10 @@ function showMessage (req, res) {
 
   Promise.all([author, receiver])
          .then((results) => {
+           console.log(user._id)
+           console.log(results)
+           console.log(results[0].author._id)
+           console.log(user._id.toString() == results[0].author._id.toString())
            res.render('pages/message', { section, user, results })
          })
 }

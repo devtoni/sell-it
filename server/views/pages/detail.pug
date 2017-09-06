@@ -8,7 +8,12 @@ block content
           img(src=product.imgUrl)
           .content-detail
             .product-content-detail
-              h4=product.price + ' €'
+             if (user._id.toString() != product.createdBy._id.toString())
+              h4.heart-icon-container#wish-btn=product.price + ' €'
+                i.heart-icon(data-id=product._id)
+             else
+              h4.heart-icon-container#deal-btn=product.price + ' €'
+                i.deal-icon(data-id=product._id)
               h6.title-detail=product.title
               p.description-detail=product.description
             .user-location-detail-product

@@ -4,9 +4,11 @@ const User = require(path.join(__base, '/models/User'))
 
 function deleteProduct (req, res) {
   const { id } = req.params
+  const { user } = req
 
   User
-      .update({product: id}, {$pull: { products: id }})
+      .findByIdAndUpdate(user._id, {$pull: { products: id }})
+      .then(console.log)
       .catch((e) => res.send(e))
 
   Product

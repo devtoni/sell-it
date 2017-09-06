@@ -19,7 +19,14 @@
   align-items: center;
   border-bottom: 1px solid lightgray;
 }
-
+.trash-p{
+  text-align: right;
+}
+.trash-div {
+  width: 10%;
+  height: 100%;
+  text-align: right;
+}
 .user-card-detail-message {
   display: flex;
   align-items: center;

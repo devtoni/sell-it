@@ -845,6 +845,29 @@ form.add-product-form {
 .product-content-detail > * {
   padding: 0.5rem 0; }
 
+.heart-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.heart-icon {
+  cursor: pointer;
+  display: inline-block;
+  background-image: url("/img/arrow.png");
+  background-size: cover;
+  height: 35px;
+  width: 35px;
+  margin-right: 15px; }
+
+.deal-icon {
+  cursor: pointer;
+  display: inline-block;
+  background-image: url("/img/deal.png");
+  background-size: cover;
+  height: 35px;
+  width: 35px;
+  margin-right: 15px; }
+
 .chat-product-detail-btn {
   text-align: center;
   background: red;
@@ -1033,6 +1056,10 @@ dashboard {
       text-align: left;
       margin-bottom: 2rem; }
 
+.profile-link {
+  flex: 1;
+  color: black !important; }
+
 .profile-card p {
   font-size: 1rem !important; }
 
@@ -1151,6 +1178,14 @@ dashboard {
   display: flex;
   align-items: center;
   border-bottom: 1px solid lightgray; }
+
+.trash-p {
+  text-align: right; }
+
+.trash-div {
+  width: 10%;
+  height: 100%;
+  text-align: right; }
 
 .user-card-detail-message {
   display: flex;

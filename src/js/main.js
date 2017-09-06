@@ -167,6 +167,27 @@
    })
  }
 
+ if ($('body').hasClass('product-detail-page')) {
+   $('#wish-btn').on('click', function (e) {
+     e.preventDefault()
+     const productId = $(this)['0'].firstChild.nextSibling.dataset.id
+     const url = `/user/update`
+     const method = 'PUT'
+     const data = { productId }
+     $.ajax({url, method, data})
+     .then(console.log)
+   })
+   $('#deal-btn').on('click', function (e) {
+     e.preventDefault()
+     const productId = $(this)['0'].firstChild.nextSibling.dataset.id
+     const url = `/user/update/product/${productId}`
+     const data = { is_Active: false }
+     const method = 'PUT'
+     $.ajax({url, method, data})
+     .then(console.log)
+   })
+ }
+
  /* SEARCH BY TAG */
 
  $('.tag-p').on('click', function (e) {

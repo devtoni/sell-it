@@ -9,21 +9,16 @@ block content
         .title
             p=user.username || user.email
             p=user.city
-            i.fa.fa-star(aria-hidden='true')
-            i.fa.fa-star(aria-hidden='true')
-            i.fa.fa-star(aria-hidden='true')
-            i.fa.fa-star(aria-hidden='true')
-            i.fa.fa-star(aria-hidden='true')
         .statistics-mobile
           .statistics-values-mobile
-            div
-              p=user.products.length || 0
+            a.profile-link(href=`/profile/${user._id}`)
+              p=activeProducts || 0
               p On sale
-            div
-              p=user.products.length || 0
+            a.profile-link(href='/sold-products')
+              p=noActiveProducts || 0
               p Sold
-            div
-              p=user.products.length || 0
+            a.profile-link(href='/my-wishes')
+              p=user.favourites.length || 0
               p Favourites
         .sidebar
           ul
@@ -37,12 +32,13 @@ block content
           .gallery
             if (user.products)
               for product, i in user.products
+               if (product.is_Active)
                 .card-gallery.profile-card
                   button#btnEditOk(data-id=product._id) Ok
                   button#btnDeleteArticle(data-id=product._id) Delete
                   button#btnEdit.btn.btn-warning.pull-right(data-test=product._id)
                     i.fa.fa-pencil
-                  a(href='/profile')
+                  a(href=`/product/${product._id}`)
                     .div.card-img-top(style=`background-image: url(${product.imgUrl});`)
                   .card-body.profile-card-body
                     p=product.price + ' €'

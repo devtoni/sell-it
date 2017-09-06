@@ -56,7 +56,10 @@
     }
   }
 }
-
+.profile-link {
+  flex: 1;
+  color: black !important;
+}
 .profile-card {
   p {
     font-size: 1rem !important;

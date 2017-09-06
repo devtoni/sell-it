@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+  .main-column-products
+    .gallery
+      h3 Sold products
+      if (user.favourites)
+        for product, i in user.favourites
+          .card-gallery
+            a(href=`/product/${product._id}`)
+              .div.card-img-top(style=`background-image: url(${product.imgUrl});`)
+            .card-body
+              p.city=product.createdBy.city || ''
+              .title-place
+                p=product.title
+              p=product.price + ' €'           
+              a(href=`/profile/${product.createdBy._id}`)
+                .user-card
+                  .img-user-card
+                    img.img-circle(src=product.createdBy.avatarUrl)

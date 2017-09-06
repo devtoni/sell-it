@@ -22,7 +22,7 @@ block content
       p=results[0].subject
       p=results[0].content
     .div-btn-reply
-      if (user._id == results[0].author._id)
-        a.custom-btn.reply(href=`/contact/${results[1].receiver._id}`) Reply
+      if (user._id.toString() == results[0].author._id.toString())
+        a.custom-btn.reply(href=`/contact/${results[1].receiver._id}`) Send a message
       else
-        a.custom-btn.reply(href=`/contact/${results[0].author._id}`) Send a message
+        a.custom-btn.reply(href=`/contact/${results[0].author._id}`) Reply

@@ -3,6 +3,8 @@ extends ../layout
 block content
   .container.mail-box
     h3 Inbox Messages
+    p.trash-p
+      i.fa.fa-trash(aria-hidden='true')
     .div-button-mail.outbox
      if (usersSentby)
       each message, index in user.receivedMessages
@@ -17,3 +19,5 @@ block content
               span Subject: 
               | #{message.subject} 
             p=`Created: ${moment(message.createdAt).format('DD-MM-YYYY')}`
+          .trash-div
+           input(type='checkbox', name='', value=message._id)
