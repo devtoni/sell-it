@@ -45,6 +45,18 @@ const UserSchema = new Schema({
       type: ObjectId,
       ref: 'Product'
     }
+  ],
+  sentMessages: [
+    {
+      type: ObjectId,
+      ref: 'Message'
+    }
+  ],
+  receivedMessages: [
+    {
+      type: ObjectId,
+      ref: 'Message'
+    }
   ]
 }, { collection })
 

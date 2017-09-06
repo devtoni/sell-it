@@ -1,0 +1,59 @@
+.mail-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .div-button-mail {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    a {
+      margin: 2rem 0;
+    }
+  }
+}
+.user-card-mail {
+  margin: 0 !important;
+  color: black !important;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}
+
+.user-card-detail-message {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.content-message-detail {
+  margin: 2rem 0;
+}
+.reply {
+  width: 50%;
+}
+.div-btn-reply {
+  margin-top: 2rem;
+}
+
+.img-user-card {
+  img {
+    border-radius: 50%;
+  }
+}
+.user-info {
+  padding-left: 1rem;
+  p {
+    white-space: nowrap;
+    max-width: 20em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  p > span{
+    font-weight: bold;
+    color: black !important;
+  }
+  p:last-child {
+    font-size: 0.8rem;
+    color: grey;
+  }
+}

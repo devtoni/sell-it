@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  .container.mail-box
+    h3 Inbox Messages
+    .div-button-mail.outbox
+     if (usersSentby)
+      each message, index in user.receivedMessages
+        a.user-card-mail(href=`/mail/message/${message._id}`)
+          .img-user-card
+            img(src=usersSentby[index].avatarUrl)
+          .user-info
+            p 
+              span To:
+              | #{usersSentby[index].username}
+            p
+              span Subject: 
+              | #{message.subject} 
+            p=`Created: ${moment(message.createdAt).format('DD-MM-YYYY')}`

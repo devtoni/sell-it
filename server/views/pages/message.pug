@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  .container.mail-box
+    h3 Message
+    .user-card.user-card-detail-message
+      .img-user-card
+        img.img-circle(src=results[0].author.avatarUrl)         
+      .user-info
+        p 
+          span From: 
+          | #{results[0].author.username}
+    .user-card.user-card-detail-message    
+      .img-user-card
+        img.img-circle(src=results[1].receiver.avatarUrl)         
+      .user-info
+        p 
+          span To:
+          | #{results[1].receiver.username}
+    p=`Created: ${moment(results[0].createdAt).format('DD-MM-YYYY HH:MM')}`
+    .content-message-detail
+      p=results[0].subject
+      p=results[0].content
+    .div-btn-reply
+      if (user._id == results[0].author._id)
+        a.custom-btn.reply(href=`/contact/${results[1].receiver._id}`) Reply
+      else
+        a.custom-btn.reply(href=`/contact/${results[0].author._id}`) Send a message

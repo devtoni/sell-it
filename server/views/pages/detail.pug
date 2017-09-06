@@ -9,21 +9,20 @@ block content
           .content-detail
             .product-content-detail
               h4=product.price + ' €'
-              h6=product.title
-              p=product.description
+              h6.title-detail=product.title
+              p.description-detail=product.description
             .user-location-detail-product
               p
                 i.fa.fa-map-marker(aria-hidden='true')
-                |  product.createdBy.city
+                |  #{product.createdBy.city}
               p=`Created: ${moment(product.createdAt).format('DD-MM-YYYY')}`
             .user-detail
-            a(href=`/profile/${product.createdBy._id}`)
-              .user-card
-                .img-user-card
-                  img.img-circle(src=product.createdBy.avatarUrl)
-                .user-info
-                  p=product.createdBy.username
-            .chat-product-detail-btn
+              a(href=`/profile/${product.createdBy._id}`)
+                img.img-circle(src=product.createdBy.avatarUrl)
+              .description-user-detail
+                p=product.createdBy.username
+                p=product.createdBy.products.length + ' Products on sale'
+            .custom-btn.contact-detail
               a(href=`/contact/${product.createdBy._id}`) Contact
 
 

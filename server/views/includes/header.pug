@@ -43,7 +43,7 @@ header
   #wrapper
     #sidebar-wrapper
       ul.sidebar-nav
-       if (user && section != 'profile')
+       if (user && section != 'profile' && section != 'mail')
         li
           .profile-side-bar
             .profile-photo
@@ -51,8 +51,6 @@ header
             .action-profile
               p
                 a(href=`/profile/${user._id}`) My account
-        li
-          a(href='/edit-profile') Edit Account
         li
           a(href='/products') Buy
         li
@@ -70,11 +68,13 @@ header
         li 
           a(href='/my-wishes') My wishes
         li
-          a(href='/edit-profile') Edit Account
-        li
           a(href='/products') Buy
         li
           a(href='/add-product') Sell
+        li
+          a(href='/mail') Mail
+        li
+          a(href='/edit-profile') Edit Account
         li
           a(href='/logout') Exit
        if (!user)
@@ -87,6 +87,18 @@ header
                 a(href='/login') Login
         li
           a(href='/products') Buy
+       if (user && section == 'mail')
+        li
+          .profile-side-bar
+            .profile-photo
+              img(src=user.avatarUrl, alt=user.avatarUrl)
+            .action-profile
+              p
+                a(href=`/profile/${user._id}`) My account
+        li 
+          a(href='/mail/inbox') Inbox
+        li
+          a(href='/mail/outbox') Outbox
         
 
 

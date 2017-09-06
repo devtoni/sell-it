@@ -1,10 +1,13 @@
 extends ../layout
 
 block content
-  .chat
-    .container
-      .row.chat-row
-        .chat-box
-          .sidebar-chat-box
-          .content-message-box
+  .container.login-container
+    h3 Contact with user
+    .card-form
+      form#login-form.form-signin(action=`/contact/${otherUser.id}`, method="POST")
+        p For:
+        input#inputEmail.form-control(type='email', value=otherUser.email , readonly, placeholder='email', required='', autofocus='', name="email")
+        p Message:
+        textarea#inputPassword.form-control(type='text', placeholder='', required='', name="text")
+        button.btn.btn-lg.btn-success.btn-block.btn-signin.custom-btn(type='submit') Send
             

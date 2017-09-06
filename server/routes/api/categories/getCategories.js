@@ -2,9 +2,10 @@ const path = require('path')
 const Category = require(path.join(__base, '/models/Categories'))
 
 function getCategories (req, res) {
-  console.log("getCategories...")
+  console.log('getCategories...')
   Category.find()
   .then(categories => {
+    console.log()
     const categoriesFormated = categories.reduce((acc, category) => {
       acc[category.title] = category.products.length
       return acc

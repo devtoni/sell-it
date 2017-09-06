@@ -114,7 +114,7 @@
        title: `Perfect you've edit succesfully your profile!`,
        timer: 5000
      })
-     window.location.href = '/profile'
+     window.location.href = `/profile/${user._id}`
    })
    .catch(() => {
      swal({
@@ -122,7 +122,7 @@
        title: `Something is wrong... :(`,
        timer: 5000
      })
-     window.location.href = '/profile'
+     window.location.href = `/profile/${user._id}`
    })
  })
 
@@ -167,6 +167,12 @@
    })
  }
 
+ /* SEARCH BY TAG */
+
+ $('.tag-p').on('click', function (e) {
+   const value = $(this).text()
+   window.location.href = `/products?category=${value}`
+ })
  /* EDIT PROFILE */
 
  if ($('body').hasClass('edit-profile')) {
