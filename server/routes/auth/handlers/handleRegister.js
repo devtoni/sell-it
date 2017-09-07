@@ -11,10 +11,11 @@ function postRegister (req, res) {
     const admin = true
     const user = new User({ email, coords, city, admin })
     User.register(user, password, err => {
+      console.log('paso por register')
       if (err) {
-        return res.json({ success: false, msg: 'Email already exists.' })
+        return res.send({ success: false, msg: 'Email already exists.' })
       }
-      res.json({ success: true, msg: 'Successful created new user.' })
+      res.send({ success: true, msg: 'Successful created new user.' })
     })
   })
 }

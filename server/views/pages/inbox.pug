@@ -3,7 +3,7 @@ extends ../layout
 block content
   .container.mail-box
     h3 Inbox Messages
-    p.trash-p
+    p.trash-p#remove-message-btn
       i.fa.fa-trash(aria-hidden='true')
     .div-button-mail.outbox
      if (usersSentby)
@@ -13,7 +13,7 @@ block content
             img(src=usersSentby[index].avatarUrl)
           .user-info
             p 
-              span To:
+              span From:
               | #{usersSentby[index].username}
             p
               span Subject: 

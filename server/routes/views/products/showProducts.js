@@ -8,7 +8,6 @@ function showProducts (req, res) {
   const queries = {}
   if (req.user) {
     user = req.user
-    queries['coords'] = { $near: user.coords }
   }
 
   const { keyword, min, max, category, sortBy = 'price' } = req.query

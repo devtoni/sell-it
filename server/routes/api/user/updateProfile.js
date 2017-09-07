@@ -16,7 +16,7 @@ function updateProfile (req, res) {
   if (imgUrl) updateOptions['avatarUrl'] = imgUrl
   if (productId) {
     User
-       .findByIdAndUpdate(user._id)
+       .findByIdAndUpdate(user._id, { $push: {favourites: productId} })
        .then(console.log)
        .catch(console.log)
   }
@@ -26,7 +26,7 @@ function updateProfile (req, res) {
     .then((userLocation) => {
       const latitude = userLocation[0].latitude
       const longitude = userLocation[0].longitude
-      return [ latitude, longitude ]
+      return [ longitude, latitude ]
     })
     .then((coords) => {
       updateOptions['coords'] = coords

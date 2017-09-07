@@ -1,20 +1,20 @@
 const path = require('path')
 const Product = require(path.join(__base, '/models/Product'))
 const User = require(path.join(__base, '/models/User'))
+const Category = require(path.join(__base, 'models/Categories'))
+const mongoose = require('mongoose')
 
 function deleteProduct (req, res) {
   const { id } = req.params
   const { user } = req
 
-  User
-      .findByIdAndUpdate(user._id, {$pull: { products: id }})
-      .then(console.log)
-      .catch((e) => res.send(e))
+  const removeFromUser = User.findByIdAndUpdate(user._id, {$pull: { products: id }})
+  const removeFromCategory = Category.findOneAndRemove({products: { $in: [mongoose.Types.ObjectId(id)] }})
+  const removeFromProduct = Product.findByIdAndRemove(id)
 
-  Product
-      .findByIdAndRemove(id)
-      .then(() => res.send(`Item with ID: ${id} has been removed`))
-      .catch((e) => res.send(`FAIL!! Product w/ id ${id} was NOT removed`))
+  Promise.all([removeFromUser, removeFromCategory, removeFromProduct])
+         .then((result) => res.send('Todo Ok'))
+         .catch((e) => res.send(e))
 }
 
 module.exports = deleteProduct

@@ -7,10 +7,6 @@ function addProduct (req, res) {
   const { title, description, category, price, imgUrl } = req.body
   const {_id: id} = req.user
 
-  Category
-  .findOneAndUpdate({title: category}, { $push: {products: id} }, {upsert: true})
-  .then((ok) => console.log(ok))
-
   User.findById(id)
   .then((user) => {
     const product = new Product({
@@ -27,7 +23,9 @@ function addProduct (req, res) {
   })
   .then((product) => {
     product.save()
-    .then((product) => {
+    Category
+    .findOneAndUpdate({title: category}, { $push: {products: product._id} }, {upsert: true})
+    .then((category) => {
       User
       .findByIdAndUpdate(id, { $push: {products: product._id} })
       .then((user) => res.redirect(`/profile/${user._id}`))

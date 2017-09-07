@@ -48,13 +48,29 @@
 /* delete article */
 
  $('.card-gallery').on('click', '#btnDeleteArticle', function (e) {
-   const id = $(this).data('id')
-   const url = `/user/delete/product/${id}`
-   const method = 'DELETE'
-   $.ajax({url, method})
-  .then(() => {
-    $(this).parent().remove()
-  })
+   const self = $(this)
+   swal({
+     title: 'Are you sure?',
+     text: "You won't be able to revert this!",
+     type: 'warning',
+     showCancelButton: true,
+     confirmButtonColor: '#3085d6',
+     cancelButtonColor: '#d33',
+     confirmButtonText: 'Yes, delete it!'
+   }).then(function () {
+     const id = self.data('id')
+     const url = `/user/delete/product/${id}`
+     const method = 'DELETE'
+     $.ajax({url, method})
+   .then(() => {
+     self.parent().remove()
+   })
+     swal(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
+   })
  })
 
 /* edit article */
@@ -169,6 +185,7 @@
 
  if ($('body').hasClass('product-detail-page')) {
    $('#wish-btn').on('click', function (e) {
+     swal('Good job!', 'Your wish has been added to your list!', 'success')
      e.preventDefault()
      const productId = $(this)['0'].firstChild.nextSibling.dataset.id
      const url = `/user/update`
@@ -193,6 +210,17 @@
  $('.tag-p').on('click', function (e) {
    const value = $(this).text()
    window.location.href = `/products?category=${value}`
+ })
+
+ $('#remove-message-btn').on('click', function (e) {
+   e.preventDefault()
+   const inputsChecked = $('input:checked')
+   const idMessages = $.map(inputsChecked, input => input.defaultValue)
+   const url = '/user/messages/delete'
+   const data = {idMessages}
+   const method = 'DELETE'
+   $.ajax({url, method, data})
+   .then((msg) => window.reload())
  })
  /* EDIT PROFILE */
 

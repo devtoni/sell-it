@@ -3,6 +3,8 @@ extends ../layout
 block content
   .container.mail-box
     h3 Outbox Messages
+    p.trash-p
+      i.fa.fa-trash(aria-hidden='true')
     .div-button-mail.outbox
      if (usersReceptors)
       each message, index in user.sentMessages

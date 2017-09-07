@@ -14,6 +14,7 @@ const updateProfile = require('./user/updateProfile')
 const getUsers = require('./users/getUsers')
 const getCategories = require('./categories/getCategories')
 const updateFavourites = require('./user/updateFavourites')
+const deleteMessages = require('./messages/deleteMessages')
 const isAuthenticated = require(path.join(__base, '/routes/auth/handlers/middleware/isAuthenticated'))
 const isAdmin = require(path.join(__base, '/routes/auth/handlers/middleware/isAdmin'))
 
@@ -22,6 +23,7 @@ router.put('/user/update/product/:id', isAuthenticated, updateProduct)
 router.put('/user/update/favourites/', isAuthenticated, updateFavourites)
 router.post('/user/add-product', isAuthenticated, upload.single('imgLocal'), uploadCloudinary, addProduct)
 router.delete('/user/delete/product/:id', isAuthenticated, deleteProduct)
+router.delete('/user/messages/delete', deleteMessages)
 
 // API ROUTES TO MANIPULATE INFO
 router.get('/api/users/', /* isAdmin, */ getUsers)

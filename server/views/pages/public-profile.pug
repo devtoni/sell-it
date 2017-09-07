@@ -17,18 +17,14 @@ block content
         .statistics-mobile
           .statistics-values-mobile
             div
-              p=otherUser.products.length || 0
+              p=activeProducts || 0
               p On sale
             div
-              p=otherUser.products.length || 0
+              p=noActiveProducts || 0
               p Sold
             div
-              p=otherUser.products.length || 0
+              p=otherUser.favourites.length || 0
               p Favourites
-        .sidebar
-          ul
-            li
-              a(href='/chat') Contact
       .right-box
         .gallery-products
           p PRODUCTS ON SALE
