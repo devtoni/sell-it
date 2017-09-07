@@ -3,7 +3,7 @@ extends ../layout
 block content
   .container.mail-box
     h3 Outbox Messages
-    p.trash-p
+    p.trash-p#remove-message-btn
       i.fa.fa-trash(aria-hidden='true')
     .div-button-mail.outbox
      if (usersReceptors)
@@ -19,4 +19,5 @@ block content
               span Subject: 
               | #{message.subject} 
             p=`Created: ${moment(message.createdAt).format('DD-MM-YYYY')}`
-      
+          .trash-div
+            input(type='checkbox', name='', value=message._id)

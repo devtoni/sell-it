@@ -2,19 +2,20 @@ extends ../layout
 
 block content
   .main-column-products
-    .gallery
+    .gallery.gallery-sold
       h3 Sold products
-      if (user.favourites)
-        for product, i in user.favourites
-          .card-gallery
-            a(href=`/product/${product._id}`)
-              .div.card-img-top(style=`background-image: url(${product.imgUrl});`)
-            .card-body
-              p.city=product.createdBy.city || ''
-              .title-place
-                p=product.title
-              p=product.price + ' €'           
-              a(href=`/profile/${product.createdBy._id}`)
-                .user-card
-                  .img-user-card
-                    img.img-circle(src=product.createdBy.avatarUrl)
+      if (user.products)
+        for product, i in user.products
+          if (!product.is_Active)
+            .card-gallery
+              a(href=`/product/${product._id}`)
+                .div.card-img-top(style=`background-image: url(${product.imgUrl});`)
+              .card-body
+                p.city=user.city || ''
+                .title-place
+                  p=product.title
+                p=product.price + ' €'           
+                a(href=`/profile/${user._id}`)
+                  .user-card
+                    .img-user-card
+                      img.img-circle(src=user.avatarUrl)

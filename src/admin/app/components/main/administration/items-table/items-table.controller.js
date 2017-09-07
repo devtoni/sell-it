@@ -6,10 +6,12 @@
     const self = this
     ApiService.getProducts()
     .then((products) => {
-      console.log(products)
-      self.productsList = products.data
-      self.now = +new Date()
+      self.productsList = products.data.totalProduct
     })
+    self.deleteBtn = function (e) {
+      const id = e.currentTarget.dataset.id
+      ApiService.deleteProduct(id)
+    }
   }
   app.controller('tableController', ['ApiService', tableController])
 })()

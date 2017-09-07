@@ -1,47 +1,35 @@
 const path = require('path')
 const Product = require(path.join(__base, '/models/Product'))
 const _ = require('lodash')
-const async = require('async')
 
 function getProducts (req, res) {
-  async.parallel({
-    totalProduct: (callback) => {
-      Product
-            .find({}, callback)
-    },
-    productsByDay: (callback) => {
-      Product
-        .aggregate([{
-          $group: {
-            _id: {
-              year: {
-                $year: '$createdAt'
-              },
-              month: {
-                $month: '$createdAt'
-              },
-              day: {
-                $dayOfMonth: '$createdAt'
-              }
-            },
-            total: {
-              $sum: 1
-            }
-          }
-        }])
-        .exec(callback)
-    },
-    activeProducts: (callback) => {
-      Product
-        .find({}, {is_Active: 1})
-        .exec(callback)
+  const option = {
+    $group: {
+      _id: {
+        year: {
+          $year: '$createdAt'
+        },
+        month: {
+          $month: '$createdAt'
+        },
+        day: {
+          $dayOfMonth: '$createdAt'
+        }
+      },
+      total: {
+        $sum: 1
+      }
     }
-  }, function (err, results) {
-    if (err) throw err
-    console.log(results)
-    const isActive = _.countBy(results.activeProducts, product => product.is_Active)
-    res.json({ productsByDay: results.productsByDay, isActive, total: results.totalProduct.length })
-  })
+  }
+  const totalProducts = Product.find({})
+  const totalProductsByDay = Product.aggregate([option])
+  const totalProductsPopulate = Product.find().populate('createdBy')
+
+  Promise.all([totalProducts, totalProductsByDay, totalProductsPopulate])
+         .then((results) => {
+           const isActive = _.countBy(results[0], product => product.is_Active)
+           res.json({ totalProductsQ: results[0].length, totalProductsByDay: results[1], isActive, totalProduct: results[2] })
+         })
 }
 
 module.exports = getProducts

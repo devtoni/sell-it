@@ -8,9 +8,14 @@
     .div-select-description {
       display: flex;
     }
-    #canvas {
-      padding: 1rem;
-      border: 1px solid black;
-      max-width: 600px;
-    }
+  }
+  .chart-box {
+    padding: 1rem;
+    max-width: 600px;
+    width: 600px;
+    max-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
   }

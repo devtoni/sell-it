@@ -4,9 +4,38 @@ dashboard {
   display: flex;
   .main-chart {
      flex: 1;
-     stats {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     stats, chart {
+       padding: 2rem;
        width: 100%;
        height: 100%;
      }
+     stats .stats-box .div-select-options {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+     }
+  }
+}
+
+.select-options {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  & label {
+    padding: 0;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+  }
+}
+
+.description-stats {
+  display: flex;
+  & > form {
+    flex: 1;
   }
 }

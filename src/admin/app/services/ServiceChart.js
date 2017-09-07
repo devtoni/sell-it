@@ -1,23 +1,57 @@
 function ServiceChart () {
-  this.getBarChart = function (element, dates, counts) {
+  this.getActiveChart = function (element, names, counts) {
+    console.log(counts)
     const barChart = new Chart(element, {
       type: 'bar',
       data: {
-        labels: dates,
+        labels: names,
         datasets: [{
-          label: '# Uploading Articles by Day',
+          label: '# Active and No Active Products',
           data: counts,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)'
+            'rgba(54, 162, 235, 0.2)'
           ],
           borderColor: [
             'rgba(255,99,132,1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)'
+            'rgba(54, 162, 235, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          xAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    })
+    return barChart
+  }
+  this.getBarChart = function (element, names, counts) {
+    console.log(counts)
+    const barChart = new Chart(element, {
+      type: 'bar',
+      data: {
+        labels: names,
+        datasets: [{
+          label: '# Total products by Day',
+          data: counts,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)'
           ],
           borderWidth: 1
         }]
@@ -27,17 +61,17 @@ function ServiceChart () {
           xAxes: [{
             type: 'time',
             time: {
-              displayFormats: {
-                'millisecond': 'MMM DD',
-                'second': 'MMM DD',
-                'minute': 'MMM DD',
-                'hour': 'MMM DD',
-                'day': 'MMM DD',
-                'week': 'MMM DD',
-                'month': 'MMM DD',
-                'quarter': 'MMM DD',
-                'year': 'MMM DD'
-              }
+              unit: 'day'
+            },
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'Date'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
             }
           }]
         }
@@ -46,13 +80,15 @@ function ServiceChart () {
     return barChart
   }
   this.getDoughnutChar = function (canvas, data, labels) {
+    console.log(data)
+    console.log(labels)
     var myPieChart = new Chart(canvas, {
       type: 'doughnut',
       data: {
         datasets: [{
-          data: data
+          data: labels
         }],
-        labels: labels
+        labels: data
       }
     })
   }

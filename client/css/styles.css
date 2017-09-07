@@ -514,10 +514,16 @@ footer {
   align-items: center; }
   .canvas-box .div-select-description {
     display: flex; }
-  .canvas-box #canvas {
-    padding: 1rem;
-    border: 1px solid black;
-    max-width: 600px; }
+
+.chart-box {
+  padding: 1rem;
+  max-width: 600px;
+  width: 600px;
+  max-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; }
 
 #map {
   width: 100%;
@@ -672,6 +678,12 @@ main.gallery-products {
     width: 100%; }
   main.gallery-products .slider {
     margin-bottom: 2rem; }
+
+.gallery-sold {
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column; }
 
 .sidebar-products {
   margin-top: 2rem;
@@ -1155,10 +1167,34 @@ dashboard {
   height: 100%;
   display: flex; }
   dashboard .main-chart {
-    flex: 1; }
-    dashboard .main-chart stats {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    dashboard .main-chart stats, dashboard .main-chart chart {
+      padding: 2rem;
       width: 100%;
       height: 100%; }
+    dashboard .main-chart stats .stats-box .div-select-options {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+
+.select-options {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%; }
+  .select-options label {
+    padding: 0;
+    margin-right: 0.5rem;
+    margin-bottom: 0; }
+
+.description-stats {
+  display: flex; }
+  .description-stats > form {
+    flex: 1; }
 
 .mail-box {
   display: flex;

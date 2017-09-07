@@ -192,7 +192,15 @@
      const method = 'PUT'
      const data = { productId }
      $.ajax({url, method, data})
-     .then(console.log)
+     .then((product) => {
+       swal({
+         type: 'success',
+         title: `Added article to your wishes!`,
+         timer: 5000
+       })
+       window.location.href = '/my-wishes'
+     })
+    .catch(e => console.log(e))
    })
    $('#deal-btn').on('click', function (e) {
      e.preventDefault()
@@ -201,7 +209,15 @@
      const data = { is_Active: false }
      const method = 'PUT'
      $.ajax({url, method, data})
-     .then(console.log)
+     .then((product) => {
+       swal({
+         type: 'success',
+         title: `Congratulations for your deal!`,
+         timer: 5000
+       })
+       window.location.href = '/sold-products'
+     })
+    .catch(e => console.log(e))
    })
  }
 
@@ -220,7 +236,7 @@
    const data = {idMessages}
    const method = 'DELETE'
    $.ajax({url, method, data})
-   .then((msg) => window.reload())
+   .then((msg) => window.location.reload())
  })
  /* EDIT PROFILE */
 

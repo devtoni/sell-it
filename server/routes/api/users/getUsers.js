@@ -1,9 +1,26 @@
 const path = require('path')
+const _ = require('lodash')
 const User = require(path.join(__base, '/models/User'))
 
 function getUsers (req, res) {
-  User
-  .aggregate([
+  const users = User.find()
+
+  users.then(users => {
+    const usersByGender = _.countBy(users, user => user.gender)
+    const usersByStatus = _.countBy(users, user => user.is_Active)
+    console.log(usersByStatus)
+    const usersByLocation = _.countBy(users, user => user.city)
+    const usersByAge = _.countBy(users, user => user.age)
+    res.json({ usersByGender, usersByStatus, usersByLocation, usersByAge })
+  })
+  .catch((error) => res.send(error))
+}
+
+module.exports = getUsers
+
+/*
+
+ .aggregate([
     {
       $project: {
         female: {
@@ -22,8 +39,5 @@ function getUsers (req, res) {
       }
     }
   ])
-  .then((users) => res.json(users))
-  .catch((error) => res.send(error))
-}
 
-module.exports = getUsers
+  */

@@ -2,7 +2,7 @@ extends ../layout
 
 block content
   .main-column-products
-    .gallery
+    .gallery.gallery-sold
       h3 My Wishes List
       if (user.favourites)
         for product, i in user.favourites

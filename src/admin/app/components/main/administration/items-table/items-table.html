@@ -1,3 +1,4 @@
+<h3>Products Management</h3>
 <table class="table administration-table">
     <thead>
       <tr>
@@ -18,7 +19,7 @@
       <td>{{product.createdBy.email}}</td>
       <td>{{product.is_Active ? 'active' : 'no active'}}</td>
       <td>{{product.createdAt | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
-      <td><button class="btn btn-danger">Delete</button></td>
+      <td><button ng-click=vm.deleteBtn($event) class="btn btn-danger" data-id={{product._id}}>Delete</button></td>
     </tr>
     </tbody>
   </table>

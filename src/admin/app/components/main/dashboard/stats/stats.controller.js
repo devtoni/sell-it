@@ -1,39 +1,31 @@
 (function () {
   'use strict'
   const app = angular.module('adminApp')
-  function StatsCtrl (ApiService, ServiceChart) {
+  function StatsCtrl (ApiService, ServiceChart, $rootScope, $filter) {
     const self = this
-    const canvas = angular.element('#canvas')
+    self.productOptions = [{name: 'Active/No Active', value: 'active'}, {name: 'By Day', value: 'day'}]
+    self.userOptions = [{name: 'Gender', value: 'gender'}, {name: 'Location', value: 'location'}, {name: 'Age', value: 'age'}]
+    self.categoriesOptions = [{name: 'Product'}]
     self.optionSelection = function () {
-      console.log(self.optionSelected)
-      switch (self.optionSelected) {
-        case 'menWomen':
-          ApiService.getTotalUsers()
-          .then(users => {
-            const data = [users.data[0].female, users.data[0].male]
-            const gender = ['female', 'male']
-            ServiceChart.getDoughnutChar(canvas, data, gender)
-          })
-          break
-        case 'productsByDay':
-          ApiService.getProducts()
-          .then(products => {
-            console.log(products)
-          })
-          break
-        case 'categories':
-          ApiService.getCategories()
-          .then(categories => {
-            console.log(categories)
-          //  ServiceChart.getDoughnutChar(canvas, counts, catNames)
-          })
-          break
-        case 'active':
-          ApiService.getProducts()
-          .then(products => console.log(products))
+      self.getInfo = function (option) {
+        let values
+        switch (option) {
+          case 'products':
+            values = $filter('filter')(self.productOptions, {checked: true})
+            $rootScope.$broadcast('optionsSelection', { getDataFrom: 'products', values })
+            break
+          case 'users':
+            values = $filter('filter')(self.userOptions, {checked: true})
+            $rootScope.$broadcast('optionsSelection', { getDataFrom: 'users', values })
+            break
+          case 'categories':
+            values = $filter('filter')(self.categoriesOptions, {checked: true})
+            $rootScope.$broadcast('optionsSelection', { getDataFrom: 'categories', values })
+            break
+        }
       }
     }
   }
 
-  app.controller('StatsCtrl', ['ApiService', 'ServiceChart', StatsCtrl])
+  app.controller('StatsCtrl', ['ApiService', 'ServiceChart', '$rootScope', '$filter', StatsCtrl])
 })()

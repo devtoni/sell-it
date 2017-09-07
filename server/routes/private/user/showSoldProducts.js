@@ -4,8 +4,9 @@ const User = require(path.join(__base, '/models/User'))
 function showSoldProducts (req, res) {
   const section = 'wishes'
   const { user } = req
-  const wishes = User.findById(user._id).populate('favourites')
-  wishes.then((user) => {
+  const sold = User.findById(user._id).populate('products')
+  sold.then((user) => {
+    console.log(user)
     res.render('pages/sold', { section, user })
   })
 }

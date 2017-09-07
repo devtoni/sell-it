@@ -10,7 +10,7 @@ function addProduct (req, res) {
   User.findById(id)
   .then((user) => {
     const product = new Product({
-      // createdAt: new Date('2017-09-05').getTime(),
+      createdAt: new Date('2017-09-05').getTime(),
       title,
       description,
       price,

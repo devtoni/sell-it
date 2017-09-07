@@ -52,6 +52,12 @@ main.gallery-products {
   }
 }
 
+.gallery-sold {
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+}
 .sidebar-products {
   margin-top: 2rem;
   width: 90%;

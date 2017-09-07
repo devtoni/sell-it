@@ -2,7 +2,8 @@
   'use strict'
   const app = angular.module('adminApp')
 
-  function sidenavController () {
+  function sidenavController ($rootScope) {
+    console.log($rootScope)
   }
   app.controller('sidenavController', [sidenavController])
 })()
