@@ -1,5 +1,6 @@
 
 function handleLogout (req, res) {
+  req.session.destroy(
   req.logout()
   res.redirect('/')
 }
