@@ -10,6 +10,7 @@
     })
     self.deleteBtn = function (e) {
       const id = e.currentTarget.dataset.id
+
       ApiService.deleteProduct(id)
     }
   }

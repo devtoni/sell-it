@@ -16,7 +16,7 @@ function ApiService ($http) {
   }
 
   function deleteProduct (id) {
-    const url = `/user/delete/product/${id}`
+    const url = `/admin/delete/product/${id}`
     return $http.delete(url)
   }
 
