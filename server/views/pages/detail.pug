@@ -26,7 +26,6 @@ block content
                 img.img-circle(src=product.createdBy.avatarUrl)
               .description-user-detail
                 p=product.createdBy.username
-                p=product.createdBy.products.length + ' Products on sale'
             .custom-btn.contact-detail
               a(href=`/contact/${product.createdBy._id}`) Contact
 

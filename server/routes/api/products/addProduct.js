@@ -17,7 +17,7 @@ function addProduct (req, res) {
       imgUrl,
       category,
       createdBy: id,
-      coords: user.coords
+      loc: { type: 'Point', coordinates: user.coords }
     })
     return product
   })

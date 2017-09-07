@@ -1,8 +1,6 @@
 (function () {
   'use strict'
-  const app = angular.module('adminApp')
-
-  function tableController (ApiService) {
+  function tableController (ApiService, toaster, $location) {
     const self = this
     ApiService.getProducts()
     .then((products) => {
@@ -10,9 +8,14 @@
     })
     self.deleteBtn = function (e) {
       const id = e.currentTarget.dataset.id
-
       ApiService.deleteProduct(id)
+      .then(response => {
+        toaster.pop('success', 'Product Deleted')
+        $location.path('/administration')
+      })
     }
   }
-  app.controller('tableController', ['ApiService', tableController])
+  angular
+       .module('adminApp')
+       .controller('tableController', ['ApiService', 'toaster', '$location', tableController])
 })()

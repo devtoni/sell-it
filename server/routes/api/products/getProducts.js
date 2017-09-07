@@ -30,6 +30,7 @@ function getProducts (req, res) {
            const isActive = _.countBy(results[0], product => product.is_Active)
            res.json({ totalProductsQ: results[0].length, totalProductsByDay: results[1], isActive, totalProduct: results[2] })
          })
+         .catch((e) => res.json(e))
 }
 
 module.exports = getProducts

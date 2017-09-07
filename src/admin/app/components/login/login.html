@@ -1,11 +1,15 @@
-<div class="login"></div>
-<div class="container">
+<div class="login-admin">
+
   <div class="card-form">
+    <h3>Login</h3>
     <form role="form" id="login" ng-submit="vm.login(vm.credentials)" class="form-signin">
-      <p>Enter your credentials</p>
+
+      <label for="">Email: </label>
       <input type="email" placeholder="email" type="text" ng-model="vm.credentials.email"  class="form-control"/>
+      <label for="">Password: </label>
       <input id="inputPassword" type="password" ng-model="vm.credentials.password" placeholder="Password" class="form-control"/>
       <button type="submit" target="/profile" class="btn btn-lg btn-success btn-block btn-signin custom-btn">Sign In</button>
     </form>
   </div>
+
 </div>

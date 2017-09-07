@@ -505,16 +505,6 @@ footer {
 .footer-position {
   position: absolute; }
 
-.canvas-box {
-  width: 90%;
-  margin: 1rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-  .canvas-box .div-select-description {
-    display: flex; }
-
 .chart-box {
   padding: 1rem;
   max-width: 600px;
@@ -524,6 +514,8 @@ footer {
   justify-content: center;
   align-items: center;
   margin: 0 auto; }
+  .chart-box > canvas {
+    width: 100%; }
 
 #map {
   width: 100%;
@@ -1152,6 +1144,11 @@ h3 {
     .image-div-form .form-group {
       width: 90%; } }
 
+items-table h3 {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2rem; }
+
 items-table table.administration-table {
   padding-top: 2rem;
   width: 90%;
@@ -1161,6 +1158,10 @@ items-table table.administration-table {
   items-table table.administration-table button {
     height: 30px;
     line-height: 15px; }
+
+.admin-bar {
+  color: #fff;
+  border: none; }
 
 dashboard {
   width: 100%;
@@ -1179,6 +1180,13 @@ dashboard {
       display: flex;
       align-items: center;
       justify-content: center; }
+
+div.login-admin {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 2rem; }
 
 .select-options {
   display: flex;
@@ -1199,7 +1207,8 @@ dashboard {
 .mail-box {
   display: flex;
   flex-direction: column;
-  height: 100%; }
+  height: 100%;
+  min-height: 500px; }
   .mail-box .div-button-mail {
     display: flex;
     flex-direction: column;
@@ -1224,6 +1233,7 @@ dashboard {
   text-align: right; }
 
 .user-card-detail-message {
+  min-height: 65px;
   display: flex;
   align-items: center;
   padding-bottom: 1rem; }

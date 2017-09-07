@@ -3,7 +3,7 @@
 
   const app = angular.module('adminApp')
 
-  function LoginCtrl ($rootScope, $location, AuthService, $log) {
+  function LoginCtrl (toaster, $location, AuthService, $log) {
     if (!AuthService.isLoggedIn()) $location.path('/')
     const self = this
     self.credentials = {
@@ -14,6 +14,7 @@
     self.login = function (credentials) {
       AuthService.login(credentials)
         .then(res => {
+          toaster.pop('success', 'Welcome!', 'Succesfully Login')
           $location.path('/administration')
         })
         .catch(err => {
@@ -23,5 +24,5 @@
   }
 
   app
-  .controller('LoginCtrl', ['$rootScope', '$location', 'AuthService', '$log', LoginCtrl])
+  .controller('LoginCtrl', ['toaster', '$location', 'AuthService', '$log', LoginCtrl])
 })()

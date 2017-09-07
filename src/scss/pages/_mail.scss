@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 500px;
   .div-button-mail {
     display: flex;
     flex-direction: column;
@@ -11,6 +12,7 @@
     }
   }
 }
+
 .user-card-mail {
   margin: 0 !important;
   color: black !important;
@@ -28,6 +30,7 @@
   text-align: right;
 }
 .user-card-detail-message {
+  min-height: 65px;
   display: flex;
   align-items: center;
   padding-bottom: 1rem;

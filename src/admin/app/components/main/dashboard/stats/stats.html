@@ -1,6 +1,7 @@
 <div class="stats-box">
   <div class="div-select-options">
     <select ng-change="vm.optionSelection()" ng-model="vm.optionSelected">
+          <option value="" disabled>Select an option</option>
           <option value="products" selected>Total Products</option>
           <option value="users">Total Users</option>
           <option value="categories">Total Categories</option>
@@ -11,29 +12,30 @@
           <div class="select-options">
             <label ng-repeat="option in vm.productOptions">
                 {{option.name}}
-                  <input type="checkbox" ng-model="option.checked">
+                  <input type="radio" ng-model="vm.checked" ng-value="option.value">
                 </label>
           </div>
+
         </form>
         <a href="" class="custom-btn" ng-click="vm.getInfo('products')">Search</a>
       </div>
-      <div class="select-options" ng-switch-when="users">
+      <div class="description-stats" ng-switch-when="users">
         <form action="">
-          <div class="users-options">
+          <div class="select-options">
             <label ng-repeat="option in vm.userOptions">
                 {{option.name}}
-                  <input type="checkbox" ng-model="option.checked">
+                  <input type="radio" ng-model="vm.checked" ng-value="option.value">
             </label>
           </div>
         </form>
         <a href="" class="custom-btn" ng-click="vm.getInfo('users')">Search</a>
       </div>
-      <div class="select-options" ng-switch-when="categories">
+      <div class="description-stats" ng-switch-when="categories">
         <form action="">
-          <div class="categories-options">
+          <div class="select-options">
             <label ng-repeat="option in vm.categoriesOptions">
                 {{option.name}}
-                  <input type="checkbox" ng-model="option.checked">
+                  <input type="radio" ng-model="vm.checked" ng-value="option.value">
                 </label>
           </div>
         </form>

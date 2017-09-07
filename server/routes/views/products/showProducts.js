@@ -15,7 +15,9 @@ function showProducts (req, res) {
   if (keyword) queries['title'] = new RegExp(keyword, 'i')
   if (category) queries['category'] = category
   if (min && max) queries['price'] = { '$gte': min, '$lte': max }
-
+  queries['loc'] = {
+    $nearSphere: user.coords
+  }
   async.parallel({
     categories: (callback) => {
       Category

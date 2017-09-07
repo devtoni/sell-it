@@ -37,10 +37,11 @@ var ProductSchema = new Schema({
     type: ObjectId,
     ref: 'User'
   },
-  coords: {
-    type: [Number],
-    index: '2d'
+  loc: {
+    type: { type: String },
+    coordinates: [ ]
   }
 }, {collection})
 
+ProductSchema.index({ loc: '2dsphere'})
 module.exports = mongoose.model('Product', ProductSchema)

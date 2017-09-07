@@ -1,4 +1,9 @@
 items-table {
+  h3 {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
   table.administration-table {
     padding-top: 2rem;
     width: 90%;
@@ -13,3 +18,7 @@ items-table {
   }
 }
 
+.admin-bar {
+  color: #fff;
+  border: none;
+}
