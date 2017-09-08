@@ -7,7 +7,6 @@ const moment = require('moment')
 const passport = require('./config/passport/')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
-// const flash = require('express-flash')
 const MongoStore = require('connect-mongo')(session)
 const db = require(path.join(__base, '/config/db'))
 
