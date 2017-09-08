@@ -30,12 +30,11 @@ function contactForm (req, res) {
 
   message.save()
     .then((message) => {
-      console.log(message)
       User.findByIdAndUpdate(user._id, { $push: {sentMessages: message._id} })
-          .then((user) => console.log('usuario uploaded'))
+          .then((user) => console.log('user uploaded'))
       User.findByIdAndUpdate(id, { $push: {receivedMessages: message._id} })
           .then((user) => console.log('received ok'))
-      res.redirect('/')
+      res.redirect(`/profile/${user._id}`)
     })
 }
 

@@ -28,7 +28,9 @@ function addProduct (req, res) {
     .then((category) => {
       User
       .findByIdAndUpdate(id, { $push: {products: product._id} })
-      .then((user) => res.redirect(`/profile/${user._id}`))
+      .then((user) => {
+        res.redirect(`/profile/${user._id}`)
+      })
     })
   })
   .catch((e) => console.log(e))

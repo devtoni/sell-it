@@ -210,9 +210,10 @@
      const method = 'PUT'
      $.ajax({url, method, data})
      .then((product) => {
+       console.log(product)
        swal({
          type: 'success',
-         title: `Congratulations for your deal!`,
+         title: `Sold it!`,
          timer: 5000
        })
        window.location.href = '/sold-products'
@@ -236,7 +237,14 @@
    const data = {idMessages}
    const method = 'DELETE'
    $.ajax({url, method, data})
-   .then((msg) => window.location.reload())
+   .then((msg) => {
+     swal({
+       type: 'success',
+       title: `Message deleted`,
+       timer: 3000
+     })
+     window.location.reload()
+   })
  })
  /* EDIT PROFILE */
 
