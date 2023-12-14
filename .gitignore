@@ -1,3 +1,12 @@
-client/libs/bower_components
 node_modules
+bower_components
+
 .env
+.env.production
+
+# Folder that dont need to be keeped for multer
+temp
+
+# Generated files from envsubst
+web/configmap.yaml
+web/deployment.yaml

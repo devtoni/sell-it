@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: sell-it-mongodb-deployment
+spec: 
+  selector: 
+    matchLabels: 
+      app: sell-it-mongodb
+  replicas: 1
+  strategy: 
+    type: RollingUpdate
+    rollingUpdate: 
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template: 
+    metadata: 
+      labels: 
+        app: sell-it-mongodb
+    spec: 
+      containers: 
+        - name: sell-it-mongodb
+          image: mongo:3.6
+          imagePullPolicy: Always
+          ports: 
+            - containerPort: 27017
+              name: mongodb 
+          volumeMounts: 
+            - name: mongodb-persistent-storage
+              mountPath: /data/db
+          resources:
+            limits:
+              memory: 128Mi
+              cpu: 500m
+      volumes: 
+        - name: mongodb-persistent-storage
+          persistentVolumeClaim: 
+            claimName: sell-it-mongodb-pvc
