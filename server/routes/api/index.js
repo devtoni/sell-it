@@ -18,6 +18,7 @@ const deleteMessages = require('./messages/deleteMessages')
 const deleteAdminProduct = require('./product/deleteAdminProduct')
 const isAuthenticated = require(path.join(__base, '/routes/auth/handlers/middleware/isAuthenticated'))
 const isAdmin = require(path.join(__base, '/routes/auth/handlers/middleware/isAdmin'))
+const healthz = require('./infra/healthz');
 
 router.put('/user/update', upload.single('avatarUrl'), uploadCloudinary, updateProfile)
 router.put('/user/update/product/:id', isAuthenticated, updateProduct)
@@ -31,5 +32,8 @@ router.delete('/user/messages/delete', deleteMessages)
 router.get('/api/users/', /* isAdmin, */ getUsers)
 router.get('/api/products/all/', /* isAdmin, */ getProducts)
 router.get('/api/categories/', /* isAdmin, */ getCategories)
+
+// HEALTH ENDPOINT
+router.get('/healthz', healthz);
 
 module.exports = router
