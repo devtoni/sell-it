@@ -1,11 +1,10 @@
 const NodeGeocoder = require('node-geocoder')
-const API = process.env.API
+
 var options = {
-  provider: 'google',
+  provider: 'teleport',
 
  // Optional depending on the providers
   httpAdapter: 'https', // Default
-  apiKey: API,
   formatter: null         // 'gpx', 'string', ...
 }
 

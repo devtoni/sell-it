@@ -1,0 +1,10 @@
+services:
+  mongodb:
+    image: mongo:3.6
+    volumes:
+      - sell_it_local_db:/data/db
+    ports:
+      - 27017:27017
+  
+volumes:
+  sell_it_local_db:

@@ -3,7 +3,7 @@ const router = express.Router()
 const passport = require('../../config/passport')
 const path = require('path')
 const multer = require('multer')
-const upload = multer({ dest: 'C:/Users/toni/Pictures' })
+const upload = multer({ dest: path.join(__base, process.env.UPLOAD_FOLDER) })
 const uploadCloudinary = require(path.join(__base, '/config/cloudinary'))
 
 const deleteProduct = require('./product/deleteProduct')
