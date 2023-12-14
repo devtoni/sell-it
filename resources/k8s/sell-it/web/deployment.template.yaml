@@ -1,0 +1,33 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: sell-it-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sell-it
+  template:
+    metadata:
+      labels:
+        app: sell-it
+    spec:
+      containers:
+      - name: node
+        image: personal.local:5000/sell-it:${IMAGE_TAG}
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: sell-it-configmap
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 3000
+          periodSeconds: 30
+          initialDelaySeconds: 30
+        command: [sh, -c]
+        args: ["cd /app && node index"]

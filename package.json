@@ -8,7 +8,7 @@
     "dev": "nodemon index",
     "build:scss": "node-sass src/scss/styles.scss client/css/styles.css",
     "build:scss:watch": "node-sass src/scss/styles.scss client/css/styles.css --watch",
-    "postinstall": "node ./node_modules/bower/bin/bower install"
+    "bower:install": "node ./node_modules/bower/bin/bower install"
   },
   "keywords": [],
   "author": "",
