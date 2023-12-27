@@ -12,5 +12,5 @@ I wanted to rescue the project to play around for learning purposes and having f
 
 | projects            | documentation |   |   |   |
 |---------------------|---------------|---|---|---|
-| site (legacy)      | [Docs](./apps/legacy/site/README.md)          |   |   |   |
-|                     |               |   |   |   |
+| site (legacy)       | [Docs](./apps/legacy/site/README.md) |   |   |   |
+| seed (legacy)       | [Docs](./apps/legacy/seed/README.md)            |   |   |   |
